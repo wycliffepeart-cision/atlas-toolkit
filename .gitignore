@@ -4,6 +4,7 @@ node_modules
 # Generated Folders
 dist
 .idea
+videos
 
 # Logs
 logs
