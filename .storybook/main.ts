@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
+import {options} from '../stoybook.config'
 const config: StorybookConfig = {
   "stories": [
     "../stories/**/*.mdx",
@@ -15,6 +16,7 @@ const config: StorybookConfig = {
   },
   "docs": {
     "autodocs": "tag"
-  }
+  },
+  ...options.main()
 };
 export default config;

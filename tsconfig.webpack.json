@@ -1,7 +1,7 @@
 {
 	"compileOnSave": false,
 	"compilerOptions": {
-		"rootDir": ".",
+		"rootDir": "..",
 		"sourceMap": true,
 		"declaration": false,
 		"moduleResolution": "node",
@@ -13,10 +13,13 @@
 		"lib": ["es2017", "dom"],
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
-		"baseUrl": ".",
+		"baseUrl": "./",
 		"jsx": "react-jsx",
 		"resolveJsonModule": true,
 		"types": ["cypress", "node"]
 	},
-	"exclude": ["node_modules", "tmp", "vendors", "dist", "src", "stories"]
+	"include": ["types/**/*d.ts"],
+	"exclude": [
+		"node_modules", "tmp",
+		"vendors", "dist", "src", "stories"]
 }

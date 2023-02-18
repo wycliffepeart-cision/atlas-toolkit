@@ -1,16 +1,18 @@
 import {create} from '@storybook/theming';
+import {StorybookConfig} from "@storybook/react-webpack5";
 
 export const options = {
 
-  main: () => ({
+  main: (): Partial<StorybookConfig> => ({
     stories: ['../stories/**/*.stories.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],
 
     staticDirs: ['./public'],
 
-    webpackFinal: async (config, {configType}) => {
-      config.module.rules = config.module.rules.map((rule) => {
+    webpackFinal: async (config: any, {configType}) => {
+
+      config.module.rules = config.module.rules.map((rule: any) => {
         // Check for file loader rule
-        if (rule.loader && typeof rule.loader === 'string' && rule.loader.includes('file-loader')) {
+        if (rule.type && typeof rule.type === 'string' && rule.type.includes('asset/resource')) {
           // Remove svg from rule.
           return {...rule, test: /\.(ico|jpg|jpeg|png|apng|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/};
         }

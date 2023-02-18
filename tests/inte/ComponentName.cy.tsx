@@ -1,3 +1,4 @@
+
 import '../../src/icons/home';
 import '../../styles/index.css';
 
@@ -11,6 +12,6 @@ describe('ComponentName.cy.tsx', () => {
       );
     }
 
-    (cy as any).mount(<Foo/>);
+    cy.mount(<Foo/>);
   });
 });

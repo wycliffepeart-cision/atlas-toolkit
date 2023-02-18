@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import '../src/icons/settings/settings'
 
 import { Button } from './Button';
 

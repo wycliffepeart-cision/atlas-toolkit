@@ -1,3 +1,4 @@
+import '../styles/index.css'
 export const parameters = {
   backgrounds: {
     default: 'light',

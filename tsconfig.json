@@ -16,8 +16,9 @@
 		"baseUrl": ".",
 		"jsx": "react-jsx",
 		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
 		"types": ["cypress", "node"]
 	},
-	"include": ["src/", "index.d.ts", "types/general.d.ts"],
+	"include": ["src/", "types/**/*d.ts"],
 	"exclude": ["node_modules", "tmp", "vendors", "stories", "dist", "tests"]
 }
