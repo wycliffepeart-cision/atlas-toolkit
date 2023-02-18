@@ -1,4 +1,4 @@
-import Settings from './settings.svg';
+import Settings from '../../../styling/icons/settings.svg';
 import { makeIcon } from '../../utils/makeIcon';
 
 export const AtlasIconSettingsTagName = 'atlas-icon-settings';

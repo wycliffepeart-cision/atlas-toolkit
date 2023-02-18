@@ -1,4 +1,4 @@
-import Home from './home.svg';
+import Home from '../../../styling/icons/home.svg';
 import { makeIcon } from '../../utils/makeIcon';
 
 export const AtlasIconHomeName = 'atlas-icon-home';

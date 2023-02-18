@@ -1,4 +1,4 @@
-import '../styles/index.css'
+import '../styling/index.css'
 export const parameters = {
   backgrounds: {
     default: 'light',
