@@ -18,6 +18,6 @@
 		"resolveJsonModule": true,
 		"types": ["cypress", "node"]
 	},
-	"include": ["src/", "index.d.ts", "tests", "stories", "types/general.d.ts"],
-	"exclude": ["node_modules", "tmp", "vendors", "dist"]
+	"include": ["src/", "index.d.ts", "types/general.d.ts"],
+	"exclude": ["node_modules", "tmp", "vendors", "stories", "dist", "tests"]
 }

@@ -18,5 +18,5 @@
 		"resolveJsonModule": true,
 		"types": ["cypress", "node"]
 	},
-	"exclude": ["node_modules", "tmp", "vendors", "dist", "src"]
+	"exclude": ["node_modules", "tmp", "vendors", "dist", "src", "stories"]
 }
