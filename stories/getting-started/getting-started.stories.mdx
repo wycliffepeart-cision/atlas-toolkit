@@ -1,0 +1,56 @@
+import {Meta} from '@storybook/addon-docs';
+import {Color, PrimaryBlue } from '../foundation/colors.tsx'
+
+<Meta
+    title="Getting Started"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: {hidden: true},
+            outlines: {hidden: true}
+        },
+    }}/>
+
+# Getting Started
+
+Maintaining consistent and engaging digital interfaces throughout our applications and experiences, demands extended guidance around color usage.
+The following palette provides the foundation as we strive to achieve balance and harmony through our User Interface design.
+
+Color is at the foundation of what makes Atlas a truly Cision design system. Rooted in the brand palette, we have expanded the choices to give designers freedom to explore combinations and ranges to fit their particular contexts.
+
+### When to use
+
+Primary colors are used for key components across the UI. Such as buttons, input fields, tabs, surfaces.
+Secondary colors are used for less prominent components in the UI, such as filter chips, while expanding the opportunity for color expression.
+
+### Color Anatomy
+
+The core blue and orange families serves as the primary action colors across all Cision products and experiences. We advised to use additional color moderately and purposefully.
+
+<div style={{
+    padding: "1rem",
+    borderRadius: "6px",
+    color: "#252525",
+    fontWeight: "bold",
+    backgroundColor: "#eee",
+    marginBottom: "1.5rem"
+}}>
+    Primary Blue
+</div>
+
+<div>
+    <div style={{marginBottom: "1.5rem"}}>{PrimaryBlue.map((props, i) => <Color key={i} {...props}/>)}</div>;
+</div>
+
+
+<div style={{
+    padding: "1rem",
+    borderRadius: "6px",
+    color: "#252525",
+    fontWeight: "bold",
+    backgroundColor: "#eee",
+    marginBottom: "1.5rem"
+}}>
+    Primary Orange
+</div>
+

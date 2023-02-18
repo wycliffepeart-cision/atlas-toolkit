@@ -1,0 +1,57 @@
+atlas-accordions {
+	border: 1px solid #ddd;
+	transition: 0.5s all;
+}
+
+atlas-accordion {
+	background: #eee;
+	transform: translateZ(0);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+atlas-accordion::part(header) {
+	margin: 0;
+	outline: 0;
+	width: 100%;
+	height: 50px;
+	display: grid;
+	outline: none;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 0 1rem;
+	font-weight: 700;
+	line-height: 50px;
+	position: relative;
+	border: 1px solid #ddd;
+	grid-template-columns: 1fr auto;
+}
+
+atlas-accordion::part(header-title) {
+	text-align: left;
+	display: block;
+}
+
+atlas-accordion::part(collapsable) {
+	transition: 0.3s all;
+}
+
+atlas-accordion::part(content) {
+	padding: 1rem;
+	display: block;
+}
+
+atlas-accordions atlas-accordion[collapse='showing'],
+atlas-accordions atlas-accordion[collapse='show'] {
+	display: block;
+	transition: 0.5s margin;
+}
+
+atlas-accordions atlas-accordion[collapse='showing']:first-child,
+atlas-accordions atlas-accordion[collapse='show']:first-child {
+	margin-top: 0;
+}
+
+atlas-accordions atlas-accordion[collapse='showing']:first-child,
+atlas-accordions atlas-accordion[collapse='show']:last-child {
+	margin-bottom: 0;
+}
