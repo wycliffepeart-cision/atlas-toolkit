@@ -1,4 +1,7 @@
 import '../theming/styles/index.css'
+import '../src/icons'
+import {options} from '../stoybook.config'
+
 export const parameters = {
   backgrounds: {
     default: 'light',
@@ -10,4 +13,10 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  ...options.preview(),
+  options: {
+    storySort: {
+      order: ['Introduction', 'Foundation', 'Forms', 'Components', 'Layout', 'Pages', 'Playground', 'Guides'],
+    },
+  }
 }

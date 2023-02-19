@@ -1,0 +1,55 @@
+import {Meta} from '@storybook/addon-docs';
+
+<Meta
+    title="Layout/Toolbar"
+    parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+            canvas: {hidden: true},
+            outlines: {hidden: true}
+        },
+    }}/>
+
+# Atlas Toolbar Layout
+
+The toolbar is a user interface element typically found at the top of the software application window,
+used to provide quick access to functions, navigation options, and information. It can contain various
+components such as a title or logo, navigation icons, search functions, menus, and buttons for commonly
+used functions or settings. The appearance and functionality of an toolbar can vary depending on the
+design and purpose of the application.
+
+### When to use
+
+The toolbar is typically used in software applications to provide quick access to frequently used functions,
+navigation options, and information. It is particularly useful when an application has a lot of
+functionality and features, and users need a quick and easy way to access them.
+
+**What it looks like**
+
+<div style={{
+    height: "76px",
+    width: "100%",
+    backgroundColor: "#eee",
+    display: "grid",
+    gridTemplateColumns: "auto 1fr",
+    gridTemplateRows: "1fr"
+}}>
+    <div style={{fontSize: "1rem", display: "flex", columnGap: "1rem", alignItems: "center", justifyContent: "center", padding: "0 1rem"}} >
+        <div style={{width: '50px', height: "50px", borderRadius: "50px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#ddd"}}>C</div>
+        <span>Good Morning Wycliffe Peart</span>
+    </div>
+    <div style={{display: "flex", width: "100%", justifyContent: "flex-end"}}>
+        <div style={{
+            display: "flex",
+            columnGap: "2rem",
+            paddingRight: "1rem",
+            justifyContent: "start",
+        }}>
+            <atlas-icon-mail/>
+            <atlas-icon-mail/>
+            <atlas-icon-mail/>
+            <atlas-icon-mail/>
+        </div>
+    </div>
+</div>
+

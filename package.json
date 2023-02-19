@@ -4,8 +4,8 @@
   "scripts": {
     "test": "vitest --dom",
     "test:ui": "vitest --dom --ui",
+    "test:run": "vitest run --dom",
     "test:coverage": "vitest run --dom --coverage",
-    "test:run": "vitest run",
     "build": "npx rollup -c && npm run generate:types",
     "prettier:fix": "prettier --write \"./**/*.{html,ts,tsx,css,js,md,json}\"",
     "prettier:check": "prettier --check \"./**/*.{html,ts,tsx,css,js,md,json}\" --config ./.prettierrc",
@@ -30,6 +30,7 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@rollup/plugin-typescript": "^11.0.0",
+    "@storybook/addon-docs": "^7.0.0-beta.50",
     "@storybook/addon-essentials": "^7.0.0-beta.50",
     "@storybook/addon-interactions": "^7.0.0-beta.50",
     "@storybook/addon-links": "^7.0.0-beta.50",

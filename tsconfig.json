@@ -28,13 +28,13 @@
 	"include": [
 		"types",
 		"src",
-		"tests"
+		"tests",
+		"stories",
 	],
 	"exclude": [
 		"node_modules",
 		"tmp",
 		"vendors",
-		"stories",
 		"dist"
 	]
 }

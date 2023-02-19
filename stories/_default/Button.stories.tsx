@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '../src/icons/mail/mail'
+import '../../src/icons/mail/mail'
 
 import { Button } from './Button';
 
