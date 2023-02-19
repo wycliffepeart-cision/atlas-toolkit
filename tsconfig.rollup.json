@@ -1,0 +1,13 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": "/src",
+    "declaration": true,
+    "allowJs": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "declarationMap": true
+  },
+  "include": ["types", "src"],
+  "exclude": ["node_modules", "tmp", "vendors", "stories", "dist"]
+}
