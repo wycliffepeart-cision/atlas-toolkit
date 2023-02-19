@@ -1,4 +1,4 @@
-import MargetPlace from '../../../theming/icons/marketplace.svg';
+import MargetPlace from '../../../theme/icons/marketplace.svg';
 import { makeIcon } from '../../utils/makeIcon';
 
 export const AtlasIconMarketPlaceName = 'atlas-icon-marketplace';

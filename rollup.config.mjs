@@ -26,7 +26,7 @@ export default {
 					dest: 'dist',
 				},
 				{
-					src: 'styles',
+					src: 'theme',
 					dest: 'dist',
 				},
 			],

@@ -1,5 +1,5 @@
 import '../../src/icons/home';
-import '../../theming/styles/index.css';
+import '../../theme/styles/index.css';
 
 describe('ComponentName.cy.tsx', () => {
   it('playground', () => {

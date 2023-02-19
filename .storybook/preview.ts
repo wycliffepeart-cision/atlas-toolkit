@@ -1,4 +1,4 @@
-import '../theming/styles/index.css'
+import '../theme/styles/index.css'
 import '../src/icons'
 import {options} from '../stoybook.config'
 
