@@ -1,6 +1,5 @@
-import * as React from 'react';
 import '../../src/icons/home';
-import '../../styling/index.css';
+import '../../theming/index.css';
 
 describe('ComponentName.cy.tsx', () => {
   it('playground', () => {

@@ -14,11 +14,11 @@
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
-		"jsx": "react-jsxdev",
+		"jsx": "react-jsx",
 		"resolveJsonModule": true,
 		"allowSyntheticDefaultImports": true,
-		"types": ["cypress", "node"]
+		"types": ["cypress", "node"],
 	},
-	"include": ["src/", "types/**/*d.ts"],
-	"exclude": ["node_modules", "tmp", "vendors", "stories", "dist", "tests"]
+	"include": ["types", "src", "tests"],
+	"exclude": ["node_modules", "tmp", "vendors", "stories", "dist"]
 }
