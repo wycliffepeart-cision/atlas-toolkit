@@ -9,7 +9,7 @@
     "build": "npx rollup -c && npm run generate:types",
     "prettier:fix": "prettier --write \"./**/*.{html,ts,tsx,css,js,md,json}\"",
     "prettier:check": "prettier --check \"./**/*.{html,ts,tsx,css,js,md,json}\" --config ./.prettierrc",
-    "generate:types": "npx -p typescript tsc -rootDir . --declaration --allowJs --emitDeclarationOnly --outDir dist --declarationMap",
+    "generate:types": "npx -p typescript tsc -p tsconfig.rollup.json",
     "sb:start": "cd stories && npm run storybook",
     "sb:run": "cd stories && npm i && npm run storybook",
     "build-storybook": "storybook build",

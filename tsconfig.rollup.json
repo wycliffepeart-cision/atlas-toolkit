@@ -8,6 +8,6 @@
     "outDir": "dist",
     "declarationMap": true
   },
-  "include": ["types", "src"],
+  "include": ["/types", "/src"],
   "exclude": ["node_modules", "tmp", "vendors", "stories", "dist"]
 }
