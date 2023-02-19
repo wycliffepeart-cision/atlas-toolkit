@@ -12,19 +12,6 @@ module.exports = {
         test: /\.svg$/,
         loader: 'svg-inline-loader'
       },
-      // {
-      //   test: /\.m?js$/,
-      //   exclude: /node_modules/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: [
-      //         ['@babel/preset-env', { targets: "defaults" }],
-      //         ["@babel/preset-typescript"]
-      //       ]
-      //     }
-      //   }
-      // },
       {
         test: /\.tsx|\.ts?$/,
         use: {
@@ -33,7 +20,7 @@ module.exports = {
             configFile: "tsconfig.webpack.json"
           }
         },
-        exclude: /node_modules|\.d\.ts$/, // this line as well
+        exclude: /node_modules|\.d\.ts$/,
       },
     ],
   },
