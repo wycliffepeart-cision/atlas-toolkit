@@ -19,6 +19,6 @@
 		"allowSyntheticDefaultImports": true,
 		"types": ["cypress", "node"],
 	},
-	"include": ["src/"],
+	"include": ["types", "src", "tests"],
 	"exclude": ["node_modules", "tmp", "vendors", "stories", "dist"]
 }

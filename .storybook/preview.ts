@@ -1,4 +1,4 @@
-import '../theming/index.css'
+import '../theming/styles/index.css'
 export const parameters = {
   backgrounds: {
     default: 'light',
