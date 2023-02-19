@@ -1,3 +1,4 @@
+import './style.css'
 import '../theme/styles/index.css'
 import '../src/icons'
 import {options} from '../stoybook.config'
@@ -16,7 +17,7 @@ export const parameters = {
   ...options.preview(),
   options: {
     storySort: {
-      order: ['Introduction', 'Foundation', 'Forms', 'Components', 'Layout', 'Pages', 'Playground', 'Guides'],
+      order: ['Introduction', 'Getting Started', 'Foundation', 'Forms', 'Components', 'Layout', 'Pages', 'Playground', 'Guides'],
     },
   }
 }
