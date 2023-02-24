@@ -26,6 +26,11 @@ export const options = {
         loader: 'svg-inline-loader',
       });
 
+      config.module.rules.push({
+          test: /\.html$/i,
+          loader: "html-loader",
+        })
+
       // Return the altered config
       return config;
     },

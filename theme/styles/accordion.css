@@ -1,12 +1,14 @@
 atlas-accordions {
-	border: 1px solid #ddd;
-	transition: 0.5s all;
+	/*border: 1px solid #ddd;*/
+	transition: 0.3s all;
 }
 
-atlas-accordion {
+atlas-accordion::part(accordion) {
 	background: #eee;
 	transform: translateZ(0);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	border: 1px solid #ddd;
+	border-radius: 6px;
 }
 
 atlas-accordion::part(header) {
@@ -22,7 +24,7 @@ atlas-accordion::part(header) {
 	font-weight: 700;
 	line-height: 50px;
 	position: relative;
-	border: 1px solid #ddd;
+	border: 0;
 	grid-template-columns: 1fr auto;
 }
 
@@ -43,7 +45,7 @@ atlas-accordion::part(content) {
 atlas-accordions atlas-accordion[collapse='showing'],
 atlas-accordions atlas-accordion[collapse='show'] {
 	display: block;
-	transition: 0.5s margin;
+	transition: 0.3s margin;
 }
 
 atlas-accordions atlas-accordion[collapse='showing']:first-child,

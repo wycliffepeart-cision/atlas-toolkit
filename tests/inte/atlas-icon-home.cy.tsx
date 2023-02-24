@@ -1,8 +1,8 @@
 import '../../src/icons/home';
 import '../../theme/styles/index.css';
 
-describe('ComponentName.cy.tsx', () => {
-  it('playground', () => {
+describe('Atlas Icon Home', () => {
+  it('is component mountable', () => {
     function Foo() {
       return (
         <>

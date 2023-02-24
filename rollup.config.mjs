@@ -29,6 +29,10 @@ export default {
 					src: 'theme',
 					dest: 'dist',
 				},
+				{
+					src: 'types',
+					dest: 'dist',
+				},
 			],
 		}),
 	],

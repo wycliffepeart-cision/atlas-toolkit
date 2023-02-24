@@ -12,8 +12,6 @@ export class Accordion extends HTMLElement {
 		super();
 
 		this.uniqueId = makeId(10);
-		this.id = this.uniqueId;
-
 		this.targetSelector = (collapse) => `${this.tagName}[id="${this.uniqueId}"][collapse="${collapse}"]::part(collapsable)`;
 
 		const templateElement = new DOMParser().parseFromString(template, 'text/html').querySelector('template');
@@ -25,6 +23,7 @@ export class Accordion extends HTMLElement {
 		const { content } = templateElement;
 		const shadowRoot = this.attachShadow({ mode: 'open' });
 		shadowRoot.replaceChildren(content.cloneNode(true));
+
 	}
 
 	resetStyle() {
@@ -35,6 +34,8 @@ export class Accordion extends HTMLElement {
 	}
 
 	connectedCallback() {
+		this.id = this.uniqueId;
+		this.shadowRoot.querySelector('button').setAttribute('data-target', this.uniqueId)
 		const target = this.shadowRoot.querySelector('[part="collapsable"]');
 		const style = document.createElement('style');
 		style.id = this.uniqueId;
@@ -42,7 +43,7 @@ export class Accordion extends HTMLElement {
 		const cssFn = () =>
 			(style.textContent = `
       atlas-accordion::part(collapsable){
-        transition: .5s all;
+        transition: .1s all;
       }
       ${this.targetSelector('hidden')} { height: ${0}px; overflow: hidden;  }
       ${this.targetSelector('showing')} { height: ${target.scrollHeight}px; overflow: hidden }
