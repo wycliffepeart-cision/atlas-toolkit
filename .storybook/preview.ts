@@ -1,14 +1,14 @@
-import './style.css'
-import '../theme/styles/index.css'
-import '../src/icons'
-import '../src/accordion'
-import {options} from '../stoybook.config'
+import './style.css';
+import '../theme/styles/index.css';
+import '../src/icons';
+import '../src';
+import { options } from '../stoybook.config';
 
 export const parameters = {
   backgrounds: {
-    default: 'light',
+    default: 'dark',
   },
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -20,5 +20,5 @@ export const parameters = {
     storySort: {
       order: ['Introduction', 'Getting Started', 'Foundation', 'Forms', 'Components', 'Layout', 'Pages', 'Playground', 'Guides'],
     },
-  }
-}
+  },
+};

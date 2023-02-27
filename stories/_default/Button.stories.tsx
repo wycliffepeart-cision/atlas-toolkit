@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '../../src/icons/mail/mail'
+import '../../src/icons/mail/mail';
 
 import { Button } from './Button';
 
@@ -15,11 +15,13 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => {
-  return <>
-  {/*// @ts-ignore*/}
-    <atlas-icon-mail/>
-    <Button {...args} />
-  </>
+  return (
+    <>
+      {/*// @ts-ignore*/}
+      <atlas-icon-mail />
+      <Button {...args} />
+    </>
+  );
 };
 
 // export const Primary = Template.bind({});

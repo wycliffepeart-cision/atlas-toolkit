@@ -1,80 +1,87 @@
 import template from './template.html';
 import { makeId } from '../utils/utils';
+import { AccordionAttrMap } from './enums';
 
 export class Accordion extends HTMLElement {
-	private readonly uniqueId;
+  private callback;
 
-	private readonly targetSelector;
+  private readonly targetId;
 
-	private callback;
+  constructor() {
+    super();
 
-	constructor() {
-		super();
+    this.targetId = makeId(20);
+    const templateElement = new DOMParser().parseFromString(template, 'text/html').querySelector('template');
 
-		this.uniqueId = makeId(10);
-		this.targetSelector = (collapse) => `${this.tagName}[id="${this.uniqueId}"][collapse="${collapse}"]::part(collapsable)`;
+    if (templateElement === undefined || templateElement === null) {
+      throw new Error('Template undefined');
+    }
 
-		const templateElement = new DOMParser().parseFromString(template, 'text/html').querySelector('template');
+    const { content } = templateElement;
+    const shadowRoot = this.attachShadow({ mode: 'open' });
+    shadowRoot.replaceChildren(content.cloneNode(true));
+  }
 
-		if (templateElement === undefined || templateElement === null) {
-			throw new Error('Template undefined');
-		}
+  static get observedAttributes() {
+    return [AccordionAttrMap.EXPANDED, AccordionAttrMap.EXPANDED];
+  }
 
-		const { content } = templateElement;
-		const shadowRoot = this.attachShadow({ mode: 'open' });
-		shadowRoot.replaceChildren(content.cloneNode(true));
+  disabled() {
+    const disabled = this.getAttribute(AccordionAttrMap.DISABLED);
 
-	}
+    if (disabled === 'true') {
+      this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+      this.shadowRoot.querySelector('button').disabled = true;
+    }
+  }
 
-	resetStyle() {
-		this.setAttribute('collapse', 'showing');
-		setTimeout(() => {
-			this.setAttribute('collapse', 'hidden');
-		}, 10);
-	}
+  attributeChangedCallback(name, oldValue, newValue) {
+    const collapsable: HTMLElement = this.shadowRoot.querySelector('[part="collapsable"]');
+    const height = `${collapsable.scrollHeight}px`;
 
-	connectedCallback() {
-		this.id = this.uniqueId;
-		this.shadowRoot.querySelector('button').setAttribute('data-target', this.uniqueId)
-		const target = this.shadowRoot.querySelector('[part="collapsable"]');
-		const style = document.createElement('style');
-		style.id = this.uniqueId;
+    if (name === AccordionAttrMap.EXPANDED && newValue === 'true') {
+      collapsable.style.height = '0';
+      collapsable.style.height = height;
+    } else if (name === AccordionAttrMap.EXPANDED && newValue === 'false') {
+      collapsable.style.height = height;
+      setTimeout(() => (collapsable.style.height = '0'), 0);
+    }
+  }
 
-		const cssFn = () =>
-			(style.textContent = `
-      atlas-accordion::part(collapsable){
-        transition: .1s all;
+  get button() {
+    return this.shadowRoot.querySelector('button');
+  }
+
+  connectedCallback() {
+    this.setAttribute('data-target', this.targetId);
+    this.shadowRoot.querySelector('button').id = this.targetId;
+
+    const collapsable: HTMLElement = this.shadowRoot.querySelector('[part="collapsable"]');
+
+    collapsable.style.height = '0';
+
+    this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+
+    if (!this.callback) {
+      this.callback = () => {
+        setTimeout(() => {
+          if (this.getAttribute(AccordionAttrMap.EXPANDED) === 'true') {
+            collapsable.style.height = 'auto';
+          }
+        }, 0);
+      };
+    }
+
+    collapsable.addEventListener('transitionend', this.callback.bind(this));
+
+    this.shadowRoot.querySelector('button').addEventListener('click', (e) => {
+      if (this.getAttribute(AccordionAttrMap.EXPANDED) === 'false') {
+        this.setAttribute(AccordionAttrMap.EXPANDED, 'true');
+      } else {
+        this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
       }
-      ${this.targetSelector('hidden')} { height: ${0}px; overflow: hidden;  }
-      ${this.targetSelector('showing')} { height: ${target.scrollHeight}px; overflow: hidden }
-      ${this.targetSelector('show')} { height: auto; overflow: hidden }
-    `);
+    });
 
-		document.head.append(style);
-
-		cssFn();
-
-		this.setAttribute('collapse', !this.getAttribute('collapse') || this.getAttribute('collapse') === 'hidden' ? 'show' : 'hidden');
-
-		if (!this.callback) {
-			this.callback = () => {
-				setTimeout(() => {
-					if (this.getAttribute('collapse') === 'showing') this.setAttribute('collapse', 'show');
-				}, 10);
-			};
-		}
-
-		target.addEventListener('transitionend', this.callback.bind(this));
-		const btn = this.shadowRoot.querySelector('button');
-
-		this.shadowRoot.querySelector('button').addEventListener('click', (e) => {
-			if (!this.getAttribute('collapse') || this.getAttribute('collapse') === 'hidden') {
-				btn.setAttribute('collapse', 'show');
-				this.setAttribute('collapse', 'showing');
-			} else if (this.getAttribute('collapse') === 'show') {
-				btn.setAttribute('collapse', 'hidden');
-				this.resetStyle();
-			}
-		});
-	}
+    this.disabled();
+  }
 }

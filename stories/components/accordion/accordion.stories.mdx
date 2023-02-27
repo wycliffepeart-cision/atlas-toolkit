@@ -1,62 +1,169 @@
 import {Meta} from '@storybook/addon-docs';
-import {Accordion} from './accordion'
+import {ControlledAccordion} from './controlled-accordion'
+import {BasicAccordion} from './basic-accordion'
+import {DemoCode} from './format'
 
 <Meta
-    title="Components/Accordion"
-    parameters={{
-        viewMode: 'docs',
-        previewTabs: {
-            canvas: {hidden: true},
-            outlines: {hidden: true}
-        },
-    }}/>
+  title="Components/Accordion"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: {hidden: true},
+      outlines: {hidden: true}
+    },
+  }}/>
 
 # Atlas Accordion
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, alias aliquam, assumenda dolores eligendi hic libero minus molestiae nesciunt nulla obcaecati odio omnis optio pariatur perferendis quos saepe totam unde.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, alias aliquam, assumenda dolores eligendi hic libero minus molestiae nesciunt nulla obcaecati odio omnis optio pariatur perferendis quos saepe totam unde.
-
-**Component Example**
-
-<Accordion/>
-
-**Component Props**
-
-<table className="sbdocs-table">
-  <thead>
-  <tr>
-    <th>Props</th>
-    <th>Datatype</th>
-    <th>Required</th>
-    <th>Values</th>
-    <th>Description</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>state</td>
-    <td>string</td>
-    <td>Yes</td>
-    <td>expanded, collapse</td>
-    <td>The name of the context</td>
-  </tr>
-  </tbody>
-</table>
-
-```tsx
-<Accordion/>
-```
-
-#### Working with accordion groups
 <br/>
-<atlas-accordions>
-  <Accordion/>
-  <Accordion/>
-  <Accordion/>
-</atlas-accordions>
 
+<div style={{display: "flex", gap: "1rem", flexDirection: "column"}}>
+  <a href="#basic-accordion" target="_self">Basic Accordion</a>
+  <a href="#controlled-accordion" target="_self">Controlled Accordion</a>
+  <a href="#accordion-api" target="_self">Accordion API</a>
+</div>
 
-**Component Props**
+<br/>
+
+The accordion component allows the user to show and hide sections of related content on a page.
+An accordion is a lightweight container that may either be used standalone, or be connected to a larger surface, such as a card.
+
+## Basic Accordion
+
+<br/>
+
+<div style={{border: "1px solid #eee", overflow: 'hidden', borderRadius: ".5rem"}}>
+  <BasicAccordion/>
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    borderTop: "1px solid #eee",
+    borderBottom: "1px solid #eee",
+    borderRadius: "0rem"
+  }}>
+    <div style={{display: "flex", gap: "1rem", flexGrow: "1", padding: "1rem"}}>
+      <a href="#">React</a>
+      <a href="#">Vue</a>
+      <a href="#">Web Component</a>
+    </div>
+    <div style={{padding: "0 1rem"}}>
+      <button>Copy</button>
+    </div>
+  </div>
+  <atlas-accordion>
+    <div slot="content">
+      <DemoCode/>
+    </div>
+  </atlas-accordion>
+</div>
+<br/>
+<br/>
+## Controlled Accordion
+
+<br/>
+
+<div style={{border: "1px solid #eee", borderRadius: ".5rem"}}>
+  <ControlledAccordion/>
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    borderTop: "1px solid #eee",
+    borderBottom: "1px solid #eee",
+    borderRadius: "0rem"
+  }}>
+    <div style={{display: "flex", gap: "1rem", flexGrow: "1", padding: "1rem"}}>
+      <a href="#">React</a>
+      <a href="#">Vue</a>
+      <a href="#">Web Component</a>
+    </div>
+    <div style={{padding: "0 1rem"}}>
+      <button>Copy</button>
+    </div>
+  </div>
+</div>
+
+```tsx
+import { CSSProperties, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
+
+export function ControlledAccordion() {
+  const [state, setState] = useState<string>('panel-1');
+
+  const handlePanel1 = useCallback(() => setState('panel-1'), []);
+  const handlePanel2 = useCallback(() => setState('panel-2'), []);
+  const handlePanel3 = useCallback(() => setState('panel-3'), []);
+
+  return (
+    <Stack>
+      <AtlasAccordion
+        title='Accordion 1'
+        onExpanded={handlePanel1}
+        expanded={state === 'panel-1'}
+        content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus est eveniet exercitationem, itaque iusto maiores minus nemo sunt suscipit! Commodi delectus, error exercitationem laborum nisi numquam perferendis sapiente vitae.'
+      />
+
+      <AtlasAccordion
+        title='Accordion 2'
+        onExpanded={handlePanel2}
+        expanded={state === 'panel-2'}
+        content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus est eveniet exercitationem, itaque iusto maiores minus nemo sunt suscipit! Commodi delectus, error exercitationem laborum nisi numquam perferendis sapiente vitae.'
+      />
+
+      <AtlasAccordion
+        disabled
+        title='Accordion 3'
+        onExpanded={handlePanel3}
+        expanded={state === 'panel-3'}
+        content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus est eveniet exercitationem, itaque iusto maiores minus nemo sunt suscipit! Commodi delectus, error exercitationem laborum nisi numquam perferendis sapiente vitae.'
+      />
+    </Stack>
+  );
+}
+
+const styles: CSSProperties = {
+  padding: '1rem',
+  borderRadius: '.5rem',
+  backgroundColor: '#fff',
+  border: '1px solid #ddd',
+};
+
+interface AccordionComponentProps {
+  title: string;
+  content: string;
+  disabled?: boolean;
+  expanded: boolean;
+  onExpanded: () => void;
+}
+
+function AtlasAccordion({ expanded, onExpanded, title, content, disabled }: AccordionComponentProps) {
+  const ref = useRef<{ button: HTMLButtonElement }>();
+
+  useEffect(() => {
+    if (ref.current) ref.current.button.addEventListener('click', onExpanded);
+
+    return () => {
+      if (ref.current) ref.current.button.removeEventListener('click', onExpanded);
+    };
+  }, []);
+
+  return (
+    <atlas-accordion ref={ref as any} expanded={expanded} disabled={disabled}>
+      <atlas-typography slot='title'>{title}</atlas-typography>
+      <atlas-icon-chevron-down slot='icon' />
+      <div slot='content' style={styles}>
+        {content}
+      </div>
+    </atlas-accordion>
+  );
+}
+
+function Stack({ children }: PropsWithChildren) {
+  return <div style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>{children}</div>;
+}
+```
+
+## Accordion API
+
+API reference docs for the React Accordion component. Learn about the props, CSS, and other APIs of this exported module.
 
 <table className="sbdocs-table">
   <thead>
@@ -70,19 +177,20 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, alias aliquam, ass
   </thead>
   <tbody>
   <tr>
-    <td>state</td>
-    <td>string</td>
-    <td>Yes</td>
-    <td>expanded, collapse</td>
-    <td>The name of the context</td>
+    <td>expended</td>
+    <td>boolean</td>
+    <td>No</td>
+    <td>true, false</td>
+    <td>
+      If true, expands the accordion, otherwise collapse it. Setting this prop enables control over the accordion.
+    </td>
+  </tr>
+  <tr>
+    <td>disabled</td>
+    <td>boolean</td>
+    <td>No</td>
+    <td>true, false</td>
+    <td>Specifies that the accordion should be disabled</td>
   </tr>
   </tbody>
 </table>
-
-```tsx
-<atlas-accordions>
-  <Accordion/>
-  <Accordion/>
-  <Accordion/>
-</atlas-accordions>
-```

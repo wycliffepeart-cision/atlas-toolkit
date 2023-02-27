@@ -6,11 +6,11 @@ describe('Atlas Icon Home', () => {
     function Foo() {
       return (
         <>
-          <atlas-icon-home/>
+          <atlas-icon-home />
         </>
       );
     }
 
-    cy.mount(<Foo/>);
+    cy.mount(<Foo />);
   });
 });
