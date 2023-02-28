@@ -2,6 +2,9 @@ import { Accordion } from './accordion';
 import { Accordions } from './accordions';
 import { AccordionHeader } from './header';
 import { AccordionContent } from './content';
+import {Collapsable} from "./collapsable";
+
+if (!customElements.get('atlas-collapsable')) customElements.define('atlas-collapsable', Collapsable);
 
 if (!customElements.get('atlas-accordion-content')) customElements.define('atlas-accordion-content', AccordionContent);
 

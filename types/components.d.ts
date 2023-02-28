@@ -1,5 +1,5 @@
 import React from 'react';
-import { HTMLElement } from 'happy-dom';
+import {HTMLElement} from 'happy-dom';
 
 declare global {
   namespace JSX {
@@ -11,6 +11,11 @@ declare global {
         disabled?: boolean;
         expanded?: boolean;
         onExpand?: () => void;
+      };
+      'atlas-accordions': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {};
+      'atlas-collapsable': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        expanded?: boolean;
+        float?: string;
       };
       'atlas-accordion-header': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & { disabled?: boolean };
       'atlas-typography': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;

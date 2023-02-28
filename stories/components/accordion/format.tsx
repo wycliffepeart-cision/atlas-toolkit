@@ -1,92 +1,100 @@
 // import Highlight from 'react-highlight';
 import prettier from 'prettier/standalone';
 import parserTypescript from 'prettier/parser-typescript';
-import Highlight, {defaultProps} from 'prism-react-renderer';
-import dracula from 'prism-react-renderer/themes/vsLight';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import dracula from 'prism-react-renderer/themes/vsDark';
+import { PropsWithChildren, useState } from 'react';
 
 // import  'prismjs/themes/prism-dark.css'
 
 export const formatTypescript = () =>
   prettier.format(
     `
-import { CSSProperties, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
+import { PropsWithChildren } from 'react';
 
-export function ControlledAccordion() {
-  const [state, setState] = useState<string>('panel-1');
-
-  const handlePanel1 = useCallback(() => setState('panel-1'), []);
-  const handlePanel2 = useCallback(() => setState('panel-2'), []);
-  const handlePanel3 = useCallback(() => setState('panel-3'), []);
-
+export function BasicAccordion() {
   return (
     <Stack>
-      <AtlasAccordion
-        title='Accordion 1'
-        onExpanded={handlePanel1}
-        expanded={state === 'panel-1'}
-        content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus est eveniet exercitationem.'
-      />
-    
-      <AtlasAccordion
-        title='Accordion 2'
-        onExpanded={handlePanel2}
-        expanded={state === 'panel-2'}
-        content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus est eveniet exercitationem.'
-      />
-    
-      <AtlasAccordion
-        disabled
-        title='Accordion 3'
-        onExpanded={handlePanel3}
-        expanded={state === 'panel-3'}
-        content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus est eveniet exercitationem.'
-      />
+      <atlas-accordion>
+        <button slot='header'>
+          <atlas-typography>Accordion 1</atlas-typography>
+          <atlas-icon-chevron-down />
+        </button>
+        <atlas-collapsable slot='collapsable'>
+          <div
+            style={{
+              margin: '0 1rem 1rem',
+              padding: '1rem',
+              backgroundColor: 'white',
+              borderRadius: '6px',
+              border: '1px solid #ddd',
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi
+            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo
+            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa necessitatibus
+            perspiciatis reprehenderit sunt totam ut voluptas.
+          </div>
+        </atlas-collapsable>
+      </atlas-accordion>
+      <atlas-accordion>
+        <button slot='header'>
+          <atlas-typography>Accordion 2</atlas-typography>
+          <atlas-icon-chevron-down />
+        </button>
+        <atlas-collapsable slot='collapsable'>
+          <div
+            style={{
+              margin: '0 1rem 1rem',
+              padding: '1rem',
+              backgroundColor: 'white',
+              borderRadius: '6px',
+              border: '1px solid #ddd',
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi
+            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo
+            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa necessitatibus
+            perspiciatis reprehenderit sunt totam ut voluptas.
+          </div>
+        </atlas-collapsable>
+      </atlas-accordion>
+      <atlas-accordion disabled>
+        <button slot='header'>
+          <atlas-typography>Disabled Accordion</atlas-typography>
+          <atlas-icon-chevron-down />
+        </button>
+        <atlas-collapsable slot='collapsable'>
+          <div
+            style={{
+              margin: '0 1rem 1rem',
+              padding: '1rem',
+              backgroundColor: 'white',
+              borderRadius: '6px',
+              border: '1px solid #ddd',
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi
+            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo
+            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa necessitatibus
+            perspiciatis reprehenderit sunt totam ut voluptas.
+          </div>
+        </atlas-collapsable>
+      </atlas-accordion>
     </Stack>
-  );
-}
-
-const styles: CSSProperties = {
-  padding: '1rem',
-  borderRadius: '.5rem',
-  backgroundColor: '#fff',
-  border: '1px solid #ddd',
-};
-
-interface AccordionComponentProps {
-  title: string;
-  content: string;
-  disabled?: boolean;
-  expanded: boolean;
-  onExpanded: () => void;
-}
-
-function AtlasAccordion({ expanded, onExpanded, title, content, disabled }: AccordionComponentProps) {
-  const ref = useRef<{ button: HTMLButtonElement }>();
-
-  useEffect(() => {
-    if (ref.current) ref.current.button.addEventListener('click', onExpanded);
-
-    return () => {
-      if (ref.current) ref.current.button.removeEventListener('click', onExpanded);
-    };
-  }, []);
-
-  return (
-    <atlas-accordion ref={ref as any} expanded={expanded} disabled={disabled}>
-      <atlas-typography slot='title'>{title}</atlas-typography>
-      <atlas-icon-chevron-down slot='icon' />
-      <div slot='content' style={styles}>
-        {content}
-      </div>
-    </atlas-accordion>
   );
 }
 
 function Stack({ children }: PropsWithChildren) {
   return <div style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>{children}</div>;
 }
-
-  `,
+    `,
     {
       parser: 'typescript',
       plugins: [parserTypescript],
@@ -97,20 +105,58 @@ function Stack({ children }: PropsWithChildren) {
     }
   );
 
-export function DemoCode() {
-  return <Highlight {...defaultProps} theme={dracula} code={formatTypescript()} language="tsx">
-    {({className, style, tokens, getLineProps, getTokenProps}) => (
-      <pre className={className} style={style}>
-        {tokens.map((line, i) => (
-          <div {...getLineProps({line, key: i})}>
-            {line.map((token, key) => (
-              <span {...getTokenProps({token, key})} />
-            ))}
+export function DemoCode({ children }: PropsWithChildren) {
+  const [state, setState] = useState(false);
+  return (
+    <div style={{ border: '1px solid #eee', overflow: 'hidden', borderRadius: '.5rem' }}>
+      {children}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          borderTop: '1px solid #eee',
+          borderBottom: '1px solid #eee',
+          borderRadius: '0rem',
+        }}
+      >
+        <div style={{ display: 'flex', gap: '1rem', flexGrow: '1', padding: '1rem' }}>
+          <a
+            href='#'
+            onClick={(e) => {
+              e.preventDefault();
+              setState((state) => !state);
+            }}
+          >
+            React
+          </a>
+          <a href='#'>Vue</a>
+          <a href='#'>Web Component</a>
+        </div>
+        <div style={{ padding: '0 1rem' }}>
+          <button>Copy</button>
+        </div>
+      </div>
+      <atlas-collapsable expanded={state}>
+        <div style={{ maxHeight: '600px', overflow: 'scroll' }}>
+          <div style={{ width: '2000px' }}>
+            <Highlight {...defaultProps} theme={dracula} code={formatTypescript()} language='tsx'>
+              {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                <pre className={className} style={style}>
+                  {tokens.map((line, i) => (
+                    <div {...getLineProps({ line, key: i })}>
+                      {line.map((token, key) => (
+                        <span {...getTokenProps({ token, key })} />
+                      ))}
+                    </div>
+                  ))}
+                </pre>
+              )}
+            </Highlight>
           </div>
-        ))}
-      </pre>
-    )}
-  </Highlight>
+        </div>
+      </atlas-collapsable>
+    </div>
+  );
   // return  Prism.highlight(formatTypescript(), Prism.languages.javascript, 'javascript');
   // return <Highlight language='typescript'>{formatTypescript()}</Highlight>;
   // return <pre><code className="language-typescript">{formatTypescript()}</code></pre>

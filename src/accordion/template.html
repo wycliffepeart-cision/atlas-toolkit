@@ -1,10 +1,4 @@
 <template>
-  <button part="header">
-    <span><slot part="title" name="title"></slot></span>
-    <span><slot part="icon" name="icon"></slot></span>
-  </button>
   <slot name="header"></slot>
-  <div part="collapsable">
-    <slot part="content" name="content"></slot>
-  </div>
+  <slot name="collapsable"></slot>
 </template>

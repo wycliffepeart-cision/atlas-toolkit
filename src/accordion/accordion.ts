@@ -23,7 +23,7 @@ export class Accordion extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return [AccordionAttrMap.EXPANDED, AccordionAttrMap.EXPANDED];
+    return [AccordionAttrMap.EXPANDED, AccordionAttrMap.DISABLED];
   }
 
   disabled() {
@@ -31,56 +31,52 @@ export class Accordion extends HTMLElement {
 
     if (disabled === 'true') {
       this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
-      this.shadowRoot.querySelector('button').disabled = true;
+      this.querySelector('button').disabled = true;
     }
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    const collapsable: HTMLElement = this.shadowRoot.querySelector('[part="collapsable"]');
-    const height = `${collapsable.scrollHeight}px`;
+    const button = this.querySelector('button');
+    const collapsable = this.querySelector('atlas-collapsable');
 
-    if (name === AccordionAttrMap.EXPANDED && newValue === 'true') {
-      collapsable.style.height = '0';
-      collapsable.style.height = height;
-    } else if (name === AccordionAttrMap.EXPANDED && newValue === 'false') {
-      collapsable.style.height = height;
-      setTimeout(() => (collapsable.style.height = '0'), 0);
+    // Toggle disabled attribute
+    if (button && name === AccordionAttrMap.DISABLED && (newValue === 'true' || !newValue)) {
+      button.setAttribute(AccordionAttrMap.DISABLED, '');
+    } else if (button) {
+      button.removeAttribute(AccordionAttrMap.DISABLED);
+    }
+
+    // Expand and collapsed the collapsable panel
+    if (collapsable && name === AccordionAttrMap.EXPANDED && (newValue === 'true' || !newValue)) {
+      collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'true');
+    } else if (collapsable) {
+      collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'false');
     }
   }
 
   get button() {
-    return this.shadowRoot.querySelector('button');
+    return this.querySelector('button');
   }
 
   connectedCallback() {
-    this.setAttribute('data-target', this.targetId);
-    this.shadowRoot.querySelector('button').id = this.targetId;
+    const button = this.button;
+    const collapsable = this.querySelector('atlas-collapsable');
 
-    const collapsable: HTMLElement = this.shadowRoot.querySelector('[part="collapsable"]');
+    if (button && !this.hasAttribute(AccordionAttrMap.EXPANDED)) {
+      this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
 
-    collapsable.style.height = '0';
-
-    this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
-
-    if (!this.callback) {
-      this.callback = () => {
-        setTimeout(() => {
-          if (this.getAttribute(AccordionAttrMap.EXPANDED) === 'true') {
-            collapsable.style.height = 'auto';
-          }
-        }, 0);
-      };
+      button.addEventListener('click', (e) => {
+        if (collapsable && this.getAttribute(AccordionAttrMap.EXPANDED) === 'false') {
+          this.setAttribute(AccordionAttrMap.EXPANDED, 'true');
+          collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'true');
+        } else if (collapsable) {
+          this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+          collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+        }
+      });
+    } else if (collapsable && this.getAttribute(AccordionAttrMap.EXPANDED) === "true") {
+      collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'true');
     }
-
-    collapsable.addEventListener('transitionend', this.callback.bind(this));
-
-    this.shadowRoot.querySelector('button').addEventListener('click', (e) => {
-      if (this.getAttribute(AccordionAttrMap.EXPANDED) === 'false') {
-        this.setAttribute(AccordionAttrMap.EXPANDED, 'true');
-      } else {
-        this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
-      }
-    });
 
     this.disabled();
   }

@@ -1,87 +1,101 @@
 atlas-accordion {
-  display: block;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  transform: translateZ(0);
-  background-color: #f8f8f8;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    transform: translateZ(0);
+    background-color: #f8f8f8;
 }
 
 atlas-accordions {
-  transition: 0.3s all;
+    transition: 0.4s all;
 }
 
 atlas-accordion::part(header) {
-  margin: 0;
-  outline: 0;
-  border: 0;
-  width: 100%;
-  display: grid;
-  outline: none;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 18px 20px;
-  position: relative;
-  background-color: transparent;
-  grid-template-columns: 1fr auto;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    display: grid;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 18px 20px;
+    position: relative;
+    background-color: transparent;
+    grid-template-columns: 1fr auto;
 }
 
-atlas-accordion-header::part(button) {
-  margin: 0;
-  outline: 0;
-  border: 0;
-  width: 100%;
-  display: grid;
-  outline: none;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 18px 20px;
-  position: relative;
-  background-color: transparent;
-  grid-template-columns: 1fr auto;
+atlas-accordion button {
+    margin: 0;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    display: grid;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 18px 20px;
+    position: relative;
+    text-align: left;
+    background-color: transparent;
+    grid-template-columns: 1fr auto;
 }
 
 atlas-accordion-content {
-  padding: 0 20px 20px 20px;
-  display: block;
+    padding: 0 20px 20px 20px;
+    display: block;
 }
 
 atlas-accordion::part(title) {
-  text-align: left;
-  display: block;
+    text-align: left;
+    display: block;
 }
 
-atlas-accordion::part(collapsable) {
-  overflow: hidden;
-  transition: 0.3s all;
+::part(collapsable),
+atlas-collapsable {
+    display: block;
+    overflow: hidden;
+    transition: 0.4s all;
+}
+
+atlas-collapsable[float="left"]{
+    position: absolute;
+    top: 0;
+}
+atlas-collapsable[float="right"]{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
 }
 
 atlas-accordion::part(content) {
-  padding: 0 20px 20px 20px;
-  display: block;
+    padding: 0 20px 20px 20px;
+    display: block;
 }
 
 atlas-accordions {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 atlas-accordions atlas-accordion[collapse='showing'],
 atlas-accordions atlas-accordion[collapse='show'] {
-  display: block;
-  transition: 0.3s margin;
+    display: block;
+    transition: 0.4s margin;
 }
 
 atlas-accordions atlas-accordion[collapse='showing']:first-child,
 atlas-accordions atlas-accordion[collapse='show']:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 atlas-accordions atlas-accordion[collapse='showing']:first-child,
 atlas-accordions atlas-accordion[collapse='show']:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }

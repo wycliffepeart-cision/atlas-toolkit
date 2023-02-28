@@ -1,76 +1,111 @@
-import { CSSProperties, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
+import {PropsWithChildren, useCallback, useState} from 'react';
 
 export function ControlledAccordion() {
-  const [state, setState] = useState<string>('panel-1');
+  const [state, setState] = useState<string | undefined>('panel-1');
 
-  const handlePanel1 = useCallback(() => setState('panel-1'), []);
-  const handlePanel2 = useCallback(() => setState('panel-2'), []);
-  const handlePanel3 = useCallback(() => setState('panel-3'), []);
+  const handlePanel1 = useCallback(() => setState((state) => (state === 'panel-1' ? undefined : 'panel-1')), []);
+
+  const handlePanel2 = useCallback(() => setState((state) => (state === 'panel-2' ? undefined : 'panel-2')), []);
+
+  const handlePanel3 = useCallback((e) => {
+    e.stopImmediatePropagation();
+
+    setState((state) => (state === 'panel-3' ? undefined : 'panel-3'));
+  }, []);
 
   return (
     <Stack>
-      <AtlasAccordion
-        title='Accordion 1'
-        onExpanded={handlePanel1}
-        expanded={state === 'panel-1'}
-        content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus est eveniet exercitationem, itaque iusto maiores minus nemo sunt suscipit! Commodi delectus, error exercitationem laborum nisi numquam perferendis sapiente vitae.'
-      />
-
-      <AtlasAccordion
-        title='Accordion 2'
-        onExpanded={handlePanel2}
-        expanded={state === 'panel-2'}
-        content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus est eveniet exercitationem, itaque iusto maiores minus nemo sunt suscipit! Commodi delectus, error exercitationem laborum nisi numquam perferendis sapiente vitae.'
-      />
-
-      <AtlasAccordion
-        disabled
-        title='Accordion 3'
-        onExpanded={handlePanel3}
-        expanded={state === 'panel-3'}
-        content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ducimus est eveniet exercitationem, itaque iusto maiores minus nemo sunt suscipit! Commodi delectus, error exercitationem laborum nisi numquam perferendis sapiente vitae.'
-      />
+      <atlas-accordion expanded={state === 'panel-1'}>
+        <button slot='header' onClick={handlePanel1}>
+          <atlas-typography>Accordion 1</atlas-typography>
+          <atlas-icon-chevron-down/>
+        </button>
+        <atlas-collapsable slot='collapsable'>
+          <div
+            style={{
+              margin: '0 1rem 1rem',
+              padding: '1rem',
+              backgroundColor: 'white',
+              borderRadius: '6px',
+              border: '1px solid #ddd',
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur
+            culpa dolorum eligendi
+            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem
+            ipsum dolor sit amet,
+            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse
+            explicabo, hic illo
+            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit.
+            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa
+            necessitatibus
+            perspiciatis reprehenderit sunt totam ut voluptas.
+          </div>
+        </atlas-collapsable>
+      </atlas-accordion>
+      <atlas-accordion expanded={state === 'panel-2'}>
+        <button slot='header' onClick={handlePanel2}>
+          <atlas-typography>Accordion 2</atlas-typography>
+          <atlas-icon-chevron-down/>
+        </button>
+        <atlas-collapsable slot='collapsable'>
+          <div
+            style={{
+              margin: '0 1rem 1rem',
+              padding: '1rem',
+              backgroundColor: 'white',
+              borderRadius: '6px',
+              border: '1px solid #ddd',
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur
+            culpa dolorum eligendi
+            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem
+            ipsum dolor sit amet,
+            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse
+            explicabo, hic illo
+            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit.
+            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa
+            necessitatibus
+            perspiciatis reprehenderit sunt totam ut voluptas.
+          </div>
+        </atlas-collapsable>
+      </atlas-accordion>
+      <atlas-accordion expanded={state === 'panel-3'} disabled>
+        <button slot='header' onClick={handlePanel3}>
+          <atlas-typography>Accordion 2</atlas-typography>
+          <atlas-icon-chevron-down/>
+        </button>
+        <atlas-collapsable slot='collapsable'>
+          <div
+            style={{
+              margin: '0 1rem 1rem',
+              padding: '1rem',
+              backgroundColor: 'white',
+              borderRadius: '6px',
+              border: '1px solid #ddd',
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur
+            culpa dolorum eligendi
+            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem
+            ipsum dolor sit amet,
+            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse
+            explicabo, hic illo
+            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit.
+            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa
+            necessitatibus
+            perspiciatis reprehenderit sunt totam ut voluptas.
+          </div>
+        </atlas-collapsable>
+      </atlas-accordion>
     </Stack>
   );
 }
 
-const styles: CSSProperties = {
-  padding: '1rem',
-  borderRadius: '.5rem',
-  backgroundColor: '#fff',
-  border: '1px solid #ddd',
-};
-
-interface AccordionComponentProps {
-  title: string;
-  content: string;
-  disabled?: boolean;
-  expanded: boolean;
-  onExpanded: () => void;
-}
-
-function AtlasAccordion({ expanded, onExpanded, title, content, disabled }: AccordionComponentProps) {
-  const ref = useRef<{ button: HTMLButtonElement }>();
-
-  useEffect(() => {
-    if (ref.current) ref.current.button.addEventListener('click', onExpanded);
-
-    return () => {
-      if (ref.current) ref.current.button.removeEventListener('click', onExpanded);
-    };
-  }, []);
-
-  return (
-    <atlas-accordion ref={ref as any} expanded={expanded} disabled={disabled}>
-      <atlas-typography slot='title'>{title}</atlas-typography>
-      <atlas-icon-chevron-down slot='icon' />
-      <div slot='content' style={styles}>
-        {content}
-      </div>
-    </atlas-accordion>
-  );
-}
-
-function Stack({ children }: PropsWithChildren) {
-  return <div style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>{children}</div>;
+function Stack({children}: PropsWithChildren) {
+  return <div style={{padding: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem'}}>{children}</div>;
 }

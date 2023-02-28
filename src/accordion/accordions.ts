@@ -10,8 +10,8 @@ export class Accordions extends HTMLElement {
   }
 
   connectedCallback() {
-    Array.from(this.querySelectorAll('atlas-accordion')).forEach((accordion: HTMLElement, _, self) => {
-      const btn: HTMLElement = accordion.shadowRoot.querySelector('button');
+    Array.from(this.querySelectorAll('atlas-accordion')).forEach((accordion: Accordion, _, self) => {
+      const btn: HTMLElement = accordion.button;
       btn.addEventListener('click', (e) => {
         self.forEach((accordion: Accordion) => {
           if (accordion.getAttribute(AccordionAttrMap.EXPANDED) === 'true' && accordion.dataset.target !== btn.id) {
