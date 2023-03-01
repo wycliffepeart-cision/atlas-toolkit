@@ -4,6 +4,7 @@ import cleaner from 'rollup-plugin-cleaner';
 import typescript from '@rollup/plugin-typescript';
 import multiInput from 'rollup-plugin-multi-input';
 import posthtml from 'rollup-plugin-posthtml-template';
+import styles from "rollup-plugin-styles";
 
 export default {
 	input: ['src/**/**/*.js', 'src/**/**/*.ts', 'src/**/**/*.html'],
@@ -15,6 +16,7 @@ export default {
 		typescript({ tsconfig: './tsconfig.json' }),
 		multiInput.default({ relative: 'src/' }),
 		posthtml(),
+		styles(),
 		copy({
 			targets: [
 				{

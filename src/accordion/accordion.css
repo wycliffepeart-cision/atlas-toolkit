@@ -10,23 +10,6 @@ atlas-accordions {
     transition: 0.4s all;
 }
 
-atlas-accordion::part(header) {
-    margin: 0;
-    outline: 0;
-    border: 0;
-    width: 100%;
-    display: grid;
-    outline: none;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24px;
-    padding: 18px 20px;
-    position: relative;
-    background-color: transparent;
-    grid-template-columns: 1fr auto;
-}
-
 atlas-accordion button {
     margin: 0;
     outline: 0;
@@ -53,24 +36,6 @@ atlas-accordion-content {
 atlas-accordion::part(title) {
     text-align: left;
     display: block;
-}
-
-::part(collapsable),
-atlas-collapsable {
-    display: block;
-    overflow: hidden;
-    transition: 0.4s all;
-}
-
-atlas-collapsable[float="left"]{
-    position: absolute;
-    top: 0;
-}
-atlas-collapsable[float="right"]{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
 }
 
 atlas-accordion::part(content) {

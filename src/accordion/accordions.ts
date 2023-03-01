@@ -1,5 +1,5 @@
 import { Accordion } from './accordion';
-import { AccordionAttrMap } from './enums';
+import { CollapsableAttrMap } from '../collapsable/enums';
 
 export class Accordions extends HTMLElement {
   constructor() {
@@ -14,8 +14,8 @@ export class Accordions extends HTMLElement {
       const btn: HTMLElement = accordion.button;
       btn.addEventListener('click', (e) => {
         self.forEach((accordion: Accordion) => {
-          if (accordion.getAttribute(AccordionAttrMap.EXPANDED) === 'true' && accordion.dataset.target !== btn.id) {
-            accordion.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+          if (accordion.getAttribute(CollapsableAttrMap.EXPANDED) === 'true' && accordion.dataset.target !== btn.id) {
+            accordion.setAttribute(CollapsableAttrMap.EXPANDED, 'false');
           }
         });
       });

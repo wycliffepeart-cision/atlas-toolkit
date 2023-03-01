@@ -36,14 +36,14 @@ export const options = {
 
   manager: () => ({
     theme: create({
-      base: 'dark',
+      base: 'light',
       brandTitle: 'Cision Atlas',
       brandUrl: 'https://cision.github.io/atlas-playground/',
       brandImage: 'https://www.cision.com/content/dam/cision-redesign/cision_logo_mobile.svg',
       brandTarget: '_blank',
     }),
     docs: {
-      theme: themes.dark,
+      theme: themes.light,
     },
   }),
 

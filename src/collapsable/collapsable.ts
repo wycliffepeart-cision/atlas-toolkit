@@ -1,5 +1,5 @@
-import { html } from '../../stories/utils';
-import { AccordionAttrMap } from './enums';
+import { html } from '../utils/html';
+import { CollapsableAttrMap } from './enums';
 
 export class Collapsable extends HTMLElement {
   private callback;
@@ -12,12 +12,8 @@ export class Collapsable extends HTMLElement {
     shadowRoot.replaceChildren(content.cloneNode(true));
   }
 
-  get template(): string | undefined {
-    return;
-  }
-
   static get observedAttributes() {
-    return [AccordionAttrMap.EXPANDED];
+    return [CollapsableAttrMap.EXPANDED];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -25,10 +21,10 @@ export class Collapsable extends HTMLElement {
 
     console.log(name, newValue)
 
-    if (name === AccordionAttrMap.EXPANDED && newValue === 'true') {
+    if (name === CollapsableAttrMap.EXPANDED && newValue === 'true') {
       this.style.height = '0';
       this.style.height = height;
-    } else if (name === AccordionAttrMap.EXPANDED && newValue === 'false') {
+    } else if (name === CollapsableAttrMap.EXPANDED && newValue === 'false') {
       this.style.height = height;
       setTimeout(() => (this.style.height = '0'), 0);
     }
@@ -36,12 +32,12 @@ export class Collapsable extends HTMLElement {
   connectedCallback() {
     // this.style.height = '0';
 
-    // this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+    // this.setAttribute(CollapsableAttrMap.EXPANDED, 'false');
 
     if (!this.callback) {
       this.callback = () => {
         setTimeout(() => {
-          if (this.getAttribute(AccordionAttrMap.EXPANDED) === 'true') {
+          if (this.getAttribute(CollapsableAttrMap.EXPANDED) === 'true') {
             this.style.height = 'auto';
           }
         }, 0);

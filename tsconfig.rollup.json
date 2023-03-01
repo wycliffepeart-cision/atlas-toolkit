@@ -2,6 +2,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": "src",
+    "target": "es2015",
+    "moduleResolution": "Node",
     "declaration": true,
     "allowJs": true,
     "emitDeclarationOnly": true,

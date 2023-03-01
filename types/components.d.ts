@@ -12,6 +12,13 @@ declare global {
         expanded?: boolean;
         onExpand?: () => void;
       };
+      'atlas-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        href?: string,
+        disabled?: boolean;
+        size?: 'small' | 'medium' | 'large';
+        ['top-adornment']?: string,
+        variant?: 'outlined' | 'contained' | 'text'
+      };
       'atlas-accordions': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {};
       'atlas-collapsable': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
         expanded?: boolean;

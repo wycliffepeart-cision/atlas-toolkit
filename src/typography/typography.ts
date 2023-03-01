@@ -1,4 +1,4 @@
-import { html } from '../../stories/utils';
+import { html } from '../utils/html';
 export class Typography extends HTMLElement {
   constructor() {
     super();

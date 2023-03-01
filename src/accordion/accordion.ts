@@ -1,10 +1,9 @@
 import template from './template.html';
 import { makeId } from '../utils/utils';
 import { AccordionAttrMap } from './enums';
+import { CollapsableAttrMap } from '../collapsable/enums';
 
 export class Accordion extends HTMLElement {
-  private callback;
-
   private readonly targetId;
 
   constructor() {
@@ -23,14 +22,14 @@ export class Accordion extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return [AccordionAttrMap.EXPANDED, AccordionAttrMap.DISABLED];
+    return [CollapsableAttrMap.EXPANDED, AccordionAttrMap.DISABLED];
   }
 
   disabled() {
     const disabled = this.getAttribute(AccordionAttrMap.DISABLED);
 
     if (disabled === 'true') {
-      this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+      this.setAttribute(CollapsableAttrMap.EXPANDED, 'false');
       this.querySelector('button').disabled = true;
     }
   }
@@ -47,10 +46,10 @@ export class Accordion extends HTMLElement {
     }
 
     // Expand and collapsed the collapsable panel
-    if (collapsable && name === AccordionAttrMap.EXPANDED && (newValue === 'true' || !newValue)) {
-      collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'true');
+    if (collapsable && name === CollapsableAttrMap.EXPANDED && (newValue === 'true' || !newValue)) {
+      collapsable.setAttribute(CollapsableAttrMap.EXPANDED, 'true');
     } else if (collapsable) {
-      collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+      collapsable.setAttribute(CollapsableAttrMap.EXPANDED, 'false');
     }
   }
 
@@ -62,20 +61,20 @@ export class Accordion extends HTMLElement {
     const button = this.button;
     const collapsable = this.querySelector('atlas-collapsable');
 
-    if (button && !this.hasAttribute(AccordionAttrMap.EXPANDED)) {
-      this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+    if (button && !this.hasAttribute(CollapsableAttrMap.EXPANDED)) {
+      this.setAttribute(CollapsableAttrMap.EXPANDED, 'false');
 
       button.addEventListener('click', (e) => {
-        if (collapsable && this.getAttribute(AccordionAttrMap.EXPANDED) === 'false') {
-          this.setAttribute(AccordionAttrMap.EXPANDED, 'true');
-          collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'true');
+        if (collapsable && this.getAttribute(CollapsableAttrMap.EXPANDED) === 'false') {
+          this.setAttribute(CollapsableAttrMap.EXPANDED, 'true');
+          collapsable.setAttribute(CollapsableAttrMap.EXPANDED, 'true');
         } else if (collapsable) {
-          this.setAttribute(AccordionAttrMap.EXPANDED, 'false');
-          collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'false');
+          this.setAttribute(CollapsableAttrMap.EXPANDED, 'false');
+          collapsable.setAttribute(CollapsableAttrMap.EXPANDED, 'false');
         }
       });
-    } else if (collapsable && this.getAttribute(AccordionAttrMap.EXPANDED) === "true") {
-      collapsable.setAttribute(AccordionAttrMap.EXPANDED, 'true');
+    } else if (collapsable && this.getAttribute(CollapsableAttrMap.EXPANDED) === 'true') {
+      collapsable.setAttribute(CollapsableAttrMap.EXPANDED, 'true');
     }
 
     this.disabled();

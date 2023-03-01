@@ -32,15 +32,6 @@ export function ControlledAccordion() {
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur
             culpa dolorum eligendi
-            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem
-            ipsum dolor sit amet,
-            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse
-            explicabo, hic illo
-            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit.
-            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa
-            necessitatibus
-            perspiciatis reprehenderit sunt totam ut voluptas.
           </div>
         </atlas-collapsable>
       </atlas-accordion>
@@ -61,15 +52,6 @@ export function ControlledAccordion() {
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur
             culpa dolorum eligendi
-            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem
-            ipsum dolor sit amet,
-            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse
-            explicabo, hic illo
-            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit.
-            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa
-            necessitatibus
-            perspiciatis reprehenderit sunt totam ut voluptas.
           </div>
         </atlas-collapsable>
       </atlas-accordion>
@@ -90,15 +72,6 @@ export function ControlledAccordion() {
           >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur
             culpa dolorum eligendi
-            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem
-            ipsum dolor sit amet,
-            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse
-            explicabo, hic illo
-            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit.
-            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa
-            necessitatibus
-            perspiciatis reprehenderit sunt totam ut voluptas.
           </div>
         </atlas-collapsable>
       </atlas-accordion>

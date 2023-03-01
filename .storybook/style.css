@@ -144,3 +144,12 @@ table {
 .sbdocs-table td:last-child {
   max-width: 200px;
 }
+
+.example-section .docblock-source {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+/*.sbdocs-content{*/
+/*  width: 816px !important;*/
+/*}*/

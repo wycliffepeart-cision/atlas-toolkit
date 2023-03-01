@@ -1,0 +1,163 @@
+atlas-button[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+atlas-button {
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Reset */
+
+atlas-button::part(top-adornment),
+atlas-button::part(left-adornment),
+atlas-button::part(right-adornment),
+atlas-button::part(bottom-adornment),
+atlas-button::part(main-content) {
+    display: block;
+}
+
+atlas-button::part(top-adornment),
+atlas-button::part(left-adornment),
+atlas-button::part(right-adornment),
+atlas-button::part(bottom-adornment) {
+    display: none;
+}
+
+/* Button */
+
+atlas-button::part(button) {
+    border: 0;
+    outline: 0;
+    color: #00607F;
+    min-width: 64px;
+    cursor: pointer;
+    line-height: 20px;
+    border-radius: 4px;
+    position: relative;
+    transition: .5s all;
+    display: inline-grid;
+    text-decoration: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+}
+
+atlas-button::part(button):hover {
+    background-color: #f3f9ff;
+}
+
+/* Size */
+
+atlas-button::part(button),
+atlas-button[size="medium"]::part(button) {
+    font-size: 16px;
+    padding: 10px 16px;
+}
+
+atlas-button[size="small"]::part(button) {
+    font-size: 14px;
+    padding: 6px 10px;
+}
+
+atlas-button[size="large"]::part(button) {
+    font-size: 18px;
+    padding: 14px 22px;
+}
+
+/* Variant */
+
+atlas-button[variant="outlined"]::part(button) {
+    color: #00607F;
+    line-height: 18px;
+    border: 1px solid #00607F;
+    background-color: transparent;
+}
+
+atlas-button[variant="outlined"]::part(button):hover {
+    background-color: #f3f9ff;
+}
+
+atlas-button[variant="contained"]::part(button) {
+    border: 0;
+    color: white;
+    background-color: #00607F;
+}
+
+atlas-button[variant="contained"][disabled]::part(button){
+    color: #777;
+    background-color: #ddd;
+}
+
+atlas-button[variant="contained"]::part(button):hover{
+    background-color: rgba(0, 96, 127, 0.88);
+}
+
+/* Top Adornment */
+
+atlas-button::part(top-adornment) {
+    display: flex;
+    grid-column: 1/-1;
+}
+
+atlas-button:has([slot="top-adornment"])::part(top-adornment){
+    margin-bottom: .5rem;
+}
+
+atlas-button[top-adornment="center"]::part(top-adornment) {
+    align-items: center;
+    justify-content: center;
+}
+
+atlas-button[top-adornment="end"]::part(top-adornment) {
+    align-items: end;
+    justify-content: end;
+}
+
+/* Left Adornment */
+
+atlas-button::part(left-adornment) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+atlas-button:has([slot="left-adornment"])::part(left-adornment) {
+    margin-right: 8px;
+}
+
+/* Main Content */
+
+atlas-button::part(main-content) {
+    display: flex;
+    grid-column: 2/3;
+    justify-content: center;
+    vertical-align: center;
+    align-items: center;
+    letter-spacing: 0.02857em;
+}
+
+/* Right Adornment */
+
+atlas-button::part(right-adornment) {
+    grid-column: 3/-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+atlas-button:has([slot="right-adornment"])::part(right-adornment) {
+    margin-left: 8px;
+}
+
+/* Bottom Adornment*/
+
+atlas-button::part(bottom-adornment) {
+    grid-column: 1/-1;
+    grid-row: 3/-1;
+    display: flex;
+}

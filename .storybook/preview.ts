@@ -6,7 +6,7 @@ import { options } from '../stoybook.config';
 
 export const parameters = {
   backgrounds: {
-    default: 'dark',
+    default: 'light',
   },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
