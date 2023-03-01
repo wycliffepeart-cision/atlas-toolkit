@@ -139,17 +139,14 @@ table {
 .sbdocs-table td,
 .sbdocs-table th {
   text-align: left;
+  word-wrap: unset;
 }
 
-.sbdocs-table td:last-child {
-  max-width: 200px;
+.sbdocs-table tr td:last-child {
+  width: 360px !important;
 }
 
 .example-section .docblock-source {
   margin-top: 1rem !important;
   margin-bottom: 0 !important;
 }
-
-/*.sbdocs-content{*/
-/*  width: 816px !important;*/
-/*}*/

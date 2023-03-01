@@ -1,26 +1,27 @@
 import { SectionPage } from './SectionPage';
 import { ButtonSlotsSection } from './api/ButtonSlotsSection';
-import { ButtonPartsSection } from './api/ButtonPartsSection';
 import { TextButtonSection } from './text-example/TextButtonSection';
 import { BasicButtonSection } from './basic-example/BasicButtonSection';
 import { OutlinedButtonSection } from './outlined-example/OutlinedButtonSection';
 import { ContainedButtonSection } from './contained-example/ContainedButtonSection';
+import { ButtonAttributeSection } from './api/ButtonAttributeSection';
+import {SizedButtonSection} from "./size-example/SizedButtonSection";
 
 export function ButtonPage() {
   return (
     <SectionPage
       title='Atlas Button'
       description={`
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, alias aliquam, assumenda dolores eligendi hic libero minus 
-    molestiae nesciunt nulla obcaecati odio omnis optio pariatur perferendis quos saepe totam unde. Lorem ipsum dolor sit amet,
-    consectetur adipisicing elit. Ab, alias aliquam, assumenda dolores eligendi hic libero minus molestiae nesciunt nulla obcaecati odio omnis optio pariatur perferendis quos saepe totam unde.
+Component that can be used to create a clickable button on a webpage.
+You can also add additional attributes to the button element to customize its appearance or behavior.
     `}
     >
       <BasicButtonSection />
       <TextButtonSection />
       <OutlinedButtonSection />
       <ContainedButtonSection />
-      <ButtonPartsSection />
+      <SizedButtonSection/>
+      <ButtonAttributeSection />
       <ButtonSlotsSection />
     </SectionPage>
   );
