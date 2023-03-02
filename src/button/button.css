@@ -16,9 +16,10 @@ atlas-button{
 
     /* Disabled */
 
-    --button-disabled-text-color: #7777777;
     --button-disabled-color: #999999;
-    --button-disabled-border-color: var(--button-disabled-color);
+    --button-disabled-text-color: #7777777;
+    --button-disabled-border-color: #dddddd;
+    --button-disabled-background-color: #eeeeee;
 
     /* Color */
 
@@ -206,7 +207,7 @@ atlas-button[variant="contained"]::part(button) {
 atlas-button[variant="contained"][disabled]::part(button){
     color: var(--button-disabled-text-color);
     border: 1px solid var(--button-disabled-border-color);
-    background-color: var(--button-disabled-color);
+    background-color: var(--button-disabled-background-color);
 }
 
 atlas-button[variant="contained"]::part(button):hover{
@@ -224,6 +225,7 @@ atlas-button:has([slot="top-adornment"])::part(top-adornment){
     margin-bottom: .5rem;
 }
 
+atlas-button[bottom-adornment="center"]::part(bottom-adornment),
 atlas-button[top-adornment="center"]::part(top-adornment) {
     align-items: center;
     justify-content: center;
@@ -280,10 +282,14 @@ atlas-button::part(bottom-adornment) {
     display: flex;
 }
 
+atlas-button:has([slot="bottom-adornment"])::part(bottom-adornment){
+    margin-top: .5rem;
+}
+
 /* Common */
 
-atlas-button[disabled]::part(button) {
+atlas-button[disabled]{
     opacity: 0.5;
-    color: #999;
-    pointer-events: none;
+    color: #999999;
+    pointer-events: none !important;
 }

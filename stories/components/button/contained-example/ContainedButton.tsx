@@ -15,7 +15,7 @@ export function ContainedButton() {
       <atlas-button size='medium' variant='contained' onClick={handleLinkOnClick('Contained Clicked')}>
         Contained
       </atlas-button>
-      <atlas-button size='medium' disabled variant='contained' onClick={handleLinkOnClick('Disabled Clicked')}>
+      <atlas-button size='medium' variant='contained' onClick={handleLinkOnClick('Disabled Clicked')} disabled>
         Disabled
       </atlas-button>
       <atlas-button size='medium' variant='contained' href='#' onClick={handleLinkOnClick('Link Clicked')}>

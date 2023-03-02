@@ -7,6 +7,11 @@ import { ContainedButtonSection } from './contained-example/ContainedButtonSecti
 import { ButtonAttributeSection } from './api/ButtonAttributeSection';
 import {SizedButtonSection} from "./size-example/SizedButtonSection";
 import {DefaultButtonSection} from "./default-example/DefaultButtonSection";
+import {ButtonLeftAdornmentSection} from "./adornment-left-example/ButtonLeftAdornmentSection";
+import {ButtonRightAdornmentSection} from "./adornment-right-example/ButtonRightAdornmentSection";
+import {ButtonTopAdornmentSection} from "./adornment-top-example/ButtonTopAdornmentSection";
+import {ButtonBottomAdornmentSection} from "./adornment-bottom-example/ButtonBottomAdornmentSection";
+import {ButtonAdornmentSection} from "./adornment-example/ButtonAdornmentSection";
 
 export function ButtonPage() {
   return (
@@ -23,6 +28,11 @@ You can also add additional attributes to the button element to customize its ap
       <OutlinedButtonSection />
       <ContainedButtonSection />
       <SizedButtonSection/>
+      <ButtonAdornmentSection/>
+      <ButtonLeftAdornmentSection/>
+      <ButtonTopAdornmentSection/>
+      <ButtonRightAdornmentSection/>
+      <ButtonBottomAdornmentSection/>
       <ButtonAttributeSection />
       <ButtonSlotsSection />
     </SectionPage>

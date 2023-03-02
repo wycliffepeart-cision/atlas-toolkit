@@ -16,7 +16,8 @@ declare global {
         href?: string,
         disabled?: boolean;
         size?: 'small' | 'medium' | 'large';
-        ['top-adornment']?: string,
+        'top-adornment'?: 'center' | 'left' | 'right',
+        'bottom-adornment'?: 'center' | 'left' | 'right',
         variant?: 'outlined' | 'contained' | 'text'
       };
       'atlas-accordions': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {};
