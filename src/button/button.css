@@ -52,6 +52,7 @@ atlas-button{
     --button-variant-text-color: #fff;
     --button-variant-text-font-color: #fff;
     --button-variant-text-background-color: transparent;
+    --button-variant-text-background-hover-color: #f3f9ff;
 
     --button-variant-outlined-reset-border: 0;
     --button-variant-outlined-color: #fff;
@@ -120,7 +121,18 @@ atlas-button::part(button):hover {
 
 /* Size */
 
-atlas-button::part(button),
+atlas-button::part(button){
+    font-size: var(--button-medium-font-size);
+    padding: var(--button-medium-padding);
+    border: var(--button-variant-outlined-reset-border);
+    color: var(--button-variant-contained-text-color);
+    background-color: var(--button-variant-contained-background-color);
+}
+
+atlas-button::part(button):hover {
+    background-color: var(--button-variant-contained-background-hover-color);
+}
+
 atlas-button[size="small"]::part(button) {
     font-size: var(--button-small-font-size);
     padding: var(--button-small-padding);
@@ -154,6 +166,20 @@ atlas-button[size="large"][variant="outlined"]::part(button){
 }
 
 /* Variant */
+
+atlas-button[variant="text"]::part(button) {
+    color: var(--button-color-primary);
+    background-color: var(--button-variant-outlined-background-color);
+}
+
+atlas-button[variant="text"]::part(button):hover {
+    background-color: var(--button-variant-text-background-hover-color);
+}
+
+atlas-button[variant="text"][disabled]::part(button){
+    color: var(--button-disabled-color);
+    background-color: var(--button-background-transparent);
+}
 
 atlas-button[variant="outlined"]::part(button) {
     color: var(--button-color-primary);

@@ -6,7 +6,7 @@ export interface SectionPageProps {}
 export function SectionPage({ title, description, children }: PropsWithChildren<SectionPageProps & SectionProps>) {
   return (
     <>
-      <h1 style={{ border: '0', fontSize: '42px' }}>{title}</h1>
+      <h1 style={{ border: '0', fontSize: '36px' }}>{title}</h1>
       <p>{description}</p>
       <br />
       <br />

@@ -1,13 +1,13 @@
 export function BasicButton({ text }: { text?: string }) {
   return (
     <>
-      <atlas-button variant='text'>
+      <atlas-button size="medium" variant='text'>
         {text || 'Text'}
       </atlas-button>
-      <atlas-button variant='contained'>
+      <atlas-button size="medium" variant='contained'>
         Contained
       </atlas-button>
-      <atlas-button variant='outlined' href='#'>
+      <atlas-button size="medium" variant='outlined' href='#'>
         Outlined
       </atlas-button>
     </>
