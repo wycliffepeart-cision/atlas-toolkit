@@ -7,10 +7,7 @@ import { SectionSourceControl } from '../SectionSourceControl';
 
 export function SizedButtonSection() {
   return (
-    <Section
-      title='Size'
-      description={`For larger or smaller buttons, use the size prop.`}
-    >
+    <Section title='Size' description={`For larger or smaller buttons, use the size prop.`}>
       <SectionPreview shouldCenter>
         <SectionStack>
           <SizedButton />

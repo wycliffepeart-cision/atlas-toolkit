@@ -1,13 +1,13 @@
 export function TextButton() {
   return (
     <>
-      <atlas-button size='medium'>
-        Primary
+      <atlas-button size='medium' variant="text">
+        Text
       </atlas-button>
-      <atlas-button size='medium' disabled>
+      <atlas-button size='medium' variant="text" disabled>
         Disabled
       </atlas-button>
-      <atlas-button size='medium' href="#">Link</atlas-button>
+      <atlas-button size='medium' variant="text" href="#">Link</atlas-button>
     </>
   );
 }
