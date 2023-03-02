@@ -30,8 +30,8 @@ You can also add additional attributes to the button element to customize its ap
       <SizedButtonSection/>
       <ButtonAdornmentSection/>
       <ButtonLeftAdornmentSection/>
-      <ButtonTopAdornmentSection/>
       <ButtonRightAdornmentSection/>
+      <ButtonTopAdornmentSection/>
       <ButtonBottomAdornmentSection/>
       <ButtonAttributeSection />
       <ButtonSlotsSection />

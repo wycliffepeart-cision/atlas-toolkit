@@ -9,7 +9,12 @@ export function ButtonAdornmentSection() {
   return (
     <Section
       title='Adornment'
-      description={`Basic buttons are useful for initiating simple actions or navigation within an application or website.`}
+      description={`
+      Button adornment is a decorative elements that can be added to a button to enhance its visual appeal, it can appear 
+      at the left, top, right or bottom or the button to add more context and provided visual enhancements.
+      
+      While adornment can enhance the aesthetic appeal of a design, it is important to use it in moderation and to ensure that it does not distract from the overall function or message of the design.
+      `}
     >
       <SectionPreview shouldCenter>
         <SectionStack>
