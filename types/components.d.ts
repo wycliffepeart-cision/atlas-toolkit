@@ -1,5 +1,8 @@
 import React from 'react';
-import {HTMLElement} from 'happy-dom';
+import { HTMLElement } from 'happy-dom';
+import * as CSS from 'csstype';
+
+interface BoxAttributes extends CSS.Properties<string | number> {}
 
 declare global {
   namespace JSX {
@@ -12,13 +15,15 @@ declare global {
         expanded?: boolean;
         onExpand?: () => void;
       };
+      'atlas-accordion-content': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      'atlas-box': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & BoxAttributes;
       'atlas-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        href?: string,
+        href?: string;
         disabled?: boolean;
         size?: 'small' | 'medium' | 'large';
-        'top-adornment'?: 'center' | 'left' | 'right',
-        'bottom-adornment'?: 'center' | 'left' | 'right',
-        variant?: 'outlined' | 'contained' | 'text'
+        'top-adornment'?: 'center' | 'left' | 'right';
+        'bottom-adornment'?: 'center' | 'left' | 'right';
+        variant?: 'outlined' | 'contained' | 'text';
       };
       'atlas-accordions': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {};
       'atlas-collapsable': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {

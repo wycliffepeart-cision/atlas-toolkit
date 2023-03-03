@@ -1,4 +1,5 @@
 import './accordion.css'
+import './content'
 import { Accordion } from './accordion';
 import { Accordions } from './accordions';
 

@@ -9,8 +9,8 @@ export function SectionPreview({children, shouldCenter}: PropsWithChildren<Secti
     <div
       style={{
         gap: '1rem',
-        padding: '2rem',
         display: 'flex',
+        minHeight: "150px",
         borderRadius: '6px',
         alignItems: 'center',
         justifyContent: shouldCenter ? 'center' : "unset",

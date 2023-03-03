@@ -1,9 +1,9 @@
-import { Section } from '../Section';
+import { Section } from '../../../docs/Section';
 import { full, partial } from './snippt';
-import { SectionStack } from '../SectionStack';
+import { SectionStack } from '../../../docs/SectionStack';
 import { OutlinedButton } from './OutlinedButton';
-import { SectionPreview } from '../SectionPreview';
-import { SectionSourceControl } from '../SectionSourceControl';
+import { SectionPreview } from '../../../docs/SectionPreview';
+import { SectionSourceControl } from '../../../docs/SectionSourceControl';
 
 export function OutlinedButtonSection() {
   return (

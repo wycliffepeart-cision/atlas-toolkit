@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+:root{
+  --border-color: #dddddd
+}
+
 html,
 body,
 div,

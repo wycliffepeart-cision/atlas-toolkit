@@ -6,6 +6,7 @@ const style: CSSProperties = {
   alignItems: 'start',
   columnGap: '1rem',
   rowGap: '1rem',
+  padding: '3rem'
 };
 
 export function SizedButton() {

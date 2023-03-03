@@ -1,4 +1,4 @@
-import { Section } from '../Section';
+import { Section } from '../../../docs/Section';
 
 export function ButtonSlotsSection() {
   return (

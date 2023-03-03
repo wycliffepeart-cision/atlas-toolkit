@@ -1,20 +1,17 @@
-import { Section } from '../../../docs/Section';
 import { full, partial } from './snippt';
-import { SectionStack } from '../../../docs/SectionStack';
+import { Section } from '../../../docs/Section';
+import { ControlledAccordion } from './ControlledAccordion';
 import { SectionPreview } from '../../../docs/SectionPreview';
-import { ContainedButton } from './ContainedButton';
 import { SectionSourceControl } from '../../../docs/SectionSourceControl';
 
-export function ContainedButtonSection() {
+export function ControlledAccordionSection() {
   return (
     <Section
-      title='Contained Button'
+      title='Controlled Accordion'
       description={`Basic buttons are useful for initiating simple actions or navigation within an application or website.`}
     >
       <SectionPreview shouldCenter>
-        <SectionStack>
-          <ContainedButton />
-        </SectionStack>
+        <ControlledAccordion />
       </SectionPreview>
       <SectionSourceControl language='jsx' example={full} snippet={partial} />
     </Section>

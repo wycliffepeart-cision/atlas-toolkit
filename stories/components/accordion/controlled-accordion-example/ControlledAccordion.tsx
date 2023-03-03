@@ -14,7 +14,7 @@ export function ControlledAccordion() {
   }, []);
 
   return (
-    <Stack>
+    <atlas-box padding="1rem" display="flex" flexDirection="column" gap="1rem">
       <atlas-accordion expanded={state === 'panel-1'}>
         <button slot='header' onClick={handlePanel1}>
           <atlas-typography>Accordion 1</atlas-typography>
@@ -75,7 +75,7 @@ export function ControlledAccordion() {
           </div>
         </atlas-collapsable>
       </atlas-accordion>
-    </Stack>
+    </atlas-box>
   );
 }
 

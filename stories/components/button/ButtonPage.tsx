@@ -1,4 +1,4 @@
-import { SectionPage } from './SectionPage';
+import { SectionPage } from '../../docs/SectionPage';
 import { ButtonSlotsSection } from './api/ButtonSlotsSection';
 import { TextButtonSection } from './text-example/TextButtonSection';
 import {SizedButtonSection} from "./size-example/SizedButtonSection";

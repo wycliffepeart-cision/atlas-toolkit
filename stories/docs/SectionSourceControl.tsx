@@ -55,7 +55,7 @@ export function SectionSourceControl({ example, snippet, language }: PropsWithCh
           </atlas-button>
         </div>
       </div>
-      <Source language={language || 'jsx'} format={false} code={isSnippet ? snippet : example} />
+      <Source language={language || 'jsx'} dark format={false} code={isSnippet ? snippet : example} />
     </>
   );
 }

@@ -1,9 +1,9 @@
-import { Section } from '../Section';
+import { Section } from '../../../docs/Section';
 import { full, partial } from './snippt';
-import { SectionStack } from '../SectionStack';
-import { SectionPreview } from '../SectionPreview';
+import { SectionStack } from '../../../docs/SectionStack';
+import { SectionPreview } from '../../../docs/SectionPreview';
 import { ButtonBottomAdornment } from './ButtonBottomAdornment';
-import { SectionSourceControl } from '../SectionSourceControl';
+import { SectionSourceControl } from '../../../docs/SectionSourceControl';
 
 export function ButtonBottomAdornmentSection() {
   return (

@@ -1,9 +1,9 @@
-import { Section } from '../Section';
+import { Section } from '../../../docs/Section';
 import { full, partial } from './snippt';
 import { DefaultButton } from './DefaultButton';
-import { SectionStack } from '../SectionStack';
-import { SectionPreview } from '../SectionPreview';
-import { SectionSourceControl } from '../SectionSourceControl';
+import { SectionStack } from '../../../docs/SectionStack';
+import { SectionPreview } from '../../../docs/SectionPreview';
+import { SectionSourceControl } from '../../../docs/SectionSourceControl';
 
 export function DefaultButtonSection() {
   return (
