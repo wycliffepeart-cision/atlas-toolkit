@@ -11,7 +11,7 @@ export function SectionPreview({children, shouldCenter}: PropsWithChildren<Secti
         gap: '1rem',
         display: 'flex',
         minHeight: "150px",
-        borderRadius: '6px',
+        // borderRadius: '6px',
         alignItems: 'center',
         justifyContent: shouldCenter ? 'center' : "unset",
         border: '1px solid #e3e7eb',

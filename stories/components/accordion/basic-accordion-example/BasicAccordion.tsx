@@ -8,12 +8,14 @@ export function BasicAccordion() {
         </button>
         <atlas-collapsable slot='collapsable'>
           <atlas-accordion-content>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi
-            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo
-            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa necessitatibus
-            perspiciatis reprehenderit sunt totam ut voluptas.
+            <atlas-typography>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi
+              eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo
+              ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa necessitatibus
+              perspiciatis reprehenderit sunt totam ut voluptas.
+            </atlas-typography>
           </atlas-accordion-content>
         </atlas-collapsable>
       </atlas-accordion>
@@ -23,22 +25,16 @@ export function BasicAccordion() {
           <atlas-icon-chevron-down />
         </button>
         <atlas-collapsable slot='collapsable'>
-          <div
-            style={{
-              margin: '0 1rem 1rem',
-              padding: '1rem',
-              backgroundColor: 'white',
-              borderRadius: '6px',
-              border: '1px solid #ddd',
-            }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi
-            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo
-            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa necessitatibus
-            perspiciatis reprehenderit sunt totam ut voluptas.
-          </div>
+          <atlas-accordion-content>
+            <atlas-typography>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi
+              eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo
+              ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa necessitatibus
+              perspiciatis reprehenderit sunt totam ut voluptas.
+            </atlas-typography>
+          </atlas-accordion-content>
         </atlas-collapsable>
       </atlas-accordion>
       <atlas-accordion disabled>
@@ -47,22 +43,16 @@ export function BasicAccordion() {
           <atlas-icon-chevron-down />
         </button>
         <atlas-collapsable slot='collapsable'>
-          <div
-            style={{
-              margin: '0 1rem 1rem',
-              padding: '1rem',
-              backgroundColor: 'white',
-              borderRadius: '6px',
-              border: '1px solid #ddd',
-            }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi
-            eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo
-            ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa necessitatibus
-            perspiciatis reprehenderit sunt totam ut voluptas.
-          </div>
+          <atlas-accordion-content>
+            <atlas-typography>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi
+              eos esse explicabo, hic illo ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo
+              ipsa necessitatibus perspiciatis reprehenderit sunt totam ut voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusamus, ad alias aliquam autem consequuntur culpa dolorum eligendi eos esse explicabo, hic illo ipsa necessitatibus
+              perspiciatis reprehenderit sunt totam ut voluptas.
+            </atlas-typography>
+          </atlas-accordion-content>
         </atlas-collapsable>
       </atlas-accordion>
     </atlas-box>

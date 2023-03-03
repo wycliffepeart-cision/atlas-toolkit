@@ -9,7 +9,7 @@ atlas-button{
     --button-box-sixing: border-box;
     --button-line-hight: 20px;
     --button-min-width: 64px;
-    --button-border-radius: 4px;
+    --button-border-radius: 6px;
     --button-text-color: #fff;
     --button-outlined: 1px solid #ddd;
     --button-background-transparent: transparent;
@@ -111,6 +111,8 @@ atlas-button::part(button) {
     border-radius: var(--button-border-radius);
     text-decoration: var(--button-reset-decoration);
 
+    align-items: center;
+    justify-content: center;
     background-color: transparent;
     grid-template-rows: auto auto auto;
     grid-template-columns: auto auto auto;
@@ -196,6 +198,13 @@ atlas-button[variant="outlined"][disabled]::part(button){
     color: var(--button-disabled-color);
     border: 1px solid var(--button-disabled-border-color);
     background-color: var(--button-background-transparent);
+}
+
+atlas-button[variant="contained"] atlas-typography::part(span) {
+    color: inherit;
+    font-weight: 500;
+    line-height: inherit;
+    font-size: 1rem;
 }
 
 atlas-button[variant="contained"]::part(button) {

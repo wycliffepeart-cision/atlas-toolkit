@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '../../src/icons/mail/mail';
 
 import { Button } from './Button';
 
@@ -18,7 +17,6 @@ const Template: ComponentStory<typeof Button> = (args) => {
   return (
     <>
       {/*// @ts-ignore*/}
-      <atlas-icon-mail />
       <Button {...args} />
     </>
   );

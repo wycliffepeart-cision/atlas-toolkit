@@ -9,16 +9,32 @@ export function IconsWrapper({ children, ...props }) {
         height: '100%',
         display: 'grid',
         alignItems: 'center',
+        textAlign: 'center',
         borderRadius: '8px',
+        padding: '.5rem',
         justifyContent: 'center',
         backgroundColor: '#fff',
         gridTemplateRows: '1fr auto',
-        boxShadow: '0px 2px 2px rgba(0, 0, 0, 0.05), 0px 2px 10px rgba(0, 0, 0, 0.05)',
+        border: '1px solid #ddd',
+        // boxShadow: '0px 2px 2px rgba(0, 0, 0, 0.05), 0px 2px 10px rgba(0, 0, 0, 0.05)',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', rowGap: '.8rem', flexDirection: 'column' }}>
+      <div style={{ padding: '1rem' }}>
         {children}
-        <div style={{ fontSize: '11px' }}>{props.name}</div>
+        <div
+          style={{
+            width: "150px",
+            paddingInline: "1rem",
+            whiteSpace: 'nowrap',
+            fontSize: '11px',
+            marginTop: '1rem',
+            overflow: 'hidden',
+            color: "#555",
+            textOverflow: 'ellipsis',
+          }}
+        >
+          {props.name}
+        </div>
       </div>
     </div>
   );
@@ -36,6 +52,58 @@ export function IconsFilter() {
     },
     {
       name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Indent Increase Indent Increase',
+      component: <atlas-icon-mail />,
+    },
+    {
+      name: 'Message Message',
       component: <atlas-icon-mail />,
     },
   ]);
@@ -86,13 +154,13 @@ export function IconsFilter() {
       {icons.length > 0 ? (
         <div
           style={{
-            rowGap: '1rem',
+            rowGap: '.5rem',
             display: 'grid',
-            columnGap: '1rem',
+            columnGap: '.5rem',
             borderRadius: '6px',
             justifyContent: 'space-between',
-            gridTemplateRows: 'repeat(3, 100px)',
-            gridTemplateColumns: 'repeat(auto-fill, 100px)',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 150px))',
+            gridTemplateRows: 'repeat(auto-fill, auto)',
           }}
         >
           {icons.map((icon, i) => (

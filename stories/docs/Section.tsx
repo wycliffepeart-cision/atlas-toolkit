@@ -8,7 +8,9 @@ export interface SectionProps {
 export function Section({ title, description, children }: PropsWithChildren<SectionProps>) {
   return (
     <div className='example-section'>
-      <h2 style={{ border: '0' }}>{title}</h2>
+      <atlas-typography variant="h2">
+          {title}
+      </atlas-typography>
       <p>{description}</p>
       {children}
     </div>

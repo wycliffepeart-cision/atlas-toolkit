@@ -1,6 +1,5 @@
 atlas-accordion {
     display: block;
-    border-radius: 6px;
     border: 1px solid #ddd;
     transform: translateZ(0);
     background-color: #f8f8f8;
@@ -62,4 +61,8 @@ atlas-accordions atlas-accordion[collapse='show']:first-child {
 atlas-accordions atlas-accordion[collapse='showing']:first-child,
 atlas-accordions atlas-accordion[collapse='show']:last-child {
     margin-bottom: 0;
+}
+
+atlas-accordion[disabled]{
+    opacity: .5;
 }

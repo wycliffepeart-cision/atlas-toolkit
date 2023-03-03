@@ -31,7 +31,7 @@ declare global {
         float?: string;
       };
       'atlas-accordion-header': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & { disabled?: boolean };
-      'atlas-typography': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      'atlas-typography': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {weight?: string, color?: string, size?: string, variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'};
     }
   }
 }
