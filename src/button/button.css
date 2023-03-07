@@ -200,6 +200,7 @@ atlas-button[variant="outlined"][disabled]::part(button){
     background-color: var(--button-background-transparent);
 }
 
+/*TODO: review*/
 atlas-button[variant="contained"] atlas-typography::part(span) {
     color: inherit;
     font-weight: 500;
