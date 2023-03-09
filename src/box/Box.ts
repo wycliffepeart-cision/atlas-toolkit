@@ -14,7 +14,6 @@ export class Box extends HTMLElement {
 
     const box = content.querySelector<HTMLDivElement>('[part="box"]');
     const keys = Object.keys(box.style).reduce((previousValue, currentValue: string) => ({...previousValue, [currentValue.toLowerCase()]: currentValue}), {});
-      console.log(keys)
 
     this.getAttributeNames().forEach((name) => {
       if (this.getAttribute(name)) box.style[keys[name]] = this.getAttribute(name);

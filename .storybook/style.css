@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-:root{
+:root {
   --border-color: #dddddd
 }
 
@@ -94,6 +94,7 @@ video {
   font-size: 100%;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -108,18 +109,22 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
   font-size: 100%;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -127,6 +132,7 @@ q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -134,6 +140,48 @@ table {
 
 * {
   box-sizing: border-box;
+}
+
+.atlas-toc {
+  margin: 0;
+  padding: 0 !important;
+}
+
+.atlas-toc li {
+  /*padding: .1rem;*/
+  list-style: none;
+}
+
+
+.atlas-toc li a {
+  display: block;
+  font-size: 13px;
+  padding-block: 4px;
+  padding-inline: 20px;
+}
+
+.atlas-toc li a.active {
+  /*color: #FFFFFF;*/
+  /*background: #029CFD;*/
+  color: #029CFD;
+  font-weight: 700;
+}
+
+.atlas-toc li a:hover {
+  background: rgba(2, 156, 253, 0.07)
+}
+
+.atlas-toc li a {
+  color: #2E3438;
+}
+
+.sbdocs.sbdocs-content {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.sbdocs.sbdocs-wrapper {
+  padding: 0;
 }
 
 .sbdocs-table {
@@ -153,4 +201,20 @@ table {
 .example-section .docblock-source {
   margin-top: 1rem !important;
   margin-bottom: 0 !important;
+}
+
+.sbdocs.sbdocs-toc--custom {
+  --toc-color: #202020;
+  --toc-background: #fff;
+  --toc-indicator-color: #efefef;
+  --toc-indicator-color--active: #fbd476;
+}
+
+.sbdocs.sbdocs-top--custom {
+  --toc-button-color: #66bf3cff;
+  --toc-button-color--hover: #66bf3ccc;
+  --toc-button-color--active: #66bf3caa;
+  --toc-button-background: #e7fdd8ff;
+  --toc-button-background--hover: #e7fdd8cc;
+  --toc-button-background--active: #e7fdd8aa;
 }

@@ -21,6 +21,13 @@ export const Primary: Story = {
     primary: true,
     label: 'Button',
   },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Another description on the story, overriding the comments'
+      }
+    }
+  }
 };
 //
 // export const Secondary: Story = {

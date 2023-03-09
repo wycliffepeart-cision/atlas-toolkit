@@ -3,8 +3,12 @@ import '../theme/styles/index.css';
 import '../src/icons';
 import '../src';
 import { options } from '../stoybook.config';
+import {Container} from "./container";
 
 export const parameters = {
+  docs: {
+    container: Container
+  },
   backgrounds: {
     default: 'light',
   },
