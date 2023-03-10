@@ -1,5 +1,5 @@
-import Projects from '../../../theme/icons/projects.svg';
 import { makeIcon } from '../../utils/makeIcon';
+import Projects from '../../../assets/icons/projects.svg';
 
 export const AtlasIconProjectsName = 'atlas-icon-projects';
 

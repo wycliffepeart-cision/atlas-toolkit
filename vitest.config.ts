@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitest/config';
-import { svgLoader } from './vendors/svg-loader/svg-loader';
+import { svgLoader } from './loaders/svg-loader';
 
 export default defineConfig({
   test: {

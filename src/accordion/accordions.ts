@@ -1,5 +1,5 @@
 import { Accordion } from './accordion';
-import { CollapsableAttrMap } from '../collapsable/enums';
+import { CollapsableAttrMap } from './enums';
 
 export class Accordions extends HTMLElement {
   constructor() {

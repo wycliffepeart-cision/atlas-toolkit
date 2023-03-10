@@ -20,5 +20,5 @@
     "types": ["cypress", "node"]
   },
   "include": ["types", "src", "tests", "stories"],
-  "exclude": ["node_modules", "tmp", "vendors", "dist"]
+  "exclude": ["node_modules", "tmp", "loaders", "dist"]
 }
