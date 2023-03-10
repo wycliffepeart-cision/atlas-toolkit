@@ -1,5 +1,4 @@
-import '../../src/icons/home';
-import '../../theme/styles/index.css';
+import '../../src/icons';
 
 describe('Atlas Icon Home', () => {
   it('is component mountable', () => {

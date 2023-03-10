@@ -1,26 +1,9 @@
 import template from './template.html';
-import { makeId } from '../utils/utils';
-import { AccordionAttrMap } from './enums';
-import { CollapsableAttrMap } from '../collapsable/enums';
+import { Template } from '../decorators/template';
+import { AccordionAttrMap, CollapsableAttrMap } from './enums';
 
+@Template(template)
 export class Accordion extends HTMLElement {
-  private readonly targetId;
-
-  constructor() {
-    super();
-
-    this.targetId = makeId(20);
-    const templateElement = new DOMParser().parseFromString(template, 'text/html').querySelector('template');
-
-    if (templateElement === undefined || templateElement === null) {
-      throw new Error('Template undefined');
-    }
-
-    const { content } = templateElement;
-    const shadowRoot = this.attachShadow({ mode: 'open' });
-    shadowRoot.replaceChildren(content.cloneNode(true));
-  }
-
   static get observedAttributes() {
     return [CollapsableAttrMap.EXPANDED, AccordionAttrMap.DISABLED];
   }

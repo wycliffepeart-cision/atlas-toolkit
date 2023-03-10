@@ -28,9 +28,6 @@ atlas-accordion button {
     grid-template-columns: 1fr auto;
 }
 
-atlas-accordion-content {
-}
-
 atlas-accordion::part(title) {
     text-align: left;
     display: block;
@@ -63,6 +60,13 @@ atlas-accordions atlas-accordion[collapse='show']:last-child {
     margin-bottom: 0;
 }
 
+atlas-collapsable {
+    display: block;
+    overflow: hidden;
+    transition: 0.4s all;
+}
+
 atlas-accordion[disabled]{
     opacity: .5;
+    pointer-events: none;
 }

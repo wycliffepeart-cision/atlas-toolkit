@@ -1,4 +1,5 @@
 atlas-button{
+    --new: 0;
     --button-reset-border: 0;
     --button-reset-outline: 0;
     --button-reset-decoration: none;

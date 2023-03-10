@@ -2,7 +2,8 @@ import { html } from '../utils/html';
 import { CollapsableAttrMap } from './enums';
 
 export class Collapsable extends HTMLElement {
-  private callback;
+  private callback: any;
+  
   constructor() {
     super();
 
@@ -18,8 +19,6 @@ export class Collapsable extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     const height = `${this.scrollHeight}px`;
-
-    console.log(name, newValue)
 
     if (name === CollapsableAttrMap.EXPANDED && newValue === 'true') {
       this.style.height = '0';
