@@ -1,11 +1,16 @@
 import '../../../src/accordion';
+import '../../../src/typography';
+import { useCallback, useState } from 'react';
 
-export function AccordionExample() {
+export function AccordionControlledExample() {
+  const [state, setState] = useState('');
+
+  const handleExpand = useCallback((value) => setState((state) => (value === state ? '' : value)), []);
 
   return (
-    <atlas-accordions>
-      <atlas-accordion>
-        <button slot='header'>
+    <>
+      <atlas-accordion expanded={state === 'panel-1'}>
+        <button slot='header' onClick={() => handleExpand('panel-1')}>
           <atlas-typography>Header</atlas-typography>
           <atlas-typography>Icon</atlas-typography>
         </button>
@@ -18,8 +23,8 @@ export function AccordionExample() {
           </div>
         </atlas-collapsable>
       </atlas-accordion>
-      <atlas-accordion>
-        <button slot='header'>
+      <atlas-accordion expanded={state === 'panel-2'}>
+        <button slot='header' onClick={() => handleExpand('panel-2')}>
           <atlas-typography>Header</atlas-typography>
           <atlas-typography>Icon</atlas-typography>
         </button>
@@ -32,6 +37,6 @@ export function AccordionExample() {
           </div>
         </atlas-collapsable>
       </atlas-accordion>
-    </atlas-accordions>
+    </>
   );
 }

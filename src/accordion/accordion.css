@@ -44,22 +44,6 @@ atlas-accordions {
     gap: 1rem;
 }
 
-atlas-accordions atlas-accordion[collapse='showing'],
-atlas-accordions atlas-accordion[collapse='show'] {
-    display: block;
-    transition: 0.4s margin;
-}
-
-atlas-accordions atlas-accordion[collapse='showing']:first-child,
-atlas-accordions atlas-accordion[collapse='show']:first-child {
-    margin-top: 0;
-}
-
-atlas-accordions atlas-accordion[collapse='showing']:first-child,
-atlas-accordions atlas-accordion[collapse='show']:last-child {
-    margin-bottom: 0;
-}
-
 atlas-accordion[disabled]{
     opacity: .5;
     pointer-events: none;
