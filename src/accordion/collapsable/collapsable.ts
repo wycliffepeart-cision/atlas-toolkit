@@ -1,33 +1,26 @@
-import { html } from '../../utils/html';
+import template from './template.html'
 import { CollapsableAttrMap } from '../enums';
+import { Template } from '../../decorators/template';
 
+@Template(template)
 export class Collapsable extends HTMLElement {
   private callback: any;
-  
-  constructor() {
-    super();
-
-    let content: DocumentFragment = html` <slot></slot>`;
-
-    const shadowRoot = this.attachShadow({ mode: 'open' });
-    shadowRoot.replaceChildren(content.cloneNode(true));
-  }
 
   static get observedAttributes() {
     return [CollapsableAttrMap.EXPANDED];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    const height = `${this.scrollHeight}px`;
-
     if (name === CollapsableAttrMap.EXPANDED && newValue === 'true') {
       this.style.height = '0';
-      this.style.height = height;
+      this.style.display = 'block';
+      this.style.height = `${this.scrollHeight}px`;
     } else if (name === CollapsableAttrMap.EXPANDED && newValue === 'false') {
-      this.style.height = height;
+      this.style.height = `${this.scrollHeight}px`;
       setTimeout(() => (this.style.height = '0'), 0);
     }
   }
+
   connectedCallback() {
     // this.style.height = '0';
 
@@ -38,6 +31,8 @@ export class Collapsable extends HTMLElement {
         setTimeout(() => {
           if (this.getAttribute(CollapsableAttrMap.EXPANDED) === 'true') {
             this.style.height = 'auto';
+          }else if (this.getAttribute(CollapsableAttrMap.EXPANDED) === 'false') {
+            this.style.display = 'none';
           }
         }, 0);
       };

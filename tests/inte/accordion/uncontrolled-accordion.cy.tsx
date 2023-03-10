@@ -1,4 +1,4 @@
-import { AccordionExample } from "./accordion.example";
+import { AccordionExample } from "./uncontrolled-accordion.example";
 
 describe('Atlas Accordion', () => {
   it('component mountable', () => {

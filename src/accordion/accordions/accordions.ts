@@ -7,16 +7,19 @@ import { Template } from '../../decorators/template';
 export class Accordions extends HTMLElement {
   connectedCallback() {
     Array.from(this.querySelectorAll('atlas-accordion')).forEach((accordion: Accordion, _, self) => {
-      accordion.button.addEventListener('click', (e) => {
-        self.forEach((accordion: Accordion) => {
-          if (
-            accordion.getAttribute(CollapsableAttrMap.EXPANDED) === 'true' &&
-            accordion.button !== (e.target as HTMLButtonElement).closest('button')
-          ) {
-            accordion.setAttribute(CollapsableAttrMap.EXPANDED, 'false');
-          }
+      const btn = accordion?.button;
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          self.forEach((accordion: Accordion) => {
+            if (
+              accordion.getAttribute(CollapsableAttrMap.EXPANDED) === 'true' &&
+              accordion.button !== (e.target as HTMLButtonElement).closest('button')
+            ) {
+              accordion.setAttribute(CollapsableAttrMap.EXPANDED, 'false');
+            }
+          });
         });
-      });
+      }
     });
   }
 }
