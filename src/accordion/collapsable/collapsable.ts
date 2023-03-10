@@ -1,5 +1,5 @@
-import { html } from '../utils/html';
-import { CollapsableAttrMap } from './enums';
+import { html } from '../../utils/html';
+import { CollapsableAttrMap } from '../enums';
 
 export class Collapsable extends HTMLElement {
   private callback: any;
