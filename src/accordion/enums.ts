@@ -3,5 +3,5 @@ export enum AccordionAttrMap {
 }
 
 export enum CollapsableAttrMap {
-  EXPANDED = 'expanded'
+  EXPANDED = 'expanded',
 }

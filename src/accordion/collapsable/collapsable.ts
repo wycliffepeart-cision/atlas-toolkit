@@ -1,4 +1,4 @@
-import template from './template.html'
+import template from './template.html';
 import { CollapsableAttrMap } from '../enums';
 import { Template } from '../../decorators/template';
 
@@ -31,7 +31,7 @@ export class Collapsable extends HTMLElement {
         setTimeout(() => {
           if (this.getAttribute(CollapsableAttrMap.EXPANDED) === 'true') {
             this.style.height = 'auto';
-          }else if (this.getAttribute(CollapsableAttrMap.EXPANDED) === 'false') {
+          } else if (this.getAttribute(CollapsableAttrMap.EXPANDED) === 'false') {
             this.style.display = 'none';
           }
         }, 0);

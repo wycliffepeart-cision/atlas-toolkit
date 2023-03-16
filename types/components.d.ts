@@ -2,8 +2,6 @@ import React from 'react';
 import { HTMLElement } from 'happy-dom';
 import * as CSS from 'csstype';
 
-interface BoxAttributes extends CSS.Properties<string | number> {}
-
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -16,7 +14,7 @@ declare global {
         onExpand?: () => void;
       };
       'atlas-accordion-content': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-      'atlas-box': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & BoxAttributes;
+      'atlas-box': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & CSS.Properties<string | number>;
       'atlas-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
         href?: string;
         disabled?: boolean;
@@ -25,13 +23,18 @@ declare global {
         'bottom-adornment'?: 'center' | 'left' | 'right';
         variant?: 'outlined' | 'contained' | 'text';
       };
-      'atlas-accordions': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {};
+      'atlas-accordions': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
       'atlas-collapsable': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
         expanded?: boolean;
         float?: string;
       };
       'atlas-accordion-header': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & { disabled?: boolean };
-      'atlas-typography': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {weight?: string, color?: string, size?: string, variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'};
+      'atlas-typography': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        weight?: string;
+        color?: string;
+        size?: string;
+        variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+      };
     }
   }
 }

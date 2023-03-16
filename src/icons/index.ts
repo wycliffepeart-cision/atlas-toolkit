@@ -1,4 +1,4 @@
-import './icon.css'
+import './icon.css';
 export * from './mail';
 export * from './home';
 export * from './marketplace';

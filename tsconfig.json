@@ -19,6 +19,6 @@
     "allowSyntheticDefaultImports": true,
     "types": ["cypress", "node"]
   },
-  "include": ["types", "src", "tests", "stories"],
+  "include": ["types", "src", "tests", "stories", ".eslintrc.cjs"],
   "exclude": ["node_modules", "tmp", "loaders", "dist"]
 }
