@@ -1,19 +1,19 @@
 @layer atlas {
-	atlas-main-nav {
-		--main-nav-row-gap: 2.5em;
-		align-items: center;
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-	}
+  atlas-main-nav {
+    --main-nav-row-gap: 2.5em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-	atlas-main-nav > :where(ul, ol) {
-		row-gap: var(--main-nav-row-gap);
-		display: inherit;
-		list-style-type: none;
-	}
+  atlas-main-nav > :where(ul, ol) {
+    row-gap: var(--main-nav-row-gap);
+    display: inherit;
+    list-style-type: none;
+  }
 
-	atlas-main-nav-item {
-		margin-block-start: var(--main-nav-row-gap);
-	}
+  atlas-main-nav-item {
+    margin-block-start: var(--main-nav-row-gap);
+  }
 }

@@ -1,4 +1,4 @@
-import "../../src/themes"
+import '../../src/themes';
 
 // ***********************************************************
 // This example support/component.ts is processed and

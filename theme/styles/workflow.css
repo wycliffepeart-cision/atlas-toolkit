@@ -1,6 +1,6 @@
 @layer atlas {
-	atlas-workflow {
-		display: block;
-		width: 100%;
-	}
+  atlas-workflow {
+    display: block;
+    width: 100%;
+  }
 }

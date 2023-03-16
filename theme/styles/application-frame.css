@@ -1,160 +1,158 @@
 @layer atlas {
-	atlas-application-frame {
-		--atlas-backdrop-background-color: rgba(0, 0, 0, 0.6);
-		--desktop-common-block-start: 1em;
-		--feed-body-container-open-width: 300px;
-		--feed-body-container-close-width: 0px;
+  atlas-application-frame {
+    --atlas-backdrop-background-color: rgba(0, 0, 0, 0.6);
+    --desktop-common-block-start: 1em;
+    --feed-body-container-open-width: 300px;
+    --feed-body-container-close-width: 0px;
 
-		--feed-body-animation-expand: feed-expand;
-		--feed-body-animation-collapse: feed-collapse;
-		--desktop-content-common-inline-margin: 1em;
+    --feed-body-animation-expand: feed-expand;
+    --feed-body-animation-collapse: feed-collapse;
+    --desktop-content-common-inline-margin: 1em;
 
-		display: grid;
-		height: 100vh;
-		grid-template-rows: min-content min-content 1fr;
-		grid-template-columns: min-content 1fr 1fr min-content min-content;
-		grid-template-areas: "al pc cc sb f" "mn s s s f" "mn ca ca ca f";
-	}
+    display: grid;
+    height: 100vh;
+    grid-template-rows: min-content min-content 1fr;
+    grid-template-columns: min-content 1fr 1fr min-content min-content;
+    grid-template-areas: 'al pc cc sb f' 'mn s s s f' 'mn ca ca ca f';
+  }
 
-	atlas-application-frame::part(backdrop) {
-		isolation: isolate;
-		background-color: var(--atlas-backdrop-background-color);
-		/* setting NEWS grid lines to cover full application sans Menu and Logo based on Desktop layout grid-template-area defined above */
-		grid-area: pc-start / pc-start / f-end / f-end;
-		display: none;
-	}
+  atlas-application-frame::part(backdrop) {
+    isolation: isolate;
+    background-color: var(--atlas-backdrop-background-color);
+    /* setting NEWS grid lines to cover full application sans Menu and Logo based on Desktop layout grid-template-area defined above */
+    grid-area: pc-start / pc-start / f-end / f-end;
+    display: none;
+  }
 
-	atlas-application-frame[backdrop]::part(backdrop) {
-		display: grid;
-	}
+  atlas-application-frame[backdrop]::part(backdrop) {
+    display: grid;
+  }
 
-	atlas-application-frame {
-		background-color: var(--atlas-application-frame-background-color);
-		color: var(--atlas-application-frame-color);
-	}
+  atlas-application-frame {
+    background-color: var(--atlas-application-frame-background-color);
+    color: var(--atlas-application-frame-color);
+  }
 
-	atlas-application-frame::part(main-nav) {
-		border-inline-end: var(--atlas-application-frame-separator-style);
-	}
+  atlas-application-frame::part(main-nav) {
+    border-inline-end: var(--atlas-application-frame-separator-style);
+  }
 
-	atlas-application-frame::part(app-logo) {
-		display: block;
-		grid-area: al;
-		border-inline-end: var(--atlas-application-frame-separator-style);
-		padding-block-start: var(--desktop-common-block-start);
-	}
+  atlas-application-frame::part(app-logo) {
+    display: block;
+    grid-area: al;
+    border-inline-end: var(--atlas-application-frame-separator-style);
+    padding-block-start: var(--desktop-common-block-start);
+  }
 
-	atlas-application-frame::part(contextual-controls) {
-		display: block;
-		grid-area: cc;
-		padding-block-start: var(--desktop-common-block-start);
-		margin-inline-end: var(--desktop-content-common-inline-margin);
-		justify-self: end;
-	}
+  atlas-application-frame::part(contextual-controls) {
+    display: block;
+    grid-area: cc;
+    padding-block-start: var(--desktop-common-block-start);
+    margin-inline-end: var(--desktop-content-common-inline-margin);
+    justify-self: end;
+  }
 
-	atlas-application-frame::part(content-area) {
-		display: block;
-		grid-area: ca;
-		overflow-y: auto;
+  atlas-application-frame::part(content-area) {
+    display: block;
+    grid-area: ca;
+    overflow-y: auto;
 
-		margin-inline: var(--desktop-content-common-inline-margin);
-	}
+    margin-inline: var(--desktop-content-common-inline-margin);
+  }
 
-	atlas-application-frame::part(feed) {
-		display: block;
-		grid-area: f;
-		overflow-y: auto;
-	}
+  atlas-application-frame::part(feed) {
+    display: block;
+    grid-area: f;
+    overflow-y: auto;
+  }
 
-	atlas-application-frame > [slot="feed"] {
-		animation-duration: 0.5s;
-		animation-name: var(--feed-body-animation-expand);
-	}
+  atlas-application-frame > [slot='feed'] {
+    animation-duration: 0.5s;
+    animation-name: var(--feed-body-animation-expand);
+  }
 
-	@keyframes feed-expand {
-		from {
-			width: var(--feed-body-container-close-width);
-		}
-		to {
-			width: var(--feed-body-container-open-width);
-		}
-	}
+  @keyframes feed-expand {
+    from {
+      width: var(--feed-body-container-close-width);
+    }
+    to {
+      width: var(--feed-body-container-open-width);
+    }
+  }
 
-	atlas-application-frame[hide-feed] > atlas-feed {
-		display: block;
-		animation-duration: 0.5s;
-		animation-name: var(--feed-body-animation-collapse);
-		width: 0;
-		padding: 1em 0;
-	}
+  atlas-application-frame[hide-feed] > atlas-feed {
+    display: block;
+    animation-duration: 0.5s;
+    animation-name: var(--feed-body-animation-collapse);
+    width: 0;
+    padding: 1em 0;
+  }
 
-	@keyframes feed-collapse {
-		from {
-			width: var(--feed-body-container-open-width);
-		}
-		to {
-			width: var(--feed-body-container-close-width);
-		}
-	}
+  @keyframes feed-collapse {
+    from {
+      width: var(--feed-body-container-open-width);
+    }
+    to {
+      width: var(--feed-body-container-close-width);
+    }
+  }
 
-	atlas-application-frame::part(main-nav) {
-		display: block;
-		grid-area: mn;
-	}
+  atlas-application-frame::part(main-nav) {
+    display: block;
+    grid-area: mn;
+  }
 
-	atlas-application-frame::part(profile-controls) {
-		display: block;
-		grid-area: pc;
-		padding-block-start: var(--desktop-common-block-start);
-		margin-inline-start: var(--desktop-content-common-inline-margin);
-	}
+  atlas-application-frame::part(profile-controls) {
+    display: block;
+    grid-area: pc;
+    padding-block-start: var(--desktop-common-block-start);
+    margin-inline-start: var(--desktop-content-common-inline-margin);
+  }
 
-	atlas-application-frame::part(search) {
-		display: block;
-		grid-area: s;
-		margin-inline: var(--desktop-content-common-inline-margin);
-	}
+  atlas-application-frame::part(search) {
+    display: block;
+    grid-area: s;
+    margin-inline: var(--desktop-content-common-inline-margin);
+  }
 
-	/* Global Search */
-	atlas-application-frame:where(:not([show-global-search]), [show-global-search="false"])::part(
-			search
-		) {
-		display: none;
-	}
+  /* Global Search */
+  atlas-application-frame:where(:not([show-global-search]), [show-global-search='false'])::part(search) {
+    display: none;
+  }
 
-	/* Application Frame Focus Mode*/
-	atlas-application-frame[focus-mode]::part(main-nav) {
-		display: none;
-	}
+  /* Application Frame Focus Mode*/
+  atlas-application-frame[focus-mode]::part(main-nav) {
+    display: none;
+  }
 
-	atlas-application-frame[focus-mode]::part(profile-controls) {
-		display: none;
-	}
+  atlas-application-frame[focus-mode]::part(profile-controls) {
+    display: none;
+  }
 
-	atlas-application-frame[focus-mode]::part(contextual-controls) {
-		display: none;
-	}
+  atlas-application-frame[focus-mode]::part(contextual-controls) {
+    display: none;
+  }
 
-	atlas-application-frame[focus-mode]::part(search) {
-		display: none;
-	}
+  atlas-application-frame[focus-mode]::part(search) {
+    display: none;
+  }
 
-	atlas-application-frame[focus-mode]::part(feed) {
-		display: none;
-	}
+  atlas-application-frame[focus-mode]::part(feed) {
+    display: none;
+  }
 
-	atlas-application-frame[focus-mode]::part(app-logo) {
-		margin: auto;
-		border: none;
-	}
+  atlas-application-frame[focus-mode]::part(app-logo) {
+    margin: auto;
+    border: none;
+  }
 
-	atlas-application-frame[focus-mode] {
-		--desktop-content-common-inline-margin: 0;
-		grid-template-rows: min-content min-content 1fr;
-		grid-template-columns: 1fr;
-		grid-template-areas:
-			"al sb"
-			"s s"
-			"ca ca";
-	}
+  atlas-application-frame[focus-mode] {
+    --desktop-content-common-inline-margin: 0;
+    grid-template-rows: min-content min-content 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'al sb'
+      's s'
+      'ca ca';
+  }
 }

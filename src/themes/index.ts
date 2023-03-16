@@ -1,1 +1,1 @@
-import "../../theme/styles/scratch.css"
+import '../../theme/styles/scratch.css';

@@ -1,83 +1,81 @@
 @layer atlas {
-	atlas-input-textarea {
-		--minimum-height: 7.25em;
+  atlas-input-textarea {
+    --minimum-height: 7.25em;
 
-		--disabled-background-color: var(--atlas-color-primary-n50);
+    --disabled-background-color: var(--atlas-color-primary-n50);
 
-		--padding-block: 0.5em;
-		--padding-inline: 1em;
+    --padding-block: 0.5em;
+    --padding-inline: 1em;
 
-		--padding-block-start-label-spacer: calc(1em + 0.125em);
-		--padding-block-start-calced: calc(
-			var(--padding-block) + var(--padding-block-start-label-spacer)
-		);
-		--total-block-padding: calc(var(--padding-block) + var(--padding-block-start-calced));
-		--minimum-height-calced: calc(var(--minimum-height) - var(--total-block-padding));
-	}
+    --padding-block-start-label-spacer: calc(1em + 0.125em);
+    --padding-block-start-calced: calc(var(--padding-block) + var(--padding-block-start-label-spacer));
+    --total-block-padding: calc(var(--padding-block) + var(--padding-block-start-calced));
+    --minimum-height-calced: calc(var(--minimum-height) - var(--total-block-padding));
+  }
 
-	atlas-input-textarea {
-		position: relative;
+  atlas-input-textarea {
+    position: relative;
 
-		accent-color: var(--atlas-input-common-accent-color);
+    accent-color: var(--atlas-input-common-accent-color);
 
-		display: grid;
-		margin-block: var(--atlas-input-common-block-margin);
-	}
+    display: grid;
+    margin-block: var(--atlas-input-common-block-margin);
+  }
 
-	atlas-input-textarea::part(input) {
-		display: block;
-		min-height: var(--minimum-height-calced);
+  atlas-input-textarea::part(input) {
+    display: block;
+    min-height: var(--minimum-height-calced);
 
-		font-size: inherit;
-		font-family: inherit;
+    font-size: inherit;
+    font-family: inherit;
 
-		padding-block-start: var(--padding-block-start-calced);
-		padding-block-end: var(--padding-block);
-		padding-inline: var(--padding-inline);
+    padding-block-start: var(--padding-block-start-calced);
+    padding-block-end: var(--padding-block);
+    padding-inline: var(--padding-inline);
 
-		color: var(--atlas-color-primary-n400);
+    color: var(--atlas-color-primary-n400);
 
-		background-color: var(--atlas-input-common-background-color);
-		border-radius: var(--atlas-input-common-border-radius);
-		border: var(--atlas-input-common-border);
-	}
+    background-color: var(--atlas-input-common-background-color);
+    border-radius: var(--atlas-input-common-border-radius);
+    border: var(--atlas-input-common-border);
+  }
 
-	atlas-input-textarea[disabled]:not([disabled="false"])::part(input) {
-		background-color: var(--disabled-background-color);
-		border-color: var(--disabled-background-color);
-	}
+  atlas-input-textarea[disabled]:not([disabled='false'])::part(input) {
+    background-color: var(--disabled-background-color);
+    border-color: var(--disabled-background-color);
+  }
 
-	atlas-input-textarea::part(input):focus {
-		outline: none;
-		box-shadow: var(--atlas-input-common-box-shadow);
-	}
+  atlas-input-textarea::part(input):focus {
+    outline: none;
+    box-shadow: var(--atlas-input-common-box-shadow);
+  }
 
-	atlas-input-textarea::part(label-wrapper) {
-		position: absolute;
-		top: calc(var(--padding-block) + 0.125em);
-		left: var(--padding-inline);
+  atlas-input-textarea::part(label-wrapper) {
+    position: absolute;
+    top: calc(var(--padding-block) + 0.125em);
+    left: var(--padding-inline);
 
-		color: var(--atlas-color-primary-n300);
-	}
+    color: var(--atlas-color-primary-n300);
+  }
 
-	atlas-input-textarea::part(label) {
-		font-size: var(--atlas-input-common-label-font-size);
-	}
+  atlas-input-textarea::part(label) {
+    font-size: var(--atlas-input-common-label-font-size);
+  }
 
-	atlas-input-textarea::part(required) {
-		font-size: var(--atlas-input-common-label-font-size);
-		display: none;
-	}
+  atlas-input-textarea::part(required) {
+    font-size: var(--atlas-input-common-label-font-size);
+    display: none;
+  }
 
-	atlas-input-textarea[required]:not([required="false"])::part(required) {
-		display: inline-block;
-	}
+  atlas-input-textarea[required]:not([required='false'])::part(required) {
+    display: inline-block;
+  }
 
-	atlas-input-textarea::part(helper-text) {
-		display: none;
-	}
+  atlas-input-textarea::part(helper-text) {
+    display: none;
+  }
 
-	atlas-input-textarea::part(content) {
-		display: none;
-	}
+  atlas-input-textarea::part(content) {
+    display: none;
+  }
 }

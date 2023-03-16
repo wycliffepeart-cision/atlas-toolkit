@@ -1,74 +1,72 @@
 @layer atlas {
-	atlas-chip-group {
-		--overflow-background: var(--atlas-color-white);
-		--overflow-border-color: var(--atlas-color-primary-n200);
-		--overflow-color: var(--atlas-color-primary-n400);
-	}
+  atlas-chip-group {
+    --overflow-background: var(--atlas-color-white);
+    --overflow-border-color: var(--atlas-color-primary-n200);
+    --overflow-color: var(--atlas-color-primary-n400);
+  }
 
-	atlas-chip-group {
-		display: flex;
-		flex-wrap: wrap;
-		padding-block: 1em;
-		row-gap: 1em;
-		column-gap: 0.7em;
-	}
+  atlas-chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    padding-block: 1em;
+    row-gap: 1em;
+    column-gap: 0.7em;
+  }
 
-	atlas-chip-group[category] > atlas-chip[slot="suffix"] {
-		border-color: var(--overflow-border-color);
-		background-color: var(--overflow-background);
-		color: var(--overflow-color);
-	}
+  atlas-chip-group[category] > atlas-chip[slot='suffix'] {
+    border-color: var(--overflow-border-color);
+    background-color: var(--overflow-background);
+    color: var(--overflow-color);
+  }
 
-	atlas-chip-group:not([category]) > atlas-chip[slot="suffix"] {
-		border-color: var(--overflow-border-color);
-		background-color: var(--overflow-background);
-		color: var(--overflow-color);
-	}
+  atlas-chip-group:not([category]) > atlas-chip[slot='suffix'] {
+    border-color: var(--overflow-border-color);
+    background-color: var(--overflow-background);
+    color: var(--overflow-color);
+  }
 
-	atlas-chip-group[category="outlets"] {
-		--atlas-chip-category-border-color: var(--atlas-chip-outlets-border-color);
-		--atlas-chip-category-background-color: var(--atlas-chip-outlets-background-color);
-		--atlas-chip-category-color: var(--atlas-chip-outlets-color);
-		--atlas-chip-category-hover-background-color: var(--atlas-chip-outlets-color);
-		--atlas-chip-category-hover-color: var(--atlas-chip-outlets-hover-color);
-		--atlas-chip-category-active-color: var(--atlas-chip-outlets-color);
-		--atlas-chip-category-active-shadow-color: var(--atlas-chip-outlets-active-shadow-color);
-		--atlas-chip-category-active-background-color: var(
-			--atlas-chip-outlets-active-background-color
-		);
-	}
+  atlas-chip-group[category='outlets'] {
+    --atlas-chip-category-border-color: var(--atlas-chip-outlets-border-color);
+    --atlas-chip-category-background-color: var(--atlas-chip-outlets-background-color);
+    --atlas-chip-category-color: var(--atlas-chip-outlets-color);
+    --atlas-chip-category-hover-background-color: var(--atlas-chip-outlets-color);
+    --atlas-chip-category-hover-color: var(--atlas-chip-outlets-hover-color);
+    --atlas-chip-category-active-color: var(--atlas-chip-outlets-color);
+    --atlas-chip-category-active-shadow-color: var(--atlas-chip-outlets-active-shadow-color);
+    --atlas-chip-category-active-background-color: var(--atlas-chip-outlets-active-background-color);
+  }
 
-	atlas-chip-group[category="hashtags"] {
-		--atlas-chip-category-border-color: var(--atlas-chip-hashtags-border-color);
-		--atlas-chip-category-background-color: var(--atlas-chip-hashtags-background-color);
-	}
+  atlas-chip-group[category='hashtags'] {
+    --atlas-chip-category-border-color: var(--atlas-chip-hashtags-border-color);
+    --atlas-chip-category-background-color: var(--atlas-chip-hashtags-background-color);
+  }
 
-	atlas-chip-group[category="topics"] {
-		--atlas-chip-category-border-color: var(--atlas-chip-topics-border-color);
-		--atlas-chip-category-background-color: var(--atlas-chip-topics-background-color);
-		--atlas-chip-category-color: var(--atlas-chip-topics-color);
-		--atlas-chip-category-hover-background-color: var(--atlas-chip-topics-color);
-		--atlas-chip-category-hover-color: var(--atlas-chip-topics-hover-color);
-		--atlas-chip-category-active-color: var(--atlas-chip-topics-color);
-		--atlas-chip-category-active-shadow-color: var(--atlas-chip-topics-active-shadow-color);
-		--atlas-chip-category-active-background-color: var(--atlas-chip-topics-active-background-color);
-	}
+  atlas-chip-group[category='topics'] {
+    --atlas-chip-category-border-color: var(--atlas-chip-topics-border-color);
+    --atlas-chip-category-background-color: var(--atlas-chip-topics-background-color);
+    --atlas-chip-category-color: var(--atlas-chip-topics-color);
+    --atlas-chip-category-hover-background-color: var(--atlas-chip-topics-color);
+    --atlas-chip-category-hover-color: var(--atlas-chip-topics-hover-color);
+    --atlas-chip-category-active-color: var(--atlas-chip-topics-color);
+    --atlas-chip-category-active-shadow-color: var(--atlas-chip-topics-active-shadow-color);
+    --atlas-chip-category-active-background-color: var(--atlas-chip-topics-active-background-color);
+  }
 
-	atlas-chip-group[category] > atlas-chip {
-		border: 1px solid;
-		border-color: var(--atlas-chip-category-border-color);
-		background-color: var(--atlas-chip-category-background-color);
-		color: var(--atlas-chip-category-color);
-	}
+  atlas-chip-group[category] > atlas-chip {
+    border: 1px solid;
+    border-color: var(--atlas-chip-category-border-color);
+    background-color: var(--atlas-chip-category-background-color);
+    color: var(--atlas-chip-category-color);
+  }
 
-	atlas-chip-group[category] atlas-chip[type="filter"] {
-		color: var(--atlas-chip-type-filter-color);
-		background-color: var(--atlas-chip-type-filter-background-color);
-		border-color: var(--atlas-chip-type-filter-border-color);
-	}
+  atlas-chip-group[category] atlas-chip[type='filter'] {
+    color: var(--atlas-chip-type-filter-color);
+    background-color: var(--atlas-chip-type-filter-background-color);
+    border-color: var(--atlas-chip-type-filter-border-color);
+  }
 
-	atlas-chip-group[category] > atlas-chip[highlighted] {
-		--atlas-chip-category-background-color: var(--atlas-chip-category-active-background-color);
-		--atlas-chip-category-color: var(--atlas-chip-category-active-color);
-	}
+  atlas-chip-group[category] > atlas-chip[highlighted] {
+    --atlas-chip-category-background-color: var(--atlas-chip-category-active-background-color);
+    --atlas-chip-category-color: var(--atlas-chip-category-active-color);
+  }
 }
