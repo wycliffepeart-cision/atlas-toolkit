@@ -7,8 +7,10 @@ coverage
 
 # Ignore files
 
+**/*.d.ts
 tsconfig.json
 tsconfig.rollup.json
 vitest.config.ts
 cypress.config.ts
-**/*.d.ts
+rollup.config.mjs
+webpack.config.cjs
