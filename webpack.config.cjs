@@ -6,25 +6,34 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader'
+        loader: 'svg-inline-loader',
       },
       {
         test: /\.tsx|\.ts?$/,
         use: {
           loader: 'ts-loader',
           options: {
-            configFile: "tsconfig.webpack.json"
-          }
+            configFile: 'tsconfig.webpack.json',
+          },
         },
         exclude: /node_modules|\.d\.ts$/,
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
       },
     ],
   },
