@@ -11,6 +11,6 @@
 - typescript
 - linting
 - prettier
-- pre-commit
+- husky
 
 npm cache clean –force
