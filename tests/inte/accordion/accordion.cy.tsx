@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import '../../src/icon';
-import '../../src/button';
-import '../../src/accordion';
+import '../../../src/icon';
+import '../../../src/button';
+import '../../../src/accordion';
 import './accordion.css';
 
 const Component = (props: any) => {
