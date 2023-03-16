@@ -1,0 +1,16 @@
+# Ignore folders
+
+dist
+loaders
+cypress
+coverage
+
+# Ignore files
+
+**/*.d.ts
+tsconfig.json
+tsconfig.rollup.json
+vitest.config.ts
+cypress.config.ts
+rollup.config.mjs
+webpack.config.cjs

@@ -1,0 +1,116 @@
+@layer atlas {
+  :root {
+    --step-color-accent: var(--atlas-color-primary-b400);
+    --step-color-base: var(--atlas-color-primary-n200);
+    --step-check-color: var(--atlas-color-on-bg-white);
+
+    --step-check-size: 1.125em;
+    --step-size: 2.5em;
+    --step-border-width: 1.5px;
+    --step-bar-length: 3em;
+    --step-spacer: 1ch;
+    --step-bar-width: 1px;
+
+    --step-bar-border: var(--step-bar-width) dashed var(--step-color-base);
+    --step-finished-bar-border: var(--step-bar-width) solid var(--step-color-accent);
+
+    --step-color: var(--step-color-base);
+    --step-background-color: inherit;
+    --step-border: var(--step-border-width) dashed var(--step-color-base);
+
+    --step-current-color: var(--step-color-accent);
+    --step-current-background-color: inherit;
+    --step-current-border: var(--step-border-width) solid var(--step-color-accent);
+
+    --step-finished-color: var(--step-check-color);
+    --step-finished-background-color: var(--step-color-accent);
+    --step-finished-border: 0;
+  }
+
+  atlas-stepper-step {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  atlas-stepper-step::part(check) {
+    display: none;
+
+    color: var(--step-check-color);
+
+    width: 1em;
+    height: 1em;
+    font-size: var(--step-check-size);
+  }
+
+  atlas-stepper-step::part(step) {
+    display: flex;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--step-size);
+    aspect-ratio: 1 / 1;
+    border-radius: 100vw;
+    overflow: hidden;
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    color: var(--step-color);
+    background-color: var(--step-background-color);
+    border: var(--step-border);
+  }
+
+  atlas-stepper-step::part(before) {
+    display: block;
+    width: var(--step-bar-length);
+    height: 0;
+    border-radius: 100vw;
+    border: var(--step-bar-border);
+    margin-inline: var(--step-spacer);
+  }
+
+  atlas-stepper-step::part(after) {
+    display: none;
+    width: var(--step-bar-length);
+    height: 0;
+    border-radius: 100vw;
+    border: var(--step-bar-border);
+    margin-inline: var(--step-spacer);
+  }
+
+  atlas-stepper-step[current]::part(step) {
+    color: var(--step-current-color);
+    background-color: var(--step-current-background-color);
+    border: var(--step-current-border);
+  }
+  atlas-stepper-step[current]::part(before) {
+    display: none;
+  }
+  atlas-stepper-step[current]::part(after) {
+    display: none;
+  }
+
+  atlas-stepper-step[finished]::part(step) {
+    color: var(--step-finished-color);
+    background-color: var(--step-finished-background-color);
+    border: var(--step-finished-border);
+  }
+  atlas-stepper-step[finished]::part(before) {
+    display: none;
+  }
+  atlas-stepper-step[finished]::part(after) {
+    display: block;
+
+    background-color: var(--step-finished-bar-color);
+    border: var(--step-finished-bar-border);
+  }
+
+  atlas-stepper-step[finished]::part(content) {
+    display: none;
+  }
+  atlas-stepper-step[finished]::part(check) {
+    display: block;
+  }
+}

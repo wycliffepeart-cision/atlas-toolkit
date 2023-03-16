@@ -1,0 +1,36 @@
+@layer atlas {
+  atlas-dropdown {
+    --default-width: 100%;
+    --menu-padding: 1em;
+    --menu-margin-block-start: 0.35em;
+    --menu-bg-color: var(--atlas-input-common-background-color);
+  }
+
+  atlas-dropdown {
+    position: relative;
+    isolation: isolate;
+    display: inline-block;
+    width: var(--default-width);
+  }
+
+  atlas-dropdown::part(menu) {
+    display: none;
+
+    max-height: fit-content;
+    width: calc(var(--default-width) - (var(--menu-padding) * 2));
+    padding: var(--menu-padding);
+    margin-block-start: var(--menu-margin-block-start);
+
+    background-color: var(--menu-bg-color);
+    position: absolute;
+    overflow-y: auto;
+
+    border: none;
+    box-shadow: var(--atlas-input-common-box-shadow);
+    border-radius: var(--atlas-input-common-border-radius);
+  }
+
+  atlas-dropdown[open]:not([open='false'])::part(menu) {
+    display: block;
+  }
+}

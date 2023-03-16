@@ -1,23 +1,24 @@
 {
-	"compileOnSave": false,
-	"compilerOptions": {
-		"rootDir": ".",
-		"sourceMap": true,
-		"declaration": false,
-		"moduleResolution": "node",
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"importHelpers": true,
-		"target": "es2015",
-		"module": "esnext",
-		"lib": ["es2017", "dom"],
-		"skipLibCheck": true,
-		"skipDefaultLibCheck": true,
-		"baseUrl": ".",
-		"jsx": "react-jsx",
-		"resolveJsonModule": true,
-		"types": ["cypress", "node"]
-	},
-	"include": ["src/", "index.d.ts", "tests", "stories", "types/general.d.ts"],
-	"exclude": ["node_modules", "tmp", "vendors", "dist"]
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["cypress", "node"]
+  },
+  "include": ["types", "src", "tests", "stories", ".eslintrc.cjs"],
+  "exclude": ["node_modules", "tmp", "loaders", "dist"]
 }

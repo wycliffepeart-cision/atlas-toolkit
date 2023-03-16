@@ -1,2 +1,4 @@
 export * from './accordion';
-export * from './icons';
+export * from './button';
+export * from './icon';
+export * from './themes';
