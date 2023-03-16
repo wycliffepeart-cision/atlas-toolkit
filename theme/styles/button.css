@@ -1,0 +1,282 @@
+@layer atlas {
+	/* Variables */
+	atlas-button {
+		--default-font-size: 1em;
+		--default-font-weight: 400;
+		--default-line-heigh: 2.5ch;
+		--default-background-color: unset;
+		--default-disabled-text-color: var(--atlas-color-primary-n300);
+
+		--large-padding-top-bottom: 0.7em;
+		--large-padding-left-right: 1.25em;
+
+		--medium-line-heigh: 1.25rem;
+		--medium-font-size: 0.875em;
+		--medium-padding-top-bottom: 0.375em;
+
+		--primary-active-background: var(--atlas-color-primary-b300);
+
+		--secondary-border-color: var(--atlas-color-primary-b500);
+		--secondary-color: var(--atlas-color-primary-b500);
+		--secondary-hover-background-color: var(--atlas-color-primary-b25);
+
+		--tertiary-text-color: var(--atlas-color-primary-n400);
+		--tertiary-focus-shadow: var(--atlas-color-primary-n200);
+		--tertiary-focus-outline: var(--atlas-color-primary-n200);
+		--tertiary-border-color: var(--atlas-color-primary-n200);
+		--tertiary-active: var(--atlas-color-primary-n100);
+		--tertiary-background-hover: var(--atlas-color-primary-n25);
+
+		--icon-default-color: var(--atlas-color-primary-n300);
+		--icon-active-color: var(--atlas-color-primary-b500);
+		--icon-hover-color: var(--atlas-color-primary-o500);
+
+		--text-color: var(--atlas-color-primary-b400);
+		--text-color-active: var(--atlas-color-primary-b400);
+		--text-color-hover: var(--atlas-color-primary-b300);
+		--text-disabled-color: var(--atlas-color-primary-n100);
+		--text-space-between: 0.65em;
+		--default-disabled-color: var(--atlas-color-primary-n100);
+
+		--box-secondary-active: var(--atlas-color-primary-b50);
+		--box-disabled-background: var(--atlas-color-primary-n50);
+		--box-focus-shadow-blur-radius: 0.5em;
+		--box-focus-shadow-spread-radius: 0.06em;
+		--box-focus-shadow-color: var(--atlas-button-primary-background-color);
+		--box-focus-shadow: 0 0 var(--box-focus-shadow-blur-radius)
+			var(--box-focus-shadow-spread-radius) var(--box-focus-shadow-color);
+		--box-focus-shadow-tertiary: 0 0 var(--box-focus-shadow-blur-radius)
+			var(--box-focus-shadow-spread-radius) var(--tertiary-focus-shadow);
+
+		--default-border-radius: 0.25em;
+		--default-border-size: 0.04em;
+		--default-focus-outline: 0.1em;
+	}
+
+	/* Shared styles */
+	atlas-button {
+		background-color: var(--default-background-color);
+		display: flex;
+		font-family: inherit;
+		font-weight: var(--default-font-weight);
+		font-size: var(--default-font-size);
+		height: 100%;
+		line-height: var(--default-line-heigh);
+		max-width: max-content;
+		min-width: max-content;
+	}
+
+	atlas-button[minor-action]:not([minor-action="false"]) {
+		line-height: var(--medium-line-heigh);
+		font-size: var(--medium-font-size);
+		padding: var(--medium-padding-top-bottom) 0;
+		max-width: max-content;
+		min-width: max-content;
+	}
+
+	atlas-button::part(button) {
+		align-items: center;
+		border: none;
+		display: inline-flex;
+		gap: var(--text-space-between);
+		padding: var(--large-padding-top-bottom) var(--large-padding-left-right);
+
+		background-color: inherit;
+		border-radius: inherit;
+		color: inherit;
+		cursor: inherit;
+		font-size: inherit;
+		font-family: inherit;
+	}
+
+	atlas-button:hover {
+		cursor: pointer;
+	}
+
+	atlas-button[disabled]:not([disabled="false"]) {
+		cursor: unset;
+		pointer-events: none;
+		border-color: var(--box-disabled-background);
+	}
+
+	/* Box */
+	atlas-button[box-type][disabled]:not([disabled="false"]) {
+		background-color: var(--box-disabled-background);
+		color: var(--default-disabled-text-color);
+		border-color: var(--box-disabled-background);
+	}
+
+	atlas-button,
+	atlas-button[kind="box"],
+	atlas-button[box-type] {
+		border-radius: var(--default-border-radius);
+	}
+
+	/* Icon button */
+	atlas-button[kind="icon"] atlas-icon {
+		color: inherit;
+	}
+
+	atlas-button[kind="icon"] {
+		background-color: unset;
+		outline: 0;
+		color: var(--icon-default-color);
+		border: none;
+	}
+
+	atlas-button[kind="icon"]:hover {
+		cursor: pointer;
+		color: var(--icon-hover-color);
+		background-color: unset;
+	}
+
+	atlas-button[kind="icon"]::part(button) {
+		padding: 0;
+	}
+
+	atlas-button[kind="icon"]::part(prefix),
+	atlas-button[kind="icon"]::part(suffix) {
+		display: none;
+	}
+
+	atlas-button[kind="icon"]:active {
+		color: var(--icon-active-color);
+	}
+
+	atlas-button[kind="icon"][disabled]:not([disabled="false"]) {
+		background: transparent;
+		color: var(--default-disabled-color);
+		border: none;
+	}
+
+	/* Text */
+	atlas-button[kind="text"] {
+		flex-direction: column;
+		background-color: unset;
+		padding: 0;
+		color: var(--text-color);
+		outline: 0;
+		border: none;
+	}
+
+	atlas-button:where([kind="text"]) {
+		margin-block: auto;
+	}
+
+	atlas-button[kind="text"]::part(button) {
+		padding: 0;
+	}
+
+	atlas-button[kind="text"]:hover {
+		color: var(--text-color-hover);
+		background-color: unset;
+	}
+
+	atlas-button[kind="text"]:active {
+		color: var(--text-color-active);
+	}
+
+	atlas-button[kind="text"][disabled]:not([disabled="false"]) {
+		background-color: unset;
+		color: var(--text-disabled-color);
+		border: none;
+	}
+
+	/* Primary */
+	atlas-button,
+	atlas-button[box-type="primary"] {
+		background-color: var(--atlas-button-primary-background-color);
+		color: var(--atlas-button-primary-color);
+		border: var(--default-border-size) solid var(--atlas-button-primary-background-color);
+	}
+
+	atlas-button[disabled]:not([disabled="false"]),
+	atlas-button[box-type="primary"][disabled]:not([disabled="false"]) {
+		background-color: var(--atlas-button-primary-disabled-background-color);
+		border-color: var(--atlas-button-primary-disabled-background-color);
+	}
+	atlas-button:hover,
+	atlas-button[box-type="primary"]:hover {
+		background-color: var(--atlas-button-hover-background-color);
+		border-color: var(--atlas-button-hover-background-color);
+	}
+
+	atlas-button:active,
+	atlas-button[box-type="primary"]:active {
+		background-color: var(--primary-active-background);
+		border-color: var(--primary-active-background);
+	}
+
+	/* Secondary */
+	atlas-button[box-type="secondary"] {
+		background-color: transparent;
+		border: var(--default-border-size) solid var(--secondary-border-color);
+		color: var(--secondary-color);
+	}
+
+	atlas-button[box-type="secondary"]:hover {
+		background-color: var(--secondary-hover-background-color);
+	}
+
+	atlas-button[box-type="secondary"]:active {
+		background-color: var(--box-secondary-active);
+	}
+
+	/* Tertiary */
+	atlas-button[box-type="tertiary"] {
+		background-color: transparent;
+		color: var(--tertiary-text-color);
+		border: var(--default-border-size) solid var(--tertiary-border-color);
+	}
+
+	atlas-button[box-type="tertiary"]:hover {
+		background-color: var(--tertiary-background-hover);
+	}
+	atlas-button[box-type="tertiary"]:active {
+		background-color: var(--tertiary-active);
+	}
+
+	/* Focus */
+	atlas-button::part(button):focus-visible,
+	atlas-button[box-type="primary"]::part(button):focus-visible,
+	atlas-button[box-type="secondary"]::part(button):focus-visible {
+		box-shadow: var(--box-focus-shadow);
+		border-radius: var(--default-border-radius);
+		outline: var(--default-focus-outline) solid var(--atlas-button-primary-background-color);
+	}
+
+	atlas-button[box-type="tertiary"]::part(button):focus-visible {
+		box-shadow: var(--box-focus-shadow-tertiary);
+		border-radius: var(--default-border-radius);
+		outline: var(--default-focus-outline) solid var(--tertiary-focus-outline);
+	}
+
+	atlas-button[kind="icon"]::part(button):focus-visible,
+	atlas-button[kind="text"]::part(button):focus-visible {
+		box-shadow: none;
+		border-radius: 0;
+		outline: 0;
+	}
+
+	/* Generic Button */
+	atlas-button[kind="generic"] {
+		border: none;
+		display: inline-block;
+		outline: none;
+		color: inherit;
+		max-width: inherit;
+		min-width: inherit;
+		line-height: normal;
+		background-color: inherit;
+	}
+
+	atlas-button[kind="generic"]::part(button) {
+		margin: 0;
+		padding: 0;
+	}
+
+	atlas-button::part(prefix),
+	atlas-button::part(suffix) {
+		line-height: 100%;
+	}
+}

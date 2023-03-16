@@ -1,0 +1,54 @@
+@layer atlas {
+	atlas-checkbox {
+		--custom-accent-color: #0b9ecd;
+		--custom-outline-color: #0e7799;
+		--box-width: 1.35em;
+		--gap: 0.5em;
+	}
+
+	atlas-checkbox {
+		display: flex;
+		align-items: center;
+		gap: var(--gap);
+	}
+
+	atlas-checkbox::part(input) {
+		cursor: pointer;
+		width: var(--box-width);
+		aspect-ratio: 1 / 1;
+
+		accent-color: var(--atlas-input-common-accent-color);
+		outline-color: var(--atlas-input-common-accent-color);
+		outline-offset: -1px;
+	}
+
+	atlas-checkbox::part(input):focus-visible {
+		box-shadow: 0 0 5px var(--atlas-input-common-accent-color);
+	}
+
+	atlas-checkbox::part(input):hover {
+		accent-color: var(--custom-accent-color);
+		outline-color: var(--custom-outline-color);
+	}
+
+	atlas-checkbox::part(input):active {
+		outline: none;
+		box-shadow: none;
+	}
+
+	atlas-checkbox::part(label) {
+		cursor: pointer;
+	}
+
+	atlas-checkbox::part(required) {
+		display: none;
+	}
+
+	atlas-checkbox[required]:not([required="false"])::part(required) {
+		display: inline;
+	}
+
+	atlas-checkbox::part(helper-text) {
+		display: none;
+	}
+}

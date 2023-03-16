@@ -1,0 +1,39 @@
+@layer atlas {
+	atlas-tile-board {
+		display: block;
+		--atlas-tile-board-border-radius: 0.75em;
+		--atlas-title-board-grid-gap: 1em;
+		--atlas-title-board-padding: 1em;
+		--atlas-tile-board-max-width: 1024px;
+		--atlas-tile-board-prefix-font-weight: 700;
+		--atlas-tile-board-prefix-gap: 1em;
+		--atlas-tile-board-margin-block-start: 1em;
+		--atlas-tile-board-padding-inline-start: 1em;
+	}
+
+	atlas-tile-board::part(prefix) {
+		display: flex;
+		margin-block-start: var(--atlas-tile-board-margin-block-start);
+		margin-inline: auto;
+
+		max-width: var(--atlas-tile-board-max-width);
+		padding-inline-start: var(--atlas-tile-board-padding-inline-start);
+
+		font-weight: var(--atlas-tile-board-prefix-font-weight);
+	}
+
+	atlas-tile-board::part(dashboard) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: min-content;
+
+		gap: var(--atlas-title-board-grid-gap);
+		padding: var(--atlas-title-board-padding);
+		border-radius: var(--atlas-tile-board-border-radius);
+
+		max-width: var(--atlas-tile-board-max-width);
+		margin: auto;
+
+		background-color: var(--atlas-color-primary-n25);
+	}
+}

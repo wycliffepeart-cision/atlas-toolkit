@@ -1,0 +1,38 @@
+:root {
+	--atlas-shadow-offset: 0px 2px;
+	--atlas-shadow-blur-hard: 2px;
+	--atlas-shadow-blur-soft: 10px;
+
+	/* 25 */
+	--atlas-shadow-color-25: rgba(0, 0, 0, 0.05);
+
+	--atlas-shadow-soft-25: var(--atlas-shadow-offset) var(--atlas-shadow-blur-soft)
+		var(--atlas-shadow-color-25);
+
+	--atlas-shadow-hard-25: var(--atlas-shadow-offset) var(--atlas-shadow-blur-hard)
+		var(--atlas-shadow-color-25);
+
+	--atlas-shadow-25: var(--atlas-shadow-hard-25), var(--atlas-shadow-soft-25);
+
+	/* 50 */
+	--atlas-shadow-color-50: rgba(0, 0, 0, 0.1);
+
+	--atlas-shadow-soft-50: var(--atlas-shadow-offset) var(--atlas-shadow-blur-soft)
+		var(--atlas-shadow-color-50);
+
+	--atlas-shadow-hard-50: var(--atlas-shadow-offset) var(--atlas-shadow-blur-hard)
+		var(--atlas-shadow-color-50);
+
+	--atlas-shadow-50: var(--atlas-shadow-hard-50), var(--atlas-shadow-soft-50);
+
+	/* 100 */
+	--atlas-shadow-color-100: rgba(0, 0, 0, 0.2);
+
+	--atlas-shadow-soft-100: var(--atlas-shadow-offset) var(--atlas-shadow-blur-soft)
+		var(--atlas-shadow-color-100);
+
+	--atlas-shadow-hard-100: var(--atlas-shadow-offset) var(--atlas-shadow-blur-hard)
+		var(--atlas-shadow-color-100);
+
+	--atlas-shadow-100: var(--atlas-shadow-hard-100), var(--atlas-shadow-soft-100);
+}

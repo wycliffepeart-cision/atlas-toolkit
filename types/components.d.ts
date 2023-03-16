@@ -16,12 +16,10 @@ declare global {
       'atlas-accordion-content': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
       'atlas-box': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & CSS.Properties<string | number>;
       'atlas-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        href?: string;
-        disabled?: boolean;
-        size?: 'small' | 'medium' | 'large';
-        'top-adornment'?: 'center' | 'left' | 'right';
-        'bottom-adornment'?: 'center' | 'left' | 'right';
-        variant?: 'outlined' | 'contained' | 'text';
+        kind: 'generic'
+      };
+      'atlas-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        name: 'chevronDownward'
       };
       'atlas-accordions': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
       'atlas-collapsable': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {

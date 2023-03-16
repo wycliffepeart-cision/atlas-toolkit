@@ -1,29 +1,33 @@
-import Template from './template.html';
-import { parseTemplate } from '../utils/html';
+import { Template } from '../decorators/template';
+import ButtonTemplate from './button.html';
 
+export const BUTTON_ATTRIBUTES = {
+  KIND: 'kind',
+  DISABLED: 'disabled',
+  BOX_TYPE: 'box-type',
+};
+
+@Template(ButtonTemplate)
 export class Button extends HTMLElement {
-  constructor() {
-    super();
-
-    this.attachShadow({ mode: 'open' });
+  static get observedAttributes() {
+    return Object.values(BUTTON_ATTRIBUTES);
   }
 
-  connectedCallback() {
-    let element: HTMLElement;
+  attributeChangedCallback(name, _oldValue, newValue) {
+    const { DISABLED } = BUTTON_ATTRIBUTES;
 
-    if (this.hasAttribute('href')) {
-      element = document.createElement('a');
-      (element as HTMLAnchorElement).href = this.getAttribute('href');
-    } else {
-      element = document.createElement('button');
+    if (name === DISABLED) {
+      const isDisabled = newValue !== null && newValue !== 'false';
+      this.shadowRoot.querySelector('button').toggleAttribute(DISABLED, isDisabled);
     }
+  }
 
-    element.setAttribute('part', 'button');
+  get disabled() {
+    const disabledAttr = this.getAttribute('disabled');
+    return disabledAttr !== null && disabledAttr !== 'false';
+  }
 
-    const content = parseTemplate(Template);
-
-    element.replaceChildren(content.cloneNode(true));
-
-    this.shadowRoot.replaceChildren(element);
+  set disabled(value) {
+    this.toggleAttribute('disabled', value);
   }
 }
