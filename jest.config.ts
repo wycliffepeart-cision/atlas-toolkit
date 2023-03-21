@@ -11,7 +11,7 @@ export default {
   //   },
   testEnvironment: 'jsdom',
   transform: {
-    '\\.ts$': ['rollup-jest', { configFile: path.resolve(__dirname, "rollup.config.mjs") }],
+    '\\.ts$': ['rollup-jest', { configFile: path.resolve(__dirname, 'rollup.config.mjs') }],
   },
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   testPathIgnorePatterns: ['dist'],

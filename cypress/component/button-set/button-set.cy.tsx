@@ -1,6 +1,6 @@
 import '../../../src/button-set';
-import '../../../theme/styles/button.css'
-import '../../../theme/styles/button-set.css'
+import '../../../theme/styles/button.css';
+import '../../../theme/styles/button-set.css';
 
 const Component = (props: any) => (
   <div style={{ padding: '1rem' }}>

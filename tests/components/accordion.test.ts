@@ -11,7 +11,6 @@ describe('Accordion Component', () => {
     // await customElements.whenDefined(ACCORDION_TAG);
     // const snackbarElement = document.createElement(ACCORDION_TAG);
     // document.body.appendChild(snackbarElement);
-
     // (expect(snackbarElement) as any).toBeInTheDocument();
   });
 
