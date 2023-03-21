@@ -4,7 +4,7 @@
 @import './tokens/palette.css' layer(atlas);
 @import './tokens/shadow.css' layer(atlas);
 
-/* the theme/scheme */
+/* the themes/scheme */
 @layer base {
   *,
   *::before,

@@ -29,7 +29,7 @@ export default {
 					dest: 'dist',
 				},
 				{
-					src: 'theme',
+					src: 'themes',
 					dest: 'dist',
 				},
 				{

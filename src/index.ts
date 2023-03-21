@@ -24,4 +24,3 @@ export * from './tile-board';
 export * from './tile-board-tile';
 export * from './workflow';
 export * from './workflow-step';
-export * from './themes';

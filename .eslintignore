@@ -4,6 +4,7 @@ dist
 loaders
 cypress
 coverage
+themes
 
 # Ignore files
 
