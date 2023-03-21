@@ -1,0 +1,13 @@
+<template>
+  <textarea id="Input" part="input"></textarea>
+
+  <label for="Input" part="label-wrapper">
+    <slot name="label" part="label"></slot>
+    <slot name="required" part="required">*</slot>
+  </label>
+
+  <slot name="helperText" part="helper-text"></slot>
+  <slot name="validationText" part="validation-text"></slot>
+
+  <slot part="content"></slot>
+</template>

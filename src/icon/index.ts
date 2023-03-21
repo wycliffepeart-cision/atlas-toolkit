@@ -1,6 +1,5 @@
 import { Icon } from './icon';
 import { iconMappings } from './mappings';
-import '../../theme/styles/icon.css';
 
 Icon.mappings = iconMappings;
 

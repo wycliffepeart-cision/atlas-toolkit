@@ -1,0 +1,12 @@
+<template>
+  <slot name="label" part="label"></slot>
+  <slot name="chips-label" part="chips-label"></slot>
+  <div part="chips-scroll-view">
+    <slot part="chips"></slot>
+  </div>
+  <slot name="controls" part="controls"></slot>
+  <slot name="input" part="input"></slot>
+  <div part="suggestion-scroll-view">
+    <slot name="suggestion" part="suggestion"></slot>
+  </div>
+</template>

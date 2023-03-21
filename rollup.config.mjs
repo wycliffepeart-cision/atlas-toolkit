@@ -1,3 +1,4 @@
+import * as path from 'path';
 import svg from 'rollup-plugin-svg';
 import copy from 'rollup-plugin-copy';
 import styles from "rollup-plugin-styles";
@@ -7,16 +8,16 @@ import multiInput from 'rollup-plugin-multi-input';
 import posthtml from 'rollup-plugin-posthtml-template';
 
 export default {
-	input: ['src/**/**/*.js', 'src/**/**/*.ts', 'src/**/**/*.html'],
+	input: ['src/**/**/*.ts', 'src/**/**/*.html'],
 	plugins: [
 		cleaner({
 			targets: ['./dist/'],
 		}),
 		svg(),
-		typescript({ tsconfig: './tsconfig.json' }),
 		multiInput.default({ relative: 'src/' }),
 		posthtml(),
 		styles(),
+		typescript({ tsconfig: './tsconfig.json' }),
 		copy({
 			targets: [
 				{
@@ -28,7 +29,7 @@ export default {
 					dest: 'dist',
 				},
 				{
-					src: 'theme',
+					src: 'themes',
 					dest: 'dist',
 				},
 				{

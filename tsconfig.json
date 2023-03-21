@@ -17,8 +17,8 @@
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["cypress", "node"]
+    "types": ["node", "jest", "cypress"]
   },
-  "include": ["types", "src", "tests", "stories", ".eslintrc.cjs"],
-  "exclude": ["node_modules", "tmp", "loaders", "dist"]
+  "include": ["types", "./jest-setup.ts", "src", "tests", "stories", ".eslintrc.cjs", "cypress/component"],
+  "exclude": ["node_modules", "tmp", "loaders", "dist", "themes"]
 }
