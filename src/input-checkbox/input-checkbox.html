@@ -1,0 +1,11 @@
+<template>
+	<input id="Input" type="checkbox" part="input" />
+
+	<label for="Input" part="label-wrapper">
+		<slot name="label" part="label"></slot>
+		<slot name="required" part="required">*</slot>
+	</label>
+
+	<slot name="helperText" part="helper-text"></slot>
+	<slot name="validationText" part="validation-text"></slot>
+</template>

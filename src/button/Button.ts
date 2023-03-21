@@ -1,5 +1,5 @@
-import { Template } from '../decorators/template';
 import ButtonTemplate from './button.html';
+import { Template } from '../decorators/template';
 
 export const BUTTON_ATTRIBUTES = {
   KIND: 'kind',

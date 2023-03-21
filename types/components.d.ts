@@ -16,9 +16,10 @@ declare global {
       'atlas-accordion-content': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
       'atlas-box': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & CSS.Properties<string | number>;
       'atlas-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        kind?: 'generic';
+        kind?: 'generic' | 'text';
         'box-type'?: 'secondary';
       };
+      'atlas-button-set': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
       'atlas-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
         name: 'chevronDownward';
       };

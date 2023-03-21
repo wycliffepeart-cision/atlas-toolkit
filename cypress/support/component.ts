@@ -1,4 +1,5 @@
 import '../../src/themes';
+import '../../theme/styles/index.css'
 
 // ***********************************************************
 // This example support/component.ts is processed and

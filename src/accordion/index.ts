@@ -1,4 +1,5 @@
 import { Accordion } from './accordion';
-import './accordion.css';
+
+console.log(Accordion);
 
 if (!customElements.get('atlas-accordion')) customElements.define('atlas-accordion', Accordion);
