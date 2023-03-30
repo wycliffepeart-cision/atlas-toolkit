@@ -52,5 +52,4 @@ describe('Tile Board', () => {
     );
     (expect(parentElement.innerHTML) as any).toMatchSnapshot('<div>I</div><div>II</div><div>III</div><div>IV</div>');
   });
-
 });

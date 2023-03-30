@@ -34,5 +34,4 @@ describe('Chip', () => {
     (expect(element) as any).toBeEmptyDOMElement();
     (expect(getShadowDomContent(element)) as any).toMatchSnapshot();
   });
-
 });

@@ -34,5 +34,4 @@ describe('MainNav', () => {
     (expect(element) as any).toBeEmptyDOMElement();
     (expect(getShadowDomContent(element)) as any).toMatchSnapshot(shadowContentSnapshot);
   });
-
 });

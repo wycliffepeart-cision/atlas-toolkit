@@ -165,6 +165,6 @@ describe('Avatar', () => {
 
     element.setAttribute('initials', 'XY');
 
-   ( expect(element.visible) as any).toEqual('initials');
+    (expect(element.visible) as any).toEqual('initials');
   });
 });

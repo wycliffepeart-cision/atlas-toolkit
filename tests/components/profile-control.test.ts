@@ -30,5 +30,4 @@ describe('Profile Control', () => {
     (expect(element) as any).toBeEmptyDOMElement();
     (expect(getShadowDomContent(element)) as any).toMatchSnapshot();
   });
-
 });

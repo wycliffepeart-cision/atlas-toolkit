@@ -25,5 +25,4 @@ describe('Dropdown', () => {
 
     (expect(getShadowDomContent(element)) as any).toMatchSnapshot();
   });
-	
 });

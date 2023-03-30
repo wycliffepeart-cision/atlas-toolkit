@@ -22,7 +22,7 @@ describe('Atlas Chip Group', () => {
   it('is correctly appended in the DOM', async () => {
     const chipGRoupElement = await setupElement();
 
-   ( expect(chipGRoupElement) as any).toBeInTheDocument();
+    (expect(chipGRoupElement) as any).toBeInTheDocument();
   });
 
   it('is capable of being selected', async () => {
@@ -39,5 +39,4 @@ describe('Atlas Chip Group', () => {
     (expect(chipGRoupElement) as any).toBeEmptyDOMElement();
     (expect(getShadowDomContent(chipGRoupElement)) as any).toMatchSnapshot();
   });
-
 });

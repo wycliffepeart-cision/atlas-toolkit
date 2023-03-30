@@ -11,7 +11,7 @@ afterEach(() => {
 
 describe('Input', () => {
   it('construts', async () => {
-		await customElements.whenDefined(INPUT_TEXT_TAG);
+    await customElements.whenDefined(INPUT_TEXT_TAG);
     const lement = document.createElement(INPUT_TEXT_TAG);
     document.body.appendChild(lement);
 
@@ -19,7 +19,7 @@ describe('Input', () => {
   });
 
   it('matches snapshot', async () => {
-		await customElements.whenDefined(INPUT_TEXT_TAG);
+    await customElements.whenDefined(INPUT_TEXT_TAG);
     const element = document.createElement(INPUT_TEXT_TAG);
     document.body.appendChild(element);
 
@@ -27,7 +27,7 @@ describe('Input', () => {
   });
 
   it('is matches snapshot when disabled', async () => {
-		await customElements.whenDefined(INPUT_TEXT_TAG);
+    await customElements.whenDefined(INPUT_TEXT_TAG);
     const element = document.createElement(INPUT_TEXT_TAG);
     document.body.appendChild(element);
 
@@ -37,7 +37,7 @@ describe('Input', () => {
   });
 
   it('is matches snapshot when disabled toggled on/off', async () => {
-		await customElements.whenDefined(INPUT_TEXT_TAG);
+    await customElements.whenDefined(INPUT_TEXT_TAG);
     const element = document.createElement(INPUT_TEXT_TAG);
     document.body.appendChild(element);
 
@@ -48,7 +48,7 @@ describe('Input', () => {
   });
 
   it('triggers onChange proxy event when updated', async () => {
-		await customElements.whenDefined(INPUT_TEXT_TAG);
+    await customElements.whenDefined(INPUT_TEXT_TAG);
     const element = document.createElement(INPUT_TEXT_TAG);
     document.body.appendChild(element);
 
@@ -77,20 +77,20 @@ describe('Input', () => {
   describe('Text JS API', () => {
     describe('.value', () => {
       it('supports .value getter', async () => {
-				await customElements.whenDefined(INPUT_TEXT_TAG);
+        await customElements.whenDefined(INPUT_TEXT_TAG);
         const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         (expect(inputElem.value) as any).toEqual('');
       });
 
       it('supports .value setter', async () => {
-				await customElements.whenDefined(INPUT_TEXT_TAG);
+        await customElements.whenDefined(INPUT_TEXT_TAG);
         const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         inputElem.value = MOCK_STRING;
         (expect(inputElem.value) as any).toEqual(MOCK_STRING);
       });
 
       it('supports .value from value attribute', async () => {
-				await customElements.whenDefined(INPUT_TEXT_TAG);
+        await customElements.whenDefined(INPUT_TEXT_TAG);
         const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         inputElem.setAttribute('value', MOCK_STRING);
         (expect(inputElem.value) as any).toEqual(MOCK_STRING);
@@ -99,27 +99,27 @@ describe('Input', () => {
 
     describe('.disabled', () => {
       it('getter (default)', async () => {
-				await customElements.whenDefined(INPUT_TEXT_TAG);
+        await customElements.whenDefined(INPUT_TEXT_TAG);
         const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         (expect(inputElem.disabled) as any).toEqual(false);
       });
 
       it('setter (identity)', async () => {
-				await customElements.whenDefined(INPUT_TEXT_TAG);
+        await customElements.whenDefined(INPUT_TEXT_TAG);
         const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         inputElem.disabled = true;
         (expect(inputElem.disabled) as any).toEqual(true);
       });
 
       it('from toggle attribute true', async () => {
-				await customElements.whenDefined(INPUT_TEXT_TAG);
+        await customElements.whenDefined(INPUT_TEXT_TAG);
         const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         inputElem.toggleAttribute('disabled', true);
         (expect(inputElem.disabled) as any).toEqual(true);
       });
 
       it('from non-toggle attribute false', async () => {
-				await customElements.whenDefined(INPUT_TEXT_TAG);
+        await customElements.whenDefined(INPUT_TEXT_TAG);
         const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         inputElem.setAttribute('disabled', 'false');
 
@@ -127,7 +127,7 @@ describe('Input', () => {
       });
 
       it('from non-toggle attribute', async () => {
-				await customElements.whenDefined(INPUT_TEXT_TAG);
+        await customElements.whenDefined(INPUT_TEXT_TAG);
         const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         inputElem.setAttribute('disabled', MOCK_STRING);
 
@@ -143,7 +143,7 @@ describe('Input', () => {
       });
 
       it('setter', () => {
-				const inputElem: any = document.createElement(INPUT_TEXT_TAG);
+        const inputElem: any = document.createElement(INPUT_TEXT_TAG);
 
         inputElem.valid = false;
         (expect(inputElem.valid) as any).toEqual(false);
@@ -156,12 +156,12 @@ describe('Input', () => {
 
     describe('.checkValidity', () => {
       it('verify validity', () => {
-				const inputElem: any = document.createElement(INPUT_TEXT_TAG);
+        const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         (expect(inputElem.checkValidity()) as any).toEqual(true);
       });
 
       it('Updates the custom atlas--invalid state', () => {
-				const inputElem: any = document.createElement(INPUT_TEXT_TAG);
+        const inputElem: any = document.createElement(INPUT_TEXT_TAG);
         inputElem.toggleAttribute('required', true);
         const innerInput = inputElem.shadowRoot.getElementById('Input');
 

@@ -25,8 +25,8 @@ describe('Input', () => {
       });
 
       it('from value attribute', async () => {
-				await customElements.whenDefined(INPUT_TEXTAREA_TAG);
-				const search: any = document.createElement(INPUT_TEXTAREA_TAG);
+        await customElements.whenDefined(INPUT_TEXTAREA_TAG);
+        const search: any = document.createElement(INPUT_TEXTAREA_TAG);
         search.setAttribute('value', 'SOME FAKE STRING');
 
         (expect(search.value) as any).toEqual('');
@@ -35,39 +35,39 @@ describe('Input', () => {
 
     describe('.disabled', () => {
       it('getter (default)', async () => {
-				await customElements.whenDefined(INPUT_TEXTAREA_TAG);
-				const search: any = document.createElement(INPUT_TEXTAREA_TAG);
+        await customElements.whenDefined(INPUT_TEXTAREA_TAG);
+        const search: any = document.createElement(INPUT_TEXTAREA_TAG);
 
         (expect(search.disabled) as any).toEqual(false);
       });
 
       it('setter (identity)', async () => {
-				await customElements.whenDefined(INPUT_TEXTAREA_TAG);
-				const search: any = document.createElement(INPUT_TEXTAREA_TAG);
+        await customElements.whenDefined(INPUT_TEXTAREA_TAG);
+        const search: any = document.createElement(INPUT_TEXTAREA_TAG);
 
         search.disabled = true;
         (expect(search.disabled) as any).toEqual(true);
       });
 
       it('from toggle attribute - true', async () => {
-				await customElements.whenDefined(INPUT_TEXTAREA_TAG);
-				const search: any = document.createElement(INPUT_TEXTAREA_TAG);
+        await customElements.whenDefined(INPUT_TEXTAREA_TAG);
+        const search: any = document.createElement(INPUT_TEXTAREA_TAG);
 
         search.toggleAttribute('disabled', true);
         (expect(search.disabled) as any).toEqual(true);
       });
 
       it('from non-toggle attribute - false', async () => {
-				await customElements.whenDefined(INPUT_TEXTAREA_TAG);
-				const search: any = document.createElement(INPUT_TEXTAREA_TAG);
+        await customElements.whenDefined(INPUT_TEXTAREA_TAG);
+        const search: any = document.createElement(INPUT_TEXTAREA_TAG);
 
         search.setAttribute('disabled', 'false');
         (expect(search.disabled) as any).toEqual(false);
       });
 
       it('from non-toggle attribute - string', async () => {
-				await customElements.whenDefined(INPUT_TEXTAREA_TAG);
-				const search: any = document.createElement(INPUT_TEXTAREA_TAG);
+        await customElements.whenDefined(INPUT_TEXTAREA_TAG);
+        const search: any = document.createElement(INPUT_TEXTAREA_TAG);
 
         search.setAttribute('disabled', 'SOME_FAKE_VALUE');
         (expect(search.disabled) as any).toEqual(true);

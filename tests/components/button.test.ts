@@ -66,5 +66,4 @@ describe('Atlas Button', () => {
     buttonElement.removeAttribute('disabled');
     (expect(buttonElement) as any).toBeEnabled();
   });
-
 });

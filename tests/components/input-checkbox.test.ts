@@ -51,7 +51,7 @@ describe('InputCheckbox component', () => {
   describe('JS-API', () => {
     describe('.checked', () => {
       it('returns false when default', () => {
-				const element: any = document.createElement(ELEMENT_TAG);
+        const element: any = document.createElement(ELEMENT_TAG);
         (expect(element.checked) as any).toBe(false);
       });
 

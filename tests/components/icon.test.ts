@@ -65,8 +65,8 @@ describe('icon', () => {
     const element = document.createElement(ELEMENT_TAG);
 
     element.setAttribute('name', 'analytics');
-		console.log(element.shadowRoot.innerHTML);
-		
+    console.log(element.shadowRoot.innerHTML);
+
     const iconElement = element.shadowRoot.querySelector('svg');
     const partAttribute = iconElement.getAttribute('part');
     const ariaAttribute = iconElement.getAttribute('aria-label');
