@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atlas Chip Group has the correct content when created 1`] = `
+<slot part="defaultGroup">
+</slot>
+<slot name="suffix"
+      part="suffix"
+>
+</slot>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed has the correct content when created: 
+<template>
+  <slot name="prefix"></slot>
+  <slot name="body"></slot>
+</template>
+ 1`] = `
+<slot name="prefix"
+      part="prefix"
+>
+</slot>
+<slot name="filter"
+      part="filter"
+>
+</slot>
+<slot name="body"
+      part="body"
+>
+</slot>
+`;

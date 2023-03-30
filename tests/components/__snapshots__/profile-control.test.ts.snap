@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Control has the correct content when created 1`] = `
+<slot name="image"
+      part="image"
+>
+</slot>
+<slot name="icon"
+      part="icon"
+>
+</slot>
+<slot name="name"
+      part="name"
+>
+</slot>
+<slot name="menu"
+      part="menu"
+>
+</slot>
+`;

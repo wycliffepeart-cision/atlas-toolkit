@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Set is matches snapshot 1`] = `
+<slot part="primary">
+</slot>
+<slot name="extended"
+      part="extended"
+>
+</slot>
+`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainNav has the correct content when created: 
+	<template>
+	</template>
+ 1`] = `
+<slot>
+</slot>
+`;

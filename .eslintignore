@@ -10,6 +10,7 @@ themes
 
 **/*.d.ts
 jest.config.cjs
+babel.config.cjs
 jest.setup.ts
 jest.config.ts
 tsconfig.json

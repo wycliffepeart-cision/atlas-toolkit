@@ -25,20 +25,6 @@ export class InputText extends HTMLElement {
     return Object.values(INPUT_TEXT_ATTRIBUTES);
   }
 
-  constructor() {
-    super();
-
-    const templateElement = InputText.template;
-
-    if (templateElement === undefined || templateElement === null) {
-      throw new Error('Template undefined.');
-    }
-
-    const { content } = templateElement;
-    const shadowRoot = this.attachShadow({ mode: 'open' });
-    shadowRoot.appendChild(content.cloneNode(true));
-  }
-
   attributeChangedCallback(name, _oldValue, newValue) {
     this.#attributePassthrought(name, newValue, [INPUT_TEXT_ATTRIBUTES.STATE]);
   }
