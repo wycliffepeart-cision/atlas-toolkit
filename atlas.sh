@@ -17,8 +17,9 @@ git add .github/
 git add dist/
 git add package.json
 git commit -m "package"
-git tag -a next-{{date +%s }} -m "next by wycliffepeart"
+git tag -a next-2 -m "next by wycliffepeart"
 git push origin next
 
 echo "Worktree cleanup"
 
+git worktree remove ./package -f
