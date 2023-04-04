@@ -1,6 +1,7 @@
 import * as path from 'path';
 import svg from 'rollup-plugin-svg';
 import copy from 'rollup-plugin-copy';
+import watch from "rollup-plugin-watch";
 import styles from "rollup-plugin-styles";
 import cleaner from 'rollup-plugin-cleaner';
 import typescript from '@rollup/plugin-typescript';
@@ -14,10 +15,11 @@ export default {
 			targets: ['./dist/'],
 		}),
 		svg(),
+		typescript({ tsconfig: './tsconfig.json' }),
 		multiInput.default({ relative: 'src/' }),
 		posthtml(),
 		styles(),
-		typescript({ tsconfig: './tsconfig.json' }),
+		watch({ dir: "themes" }),
 		copy({
 			targets: [
 				{

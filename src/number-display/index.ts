@@ -1,3 +1,3 @@
 import { NumberDisplay } from './number-display';
 
-if (!customElements.get('atlas-number-display')) customElements.define('atlas-number-display', NumberDisplay);
+if (!customElements.get('wh-number-display')) customElements.define('wh-number-display', NumberDisplay);

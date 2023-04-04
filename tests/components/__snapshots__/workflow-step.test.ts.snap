@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workflow Step is matches snapshot 1`] = `
+<slot name="previousControls"
+      part="previousControls"
+>
+</slot>
+<slot name="nextControls"
+      part="nextControls"
+>
+</slot>
+<slot name="title"
+      part="title"
+>
+</slot>
+<slot name="subTitle"
+      part="subTitle"
+>
+</slot>
+<slot name="stepper"
+      part="stepper"
+>
+</slot>
+<slot part="body">
+</slot>
+<slot name="controls"
+      part="controls"
+>
+</slot>
+`;
+
+exports[`Workflow Step to respect having attributes  1`] = `
+<slot name="previousControls"
+      part="previousControls"
+>
+</slot>
+<slot name="nextControls"
+      part="nextControls"
+>
+</slot>
+<slot name="title"
+      part="title"
+>
+</slot>
+<slot name="subTitle"
+      part="subTitle"
+>
+</slot>
+<slot name="stepper"
+      part="stepper"
+>
+</slot>
+<slot part="body">
+</slot>
+<slot name="controls"
+      part="controls"
+>
+</slot>
+`;

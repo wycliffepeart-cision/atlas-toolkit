@@ -1,4 +1,4 @@
-import abbreviateNumber from './abbreviate-number.js';
+import abbreviateNumber from './abbreviate-number';
 
 const BASE_10 = 10;
 const attrs = { SHORT: 'short', VALUE: 'value', DIGITS: 'float-digits', INT: 'int' };

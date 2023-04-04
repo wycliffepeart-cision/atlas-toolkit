@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input is matches snapshot when disabled 1`] = `
+<input id="Input"
+       type="text"
+       part="input"
+       disabled
+>
+<label for="Input"
+       part="label-wrapper"
+>
+  <slot name="label"
+        part="label"
+  >
+  </slot>
+  <slot name="required"
+        part="required"
+  >
+    *
+  </slot>
+</label>
+<slot name="prefix"
+      part="prefix"
+>
+</slot>
+<slot name="suffix"
+      part="suffix"
+>
+</slot>
+<slot name="helperText"
+      part="helper-text"
+>
+</slot>
+<slot name="validationText"
+      part="validation-text"
+>
+</slot>
+`;
+
+exports[`Input is matches snapshot when disabled toggled on/off 1`] = `
+<input id="Input"
+       type="text"
+       part="input"
+>
+<label for="Input"
+       part="label-wrapper"
+>
+  <slot name="label"
+        part="label"
+  >
+  </slot>
+  <slot name="required"
+        part="required"
+  >
+    *
+  </slot>
+</label>
+<slot name="prefix"
+      part="prefix"
+>
+</slot>
+<slot name="suffix"
+      part="suffix"
+>
+</slot>
+<slot name="helperText"
+      part="helper-text"
+>
+</slot>
+<slot name="validationText"
+      part="validation-text"
+>
+</slot>
+`;
+
+exports[`Input matches snapshot 1`] = `
+<input id="Input"
+       type="text"
+       part="input"
+>
+<label for="Input"
+       part="label-wrapper"
+>
+  <slot name="label"
+        part="label"
+  >
+  </slot>
+  <slot name="required"
+        part="required"
+  >
+    *
+  </slot>
+</label>
+<slot name="prefix"
+      part="prefix"
+>
+</slot>
+<slot name="suffix"
+      part="suffix"
+>
+</slot>
+<slot name="helperText"
+      part="helper-text"
+>
+</slot>
+<slot name="validationText"
+      part="validation-text"
+>
+</slot>
+`;

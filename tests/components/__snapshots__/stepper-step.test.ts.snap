@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stepper is matches snapshot 1`] = `
+<div part="before">
+</div>
+<div part="step">
+  <slot part="content">
+  </slot>
+  <atlas-icon name="checkmark"
+              part="check"
+  >
+  </atlas-icon>
+</div>
+<div part="after">
+</div>
+`;
