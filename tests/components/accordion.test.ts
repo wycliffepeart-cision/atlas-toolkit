@@ -10,7 +10,7 @@ describe('Accordion Component', () => {
     const snackbarElement = document.createElement(ACCORDION_TAG);
     document.body.appendChild(snackbarElement);
 
-    expect(snackbarElement).toBeInTheDocument();
+    (expect(snackbarElement) as any).toBeInTheDocument();
   });
 
   it('is capable of being selected', async () => {

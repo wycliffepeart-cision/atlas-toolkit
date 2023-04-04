@@ -1,63 +1,64 @@
 @layer atlas {
-  atlas-accordion {
-    --atlas-accordion-border-radius: 0.5rem;
-    --atlas-accordion-header-padding-block: 1.125rem;
-    --atlas-accordion-header-padding-inline: 1.25rem;
-    --atlas-accordion-title-font-size: 1.125rem;
-    --atlas-accordion-title-line-height: 1.5rem;
-    --atlas-accordion-body-padding-inline: 1.25rem;
-    --atlas-accordion-body-padding-block: 1.25rem;
+	atlas-accordion {
+		--atlas-accordion-border-radius: 0.5rem;
+		--atlas-accordion-header-padding-block: 1.125rem;
+		--atlas-accordion-header-padding-inline: 1.25rem;
+		--atlas-accordion-title-font-size: 1.125rem;
+		--atlas-accordion-title-line-height: 1.5rem;
+		--atlas-accordion-body-padding-inline: 1.25rem;
+		--atlas-accordion-body-padding-block: 1.25rem;
 
-    background: var(--atlas-color-primary-n50);
-    border-radius: var(--atlas-accordion-border-radius);
-    background-clip: border-box;
-  }
+		background: var(--atlas-color-primary-n50);
+		border-radius: var(--atlas-accordion-border-radius);
+		background-clip: border-box;
+		width: 100%;
+	}
 
-  atlas-accordion,
-  atlas-accordion::part(header) {
-    display: block;
-  }
+	atlas-accordion,
+	atlas-accordion::part(header) {
+		display: block;
+	}
 
-  atlas-accordion atlas-button[kind='generic']::part(label) {
-    font-size: var(--atlas-accordion-title-font-size);
-    line-height: var(--atlas-accordion-title-line-height);
-  }
+	atlas-accordion atlas-button[kind="generic"]::part(label) {
+		font-size: var(--atlas-accordion-title-font-size);
+		line-height: var(--atlas-accordion-title-line-height);
+	}
 
-  atlas-accordion atlas-button[kind='generic'] {
-    display: block;
-  }
+	atlas-accordion atlas-button[kind="generic"] {
+		display: block;
+	}
 
-  atlas-accordion > atlas-button[kind='generic']::part(button) {
-    width: 100%;
-    text-align: initial;
-    box-sizing: border-box;
-    justify-content: space-between;
-    border-radius: var(--atlas-accordion-border-radius);
-    padding-block: var(--atlas-accordion-header-padding-block);
-    padding-inline: var(--atlas-accordion-header-padding-inline);
-  }
+	atlas-accordion > atlas-button[kind="generic"]::part(button) {
+		width: 100%;
+		text-align: initial;
+		box-sizing: border-box;
+		justify-content: space-between;
+		border-radius: var(--atlas-accordion-border-radius);
+		padding-block: var(--atlas-accordion-header-padding-block);
+		padding-inline: var(--atlas-accordion-header-padding-inline);
+	}
 
-  atlas-accordion[expanded='false'] > atlas-button[kind='generic']:hover,
-  atlas-accordion:not([expanded]) > atlas-button[kind='generic']:hover {
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-    border-radius: var(--atlas-accordion-border-radius);
-  }
+	atlas-accordion[expanded="false"] > atlas-button[kind="generic"]:hover,
+	atlas-accordion:not([expanded]) > atlas-button[kind="generic"]:hover {
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+		border-radius: var(--atlas-accordion-border-radius);
+	}
 
-  atlas-accordion > atlas-button[kind='generic'] > atlas-icon {
-    font-size: 0.5rem;
-  }
+	atlas-accordion > atlas-button[kind="generic"] > atlas-icon {
+		font-size: 0.5rem;
+	}
 
-  atlas-accordion[expanded]:not([expanded='false']) > atlas-button[kind='generic'] > atlas-icon {
-    transform: rotate(180deg);
-  }
+	atlas-accordion[expanded]:not([expanded="false"]) > atlas-button[kind="generic"] > atlas-icon {
+		transform: rotate(180deg);
+	}
 
-  atlas-accordion::part(body) {
-    display: none;
-    padding-inline: var(--atlas-accordion-body-padding-inline);
-    padding-block: 0 var(--atlas-accordion-body-padding-block);
-  }
+	atlas-accordion::part(body) {
+		display: none;
+		padding-inline: var(--atlas-accordion-body-padding-inline);
+		padding-block: 0 var(--atlas-accordion-body-padding-block);
+	}
 
-  atlas-accordion[expanded]:not([expanded='false'])::part(body) {
-    display: block;
-  }
+	atlas-accordion[expanded]:not([expanded="false"])::part(body) {
+		display: block;
+	}
 }
