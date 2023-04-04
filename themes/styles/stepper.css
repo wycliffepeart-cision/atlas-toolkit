@@ -1,6 +1,0 @@
-@layer atlas {
-  atlas-stepper {
-    display: flex;
-    flex-wrap: nowrap;
-  }
-}
