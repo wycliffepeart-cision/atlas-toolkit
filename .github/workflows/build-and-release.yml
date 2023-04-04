@@ -1,0 +1,101 @@
+name: Build, push & release
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      from:
+        type: choice
+        options:
+          - atlas-raw-components
+          - atlas-styles
+          - raw-components & styles
+        description: the modified source that justifies the manual release
+        required: true
+      changes:
+        type: string
+        description: the changes that will be added to the new release (comma separated list of PR links)
+        required: true
+
+env:
+  TAG_NAME: r${{ github.run_number }}
+  DIST_BRANCH: dist
+  GH_USERNAME: ${{ github.repository_owner}}
+  CI_COMMIT_AUTHOR: Continuous Integration
+  EVERGREEN_TAG_NAME: next
+
+jobs:
+
+  verify-code-style:
+    uses: ./.github/workflows/verify-code-style.yml
+
+  build-and-generate-tag:
+    runs-on: [self-hosted, Linux, X64, gcp, small]
+    env:
+      CI_COMMIT_MESSAGE: Continuous Integration Build release
+
+    needs: [verify-code-style]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+      - uses: webfactory/ssh-agent@v0.7.0
+
+      - name: Generate Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Config Git
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ env.GH_USERNAME }}@users.noreply.github.com"
+
+      - name: Manage Worktree
+        run: |
+          git worktree add --no-checkout --detach ./package
+          cp package.json ./package
+          cp .github/ ./package -r
+          cp dist/ ./package -r
+
+      - name: Commit and push
+        run: |
+          cd package/
+          git switch -c ${{ env.DIST_BRANCH }}
+          git add .github/
+          git add dist/
+          git add package.json
+          git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git tag -a ${{ env.TAG_NAME }} -m "${{env.TAG_NAME}} by ${{ github.actor }} from ${{ github.head_ref }}"
+          git push origin ${{ env.TAG_NAME }}
+
+      - name: Worktree cleanup
+        run: git worktree remove ./package -f
+
+  release-tag:
+    runs-on: [self-hosted, Linux, X64, gcp, small]
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    needs: [build-and-generate-tag]
+    steps:
+      - name: Create Release
+        id: create-release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          release_name: Release for tag ${{ env.TAG_NAME }}
+          prerelease: true
+          body: ${{ needs.generate-changelog.outputs.changelog }}
+
+  generate-moving-tag:
+    uses: ./.github/workflows/generate-moving-tag.yml
+    needs: [build-and-generate-tag, release-tag]
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      tag_name: next
+      release_name: r${{ github.run_number }}
