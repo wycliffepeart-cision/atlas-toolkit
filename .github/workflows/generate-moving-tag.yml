@@ -29,7 +29,7 @@ on:
 
 jobs:
   generate-moving-tag:
-    runs-on: ${{ env.RUNNERS }}
+    runs-on: ubuntu-latest # TODO: [self-hosted, Linux, X64, gcp, small]
 
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
