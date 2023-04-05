@@ -47,6 +47,8 @@ jobs:
           echo "Inastall dependencies"
           npm install
           echo "npm run build:dist"
+          pwd
+          ls
           npm run build:dist
           echo "npm run build:types"
           npm run build:types
