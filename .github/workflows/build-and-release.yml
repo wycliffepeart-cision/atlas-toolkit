@@ -50,6 +50,11 @@ jobs:
           pwd
           ls
           npm -v
+          cd src
+          ls
+          cd src/button
+          ls
+          cd ../..
           npm run build:dist
           echo "npm run build:types"
           npm run build:types
