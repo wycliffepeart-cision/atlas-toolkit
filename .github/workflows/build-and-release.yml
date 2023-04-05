@@ -60,13 +60,16 @@ jobs:
         continue-on-error: true
         run: npm list
 
+      - name: Install dependencies
+        run: |
+          npm install
+
       - name: Generate Build
         run: |
-          echo "Inastall dependencies"
-          npm install
-          echo "npm run build:dist"
           npm run build:dist
-          echo "npm run build:types"
+
+      - name: Generate Types
+        run: |
           npm run build:types
 
       - name: Config Git
