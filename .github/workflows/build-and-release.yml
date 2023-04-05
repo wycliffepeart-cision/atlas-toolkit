@@ -44,8 +44,11 @@ jobs:
 
       - name: Generate Build
         run: |
+          echo "Inastall dependencies"
           npm install
+          echo "npm run build:dist"
           npm run build:dist
+          echo "npm run build:types"
           npm run build:types
 
       - name: Config Git
