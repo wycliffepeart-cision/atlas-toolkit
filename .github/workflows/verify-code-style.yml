@@ -1,0 +1,29 @@
+name: Verify code style
+on:
+  pull_request:
+  workflow_call:
+    secrets:
+        SSH_REPO_ACCESS:
+          required: false
+
+jobs:
+  verify-code-style:
+    runs-on: ubuntu-latest # TODO: [self-hosted, Linux, X64, gcp, small]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      # - uses: webfactory/ssh-agent@v0.7.0
+      #   with:
+      #     ssh-private-key: ${{ secrets.SSH_REPO_ACCESS }}
+
+      - name: Install dependencies
+        run: npm install
+
+      # - name: Verify code style - JS
+      # run: npm run lint:eslint --if-present
+
+      - name: Verify code style - HTML & CSS
+        run: npm run lint:prettier --if-present

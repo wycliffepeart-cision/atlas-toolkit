@@ -11,6 +11,7 @@
     background: var(--atlas-color-primary-n50);
     border-radius: var(--atlas-accordion-border-radius);
     background-clip: border-box;
+    width: 100%;
   }
 
   atlas-accordion,

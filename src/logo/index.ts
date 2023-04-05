@@ -1,3 +1,3 @@
 import { Logo } from './logo';
 
-if (!customElements.get('atlas-brand-logo')) customElements.define('atlas-brand-logo', Logo);
+if (!customElements.get('atlas-logo')) customElements.define('atlas-logo', Logo);
