@@ -52,7 +52,7 @@ jobs:
           npm -v
           cd src
           ls
-          cd src/button
+          cd button
           ls
           cd ../..
           npm run build:dist
