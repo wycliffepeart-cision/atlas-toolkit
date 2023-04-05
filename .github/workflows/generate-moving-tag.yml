@@ -1,0 +1,52 @@
+name: generate moving tag
+
+on:
+  workflow_call:
+    secrets:
+      GH_TOKEN:
+        required: true
+
+    inputs:
+      tag_name:
+        description: 'moving tag name (next, latest).'
+        type: string
+        required: true
+
+      release_name:
+        description: 'name of the release that will be tagged'
+        type: string
+        required: true
+
+      author:
+        description: 'name to be set as user.name during git config'
+        type: string
+        default: Continuous Integration
+
+      username:
+        description: 'username to be set as user.email during git config'
+        type: string
+        default: ${{ github.repository_owner}}
+
+jobs:
+  generate-moving-tag:
+    runs-on: ubuntu-latest # TODO: [self-hosted, Linux, X64, gcp, small]
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    steps:
+      - name: Config Git
+        run: |
+          git config --global user.name "${{ inputs.author }}"
+          git config --global user.email "${{ inputs.username }}@users.noreply.github.com"
+
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.release_name }}
+
+      - name: Generate ${{ inputs.tag_name }} Tag
+        run: |
+          # git fetch --all --tags
+          # git checkout ${{ inputs.release_name }}
+          git tag -a ${{ inputs.tag_name }} -m "${{ inputs.tag_name }} from ${{ inputs.release_name }}"
+          git push origin ${{ inputs.tag_name }} -f

@@ -16,8 +16,8 @@ git switch -c dist
 git add .
 git add package.json
 git commit -m "package"
-git tag -a next-7 -m "next by wycliffepeart"
-git push origin next-7
+git tag -a next-8 -m "next by wycliffepeart"
+git push origin next-8
 
 echo "Worktree cleanup"
 
