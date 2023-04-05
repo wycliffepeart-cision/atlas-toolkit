@@ -14,7 +14,7 @@ env:
 
 jobs:
   snyk-scan:
-    if: github.repository_owner == env.OWNER
+    if: github.repository_owner == ${{env.OWNER}}
     uses: Cision-DevOps/github-workflows-shared/.github/workflows/snyk-node-v1.yaml@main
     secrets:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
