@@ -59,7 +59,7 @@ jobs:
       - name: Manage Worktree
         run: |
           git worktree add --no-checkout --detach ./package
-          cp -r dist/ ./package
+          cp -R ./dist/* ./package
 
       - name: Commit and push
         run: |
