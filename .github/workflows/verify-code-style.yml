@@ -26,4 +26,4 @@ jobs:
       # run: npm run lint:eslint --if-present
 
       - name: Verify code style - HTML & CSS
-        run: npm run lint:prettier --if-present
+        run: npm run prettier:check --if-present

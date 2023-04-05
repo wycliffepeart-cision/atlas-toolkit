@@ -19,10 +19,10 @@ jobs:
   #   secrets:
   #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-  # verify-code-style:
-  #   uses: ./.github/workflows/verify-code-style.yml
-    # secrets:
-    #   SSH_REPO_ACCESS: ${{ secrets.SSH_REPO_ACCESS }}
+  verify-code-style:
+    uses: ./.github/workflows/verify-code-style.yml
+    secrets:
+      SSH_REPO_ACCESS: ${{ secrets.SSH_REPO_ACCESS }}
 
   build-and-generate-tag:
     runs-on: ubuntu-20.04 # TODO: [self-hosted, Linux, X64, gcp, small]
