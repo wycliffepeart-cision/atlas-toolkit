@@ -68,7 +68,7 @@ jobs:
           cd package/
           git switch -c ${{ env.DIST_BRANCH }}
           git add .github/
-          git add dist/
+          git add dist
           git add package.json
           git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
           git tag -a ${{ env.TAG_NAME }} -m "${{env.TAG_NAME}} by ${{ github.actor }} from ${{ github.head_ref }}"
