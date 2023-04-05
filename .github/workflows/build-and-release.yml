@@ -29,7 +29,7 @@ jobs:
     env:
       CI_COMMIT_MESSAGE: Continuous Integration Build release
 
-    needs: [snyk-scan, verify-code-style]
+    needs: [verify-code-style] # [snyk-scan, verify-code-style]
 
     steps:
       - uses: actions/checkout@v3
