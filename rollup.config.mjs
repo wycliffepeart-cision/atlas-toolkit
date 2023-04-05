@@ -15,7 +15,7 @@ export default {
 			targets: ['./dist/'],
 		}),
 		svg(),
-		typescript({ tsconfig: './tsconfig.json', exclude: 'cypress' }),
+		typescript({ tsconfig: './tsconfig.json', exclude: ['./cypress'] }),
 		multiInput.default({ relative: 'src/' }),
 		posthtml(),
 		styles(),
