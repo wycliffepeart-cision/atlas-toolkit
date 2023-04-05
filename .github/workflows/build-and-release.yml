@@ -45,7 +45,8 @@ jobs:
       - name: Generate Build
         run: |
           npm install
-          npm run build
+          npm run build:dist
+          npm run build:types
 
       - name: Config Git
         run: |
