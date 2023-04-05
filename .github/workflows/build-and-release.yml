@@ -37,7 +37,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v3
         with:
-          node-version: v19.7.0
+          node-version: v16.15.1 # v19.7.0
       # - uses: webfactory/ssh-agent@v0.7.0
       #   with:
       #     ssh-private-key: ${{ secrets.SSH_REPO_ACCESS }}
