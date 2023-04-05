@@ -11,6 +11,7 @@ env:
   CI_COMMIT_AUTHOR: Continuous Integration
   EVERGREEN_TAG_NAME: next
   OWNER: cision
+  RUNNERS: ubuntu-20.04 # [self-hosted, Linux, X64, gcp, small]
 
 jobs:
   # snyk-scan:
@@ -25,7 +26,7 @@ jobs:
       SSH_REPO_ACCESS: ${{ secrets.SSH_REPO_ACCESS }}
 
   build-and-generate-tag:
-    runs-on: ubuntu-20.04 # TODO: [self-hosted, Linux, X64, gcp, small]
+    runs-on: ${{ env.RUNNERS }}
     env:
       CI_COMMIT_MESSAGE: Continuous Integration Build release
 
@@ -95,7 +96,7 @@ jobs:
         run: git worktree remove -f ./package
 
   release-tag:
-    runs-on: ubuntu-latest # TODO: [self-hosted, Linux, X64, gcp, small]
+    runs-on: ${{ env.RUNNERS }}
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -113,6 +114,8 @@ jobs:
   generate-moving-tag:
     uses: ./.github/workflows/generate-moving-tag.yml
     needs: [build-and-generate-tag, release-tag]
+    env:
+      RUNNERS: ${{ env.RUNNERS }}
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
