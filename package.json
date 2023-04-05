@@ -5,7 +5,7 @@
     "test": "jest",
     "cy:open": "cypress open",
     "cy:run": "cypress run --component",
-    "build:dist": "./node_modules/.bin/rollup -c",
+    "build:dist": "npx rollup -c",
     "build:types": "npm run generate:types",
     "build:watch": "npx rollup -c --watch",
     "prettier:fix": "prettier --write \"./**/*.{html,ts,tsx,css,js,md,json}\"",
