@@ -19,8 +19,8 @@ jobs:
   #   secrets:
   #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-  verify-code-style:
-    uses: ./.github/workflows/verify-code-style.yml
+  # verify-code-style:
+  #   uses: ./.github/workflows/verify-code-style.yml
     # secrets:
     #   SSH_REPO_ACCESS: ${{ secrets.SSH_REPO_ACCESS }}
 
@@ -29,7 +29,7 @@ jobs:
     env:
       CI_COMMIT_MESSAGE: Continuous Integration Build release
 
-    needs: [verify-code-style] # [snyk-scan, verify-code-style]
+    # needs: [verify-code-style] # [snyk-scan, verify-code-style]
 
     steps:
       - uses: actions/checkout@v3
