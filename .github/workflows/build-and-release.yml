@@ -25,7 +25,7 @@ jobs:
     #   SSH_REPO_ACCESS: ${{ secrets.SSH_REPO_ACCESS }}
 
   build-and-generate-tag:
-    runs-on: ubuntu-latest # TODO: [self-hosted, Linux, X64, gcp, small]
+    runs-on: ubuntu-20.04 # TODO: [self-hosted, Linux, X64, gcp, small]
     env:
       CI_COMMIT_MESSAGE: Continuous Integration Build release
 
