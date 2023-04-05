@@ -38,23 +38,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: v19.7.0
-      # - uses: webfactory/ssh-agent@v0.7.0
-      #   with:
-      #     ssh-private-key: ${{ secrets.SSH_REPO_ACCESS }}
+      - uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_REPO_ACCESS }}
 
       - name: Generate Build
         run: |
           echo "Inastall dependencies"
           npm install
           echo "npm run build:dist"
-          pwd
-          ls
-          npm -v
-          cd src
-          ls
-          cd button
-          ls
-          cd ../..
           npm run build:dist
           echo "npm run build:types"
           npm run build:types
