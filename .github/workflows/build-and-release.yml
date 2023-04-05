@@ -77,9 +77,12 @@ jobs:
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "${{ env.GH_USERNAME }}@users.noreply.github.com"
 
-      - name: Manage Worktree
+      - name: Create Worktree
         run: |
           git worktree add --no-checkout --detach ./package
+          
+      - name: Copy Dist To Working Tree
+        run: |
           cp -R ./dist/* ./package
 
       - name: Commit and push
