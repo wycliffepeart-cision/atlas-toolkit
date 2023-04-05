@@ -61,15 +61,13 @@ jobs:
           git worktree add --no-checkout --detach ./package
           cp package.json ./package
           cp -R .github ./package
-          cp -R dist/ ./package
+          cp -R dist ./package
 
       - name: Commit and push
         run: |
           cd package/
           git switch -c ${{ env.DIST_BRANCH }}
-          git add .github/
-          git add dist
-          git add package.json
+          git add .
           git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
           git tag -a ${{ env.TAG_NAME }} -m "${{env.TAG_NAME}} by ${{ github.actor }} from ${{ github.head_ref }}"
           git push origin ${{ env.TAG_NAME }}
