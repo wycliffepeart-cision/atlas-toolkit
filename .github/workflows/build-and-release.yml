@@ -49,6 +49,7 @@ jobs:
           echo "npm run build:dist"
           pwd
           ls
+          npm -v
           npm run build:dist
           echo "npm run build:types"
           npm run build:types
