@@ -62,7 +62,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm 
+          npm i
           
       - name: Run tests
         run: npm run test --if-present
