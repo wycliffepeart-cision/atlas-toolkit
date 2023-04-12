@@ -13,8 +13,8 @@ describe('Logo Component', () => {
 `;
 
   it('is correctly appended in the DOM', async () => {
-    (expect(0) as any).toBe(0)
-  })
+    (expect(0) as any).toBe(0);
+  });
 
   // it('is correctly appended in the DOM', async () => {
   //   await customElements.whenDefined(LOGO_TAG);

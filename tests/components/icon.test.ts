@@ -49,7 +49,7 @@ describe('icon', () => {
     element.setAttribute('name', 'analytics');
     (expect(element) as any).toContainHTML(`<atlas-icon name="analytics"></atlas-icon>`);
     (expect(element) as any).toBeEmptyDOMElement();
-    
+
     // TODO: Fix issue
     // (expect(getShadowDomContent(element)) as any).toMatchInlineSnapshot(shadowContentSnapshot, `""`);
   });
