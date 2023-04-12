@@ -1,0 +1,1 @@
+{"version":3,"file":"input-textarea.d.ts","sourceRoot":"","sources":["../../src/input-textarea/input-textarea.ts"],"names":[],"mappings":"AAKA,qBACa,aAAc,SAAQ,WAAW;IAC5C,MAAM,KAAK,kBAAkB,aAE5B;IAED,wBAAwB,CAAC,IAAI,KAAA,EAAE,SAAS,KAAA,EAAE,QAAQ,KAAA;IAalD,IAAI,KAAK,WAGR;IAED,IAAI,KAAK,CAAC,GAAG,QAAA,EAGZ;IAED,IAAI,QAAQ,YAGX;IAED,IAAI,QAAQ,CAAC,KAAK,SAAA,EAEjB;CACF"}
