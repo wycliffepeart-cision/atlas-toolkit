@@ -12,6 +12,5 @@
     "experimentalDecorators": true
   },
   "include": ["types/extension.d.ts", "src"],
-  "exclude": ["node_modules", "tmp", "loaders", "stories", "dist",
-    "assets", "cypress"]
+  "exclude": ["node_modules", "tmp", "loaders", "stories", "dist", "assets", "cypress"]
 }
