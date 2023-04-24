@@ -8,7 +8,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "ESNext",
     "module": "esnext",
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
@@ -20,5 +20,5 @@
     "types": ["node", "jest", "cypress", "@testing-library/jest-dom", "@types/testing-library__jest-dom"]
   },
   "include": ["types", "./jest-setup.ts", "src", "tests", "stories", ".eslintrc.cjs", "cypress/component"],
-  "exclude": ["node_modules", "tmp", "loaders", "dist", "themes"]
+  "exclude": ["node_modules", "tmp", "loaders", "dist", "assets"]
 }

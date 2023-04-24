@@ -1,4 +1,4 @@
-import '../../src/main-nav-item';
+import '../../src/component/main-nav-item/main-nav-item';
 
 const NAV_ITEM_TAG = 'atlas-main-nav-item';
 const shadowContentSnapshot = `

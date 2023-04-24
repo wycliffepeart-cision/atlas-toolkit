@@ -1,4 +1,4 @@
-import '../../src/input-search';
+import '../../src/component/input-search/input-search';
 
 const INPUT_SEARCH_TAG = 'atlas-search';
 

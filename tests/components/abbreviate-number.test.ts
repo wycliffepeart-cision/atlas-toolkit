@@ -1,4 +1,4 @@
-import abbreviateNumber from '../../src/number-display/abbreviate-number';
+import abbreviateNumber from '../../src/component/number-display/abbreviate-number';
 
 const AVAILABLE_LANG = 'en';
 

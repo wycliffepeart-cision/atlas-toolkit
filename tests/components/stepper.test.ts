@@ -1,4 +1,4 @@
-import '../../src/stepper';
+import '../../src/component/stepper/stepper';
 
 const STEPPER_TAG = 'atlas-stepper';
 

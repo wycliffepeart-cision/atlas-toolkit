@@ -1,5 +1,5 @@
 import { fireEvent } from '@testing-library/dom';
-import '../../src/input-text';
+import '../../src/component/input-text/input-text';
 
 const INPUT_TEXT_TAG = 'atlas-input-text';
 const MOCK_STRING = 'TEST TEXT VALUE';

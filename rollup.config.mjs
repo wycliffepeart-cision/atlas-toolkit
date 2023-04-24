@@ -19,7 +19,7 @@ export default {
 		multiInput.default({ relative: 'src/' }),
 		posthtml(),
 		styles(),
-		watch({ dir: "themes" }),
+		watch({ dir: "assets" }),
 		copy({
 			targets: [
 				{
@@ -31,7 +31,7 @@ export default {
 					dest: 'dist',
 				},
 				{
-					src: 'themes',
+					src: 'assets',
 					dest: 'dist',
 				},
 				{

@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": "src",
-    "target": "es2015",
+    "target": "ESNext",
     "moduleResolution": "Node",
     "declaration": true,
     "allowJs": true,
@@ -12,5 +12,5 @@
     "experimentalDecorators": true
   },
   "include": ["types/extension.d.ts", "src"],
-  "exclude": ["node_modules", "tmp", "loaders", "stories", "dist", "themes", "cypress"]
+  "exclude": ["node_modules", "tmp", "loaders", "stories", "dist", "assets", "cypress"]
 }
