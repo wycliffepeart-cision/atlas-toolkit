@@ -49,3 +49,5 @@ export class Alert extends HTMLElement {
     this.dispatchEvent(new CustomEvent('close', { bubbles: true, composed: true }));
   };
 }
+
+if (!customElements.get('atlas-alert')) customElements.define('atlas-alert', Alert);

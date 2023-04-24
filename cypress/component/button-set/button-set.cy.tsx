@@ -1,4 +1,4 @@
-import '../../../src/component/button-set';
+import '../../../src/component/button-set/button-set';
 import '../../../assets/styles/button.css';
 import '../../../assets/styles/button-set.css';
 

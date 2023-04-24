@@ -1,4 +1,4 @@
-import '../../src/component/tile-board-tile';
+import '../../src/component/tile-board-tile/tile-board-tile';
 
 const TILE_BOARD_TILE_TAG = 'atlas-tile-board-tile';
 const getShadowDomContent = (element) => element.shadowRoot.innerHTML;

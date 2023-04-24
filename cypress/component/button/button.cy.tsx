@@ -1,4 +1,4 @@
-import '../../../src/component/button';
+import '../../../src/component/button/button';
 
 const Component = (props: any) => (
   <div style={{ padding: '1rem' }}>

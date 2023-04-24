@@ -1,4 +1,5 @@
 import { ShadowModeOpen } from '../../decorators/ShadowModeOpen';
+import {iconMappings} from "./mappings";
 
 export const ATTR_NAME = 'name';
 
@@ -40,3 +41,8 @@ export class Icon extends HTMLElement {
     }
   }
 }
+
+
+Icon.mappings = iconMappings;
+
+if (!customElements.get('atlas-icon')) customElements.define('atlas-icon', Icon);

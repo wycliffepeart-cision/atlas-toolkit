@@ -9,3 +9,5 @@ export class InputDropdown extends HTMLElement {
     return DROPDOWN_ATTRIBUTES;
   }
 }
+
+if (!customElements.get('atlas-dropdown')) customElements.define('atlas-dropdown', InputDropdown);

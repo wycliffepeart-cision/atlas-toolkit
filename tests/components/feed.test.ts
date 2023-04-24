@@ -1,4 +1,4 @@
-import '../../src/component/feed';
+import '../../src/component/feed/feed';
 
 const ELEMENT_TAG = 'atlas-feed';
 const getShadowDomContent = (element) => element.shadowRoot.innerHTML;

@@ -68,3 +68,5 @@ export class InputCheckbox extends HTMLElement {
     this.#inputElem.value = value;
   }
 }
+
+if (!customElements.get('atlas-checkbox')) customElements.define('atlas-checkbox', InputCheckbox);

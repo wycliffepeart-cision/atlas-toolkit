@@ -41,3 +41,5 @@ export class InputTextarea extends HTMLElement {
     this.toggleAttribute('disabled', value);
   }
 }
+
+if (!customElements.get('atlas-input-textarea')) customElements.define('atlas-input-textarea', InputTextarea);

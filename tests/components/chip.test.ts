@@ -1,4 +1,4 @@
-import '../../src/component/chip';
+import '../../src/component/chip/chip';
 
 const ELEMENT_TAG = 'atlas-chip';
 const getShadowDomContent = (element) => element.shadowRoot.innerHTML;

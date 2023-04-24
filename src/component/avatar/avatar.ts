@@ -57,3 +57,5 @@ export class Avatar extends HTMLElement {
     this.setAttribute(AVATAR_ATTRIBUTES.VISIBLE, DISPLAY[visibleAttr]);
   }
 }
+
+if (!customElements.get('atlas-avatar')) customElements.define('atlas-avatar', Avatar);

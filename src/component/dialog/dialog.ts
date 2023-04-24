@@ -49,3 +49,5 @@ export class Dialog extends HTMLElement {
     this.dispatchEvent(new CustomEvent('close', { bubbles: true, composed: true }));
   };
 }
+
+if (!customElements.get('atlas-dialog')) customElements.define('atlas-dialog', Dialog);

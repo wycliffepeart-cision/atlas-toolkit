@@ -1,4 +1,4 @@
-import '../../src/component/input-chip-group';
+import '../../src/component/input-chip-group/input-chip-group';
 
 const INPUT_CHIP_GROUP_TAG = 'atlas-input-chip-group';
 

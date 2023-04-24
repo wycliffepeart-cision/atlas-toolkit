@@ -1,4 +1,4 @@
-import '../../src/component/button-set';
+import '../../src/component/button-set/button-set';
 
 const BUTTON_SET_TAG = 'atlas-button-set';
 

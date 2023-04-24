@@ -73,3 +73,5 @@ export class InputSearch extends HTMLElement {
     return this.hasAttribute('disabled');
   }
 }
+
+if (!customElements.get('atlas-search')) customElements.define('atlas-search', InputSearch);

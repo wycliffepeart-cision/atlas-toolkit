@@ -1,4 +1,4 @@
-import '../../src/component/input-dropdown';
+import '../../src/component/input-dropdown/input-dropdown';
 
 const ELEMENT_TAG = 'atlas-dropdown';
 const getShadowDomContent = (element) => element.shadowRoot.innerHTML;

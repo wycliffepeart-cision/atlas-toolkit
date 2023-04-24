@@ -1,4 +1,4 @@
-import '../../src/component/accordion';
+import '../../src/component/accordion/accordion';
 
 const getShadowDomContent = (element) => element.shadowRoot.innerHTML;
 

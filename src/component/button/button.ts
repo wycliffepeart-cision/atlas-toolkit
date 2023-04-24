@@ -31,3 +31,6 @@ export class Button extends HTMLElement {
     this.toggleAttribute('disabled', value);
   }
 }
+
+if (!customElements.get('atlas-button')) customElements.define('atlas-button', Button);
+

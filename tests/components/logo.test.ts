@@ -1,4 +1,4 @@
-import '../../src/component/logo';
+import '../../src/component/logo/logo';
 import '@testing-library/jest-dom';
 
 describe('Logo Component', () => {

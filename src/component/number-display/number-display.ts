@@ -68,3 +68,5 @@ export class NumberDisplay extends HTMLElement {
     this.shadowRoot.textContent = valueIsNumber ? this.getTextContent(currentValue) : currentValue;
   }
 }
+
+if (!customElements.get('wh-number-display')) customElements.define('wh-number-display', NumberDisplay);

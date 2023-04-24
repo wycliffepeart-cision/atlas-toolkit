@@ -104,3 +104,5 @@ export class InputText extends HTMLElement {
     this.toggleAttribute(INPUT_STATES.ATLAS_INVALID, !value);
   }
 }
+
+if (!customElements.get('atlas-input-text')) customElements.define('atlas-input-text', InputText);

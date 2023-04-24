@@ -1,4 +1,4 @@
-import '../../src/component/input-textarea';
+import '../../src/component/input-textarea/input-textarea';
 
 const INPUT_TEXTAREA_TAG = 'atlas-input-textarea';
 

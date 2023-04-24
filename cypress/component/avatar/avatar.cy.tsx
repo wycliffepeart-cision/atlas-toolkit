@@ -1,4 +1,4 @@
-import '../../../src/component/avatar';
+import '../../../src/component/avatar/avatar';
 import Image from './placeholder-profile-pic.jpg';
 
 const Component = (props: any) => (

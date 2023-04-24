@@ -1,4 +1,4 @@
-import '../../src/component/snackbar';
+import '../../src/component/snackbar/snackbar';
 
 describe('Snackbar Component', () => {
   const SNACKBAR_TAG = 'atlas-snackbar';
