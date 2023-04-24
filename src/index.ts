@@ -1,4 +1,3 @@
-export * from './styles';
 export * from './component/accordion/accordion';
 export * from './component/alert/alert';
 export * from './component/application-frame/application-frame';
