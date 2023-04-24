@@ -5,4 +5,3 @@ import WorkflowTemplate from './workflow.html';
 export class Workflow extends HTMLElement {}
 
 if (!customElements.get('atlas-workflow')) customElements.define('atlas-workflow', Workflow);
-

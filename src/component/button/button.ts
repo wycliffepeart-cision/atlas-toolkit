@@ -33,4 +33,3 @@ export class Button extends HTMLElement {
 }
 
 if (!customElements.get('atlas-button')) customElements.define('atlas-button', Button);
-
