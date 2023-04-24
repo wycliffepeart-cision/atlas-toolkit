@@ -1,4 +1,4 @@
-import '../../src/avatar';
+import '../../src/component/avatar';
 
 const ELEMENT_TAG = 'atlas-avatar';
 const VISIBLE_ATTRIBUTE_NAME = 'visible';

@@ -1,4 +1,4 @@
-import '../../src/icon';
+import '../../src/component/icon';
 import analyticsIcon from '../assets/analytics.svg';
 
 const ELEMENT_TAG = 'atlas-icon';

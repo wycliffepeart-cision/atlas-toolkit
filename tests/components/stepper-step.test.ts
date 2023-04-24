@@ -1,4 +1,4 @@
-import '../../src/stepper-step';
+import '../../src/component/stepper-step';
 
 const STEPPER_STEP_TAG = 'atlas-stepper-step';
 const KNOWN_ATTRIBUTES = ['finished', 'current'];

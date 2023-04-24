@@ -1,4 +1,4 @@
-import '../../src/workflow';
+import '../../src/component/workflow';
 
 const WORKFLOW_TAG = 'atlas-workflow';
 

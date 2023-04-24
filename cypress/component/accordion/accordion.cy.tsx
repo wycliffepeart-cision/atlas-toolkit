@@ -1,6 +1,6 @@
-import '../../../src/icon';
-import '../../../src/button';
-import '../../../src/accordion';
+import '../../../src/component/icon';
+import '../../../src/component/button';
+import '../../../src/component/accordion';
 import { useState } from 'react';
 import './accordion.css';
 

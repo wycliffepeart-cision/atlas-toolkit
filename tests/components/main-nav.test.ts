@@ -1,4 +1,4 @@
-import '../../src/main-nav';
+import '../../src/component/main-nav';
 
 const MAIN_NAV_TAG = 'atlas-main-nav';
 const getShadowDomContent = (element) => element.shadowRoot.innerHTML;

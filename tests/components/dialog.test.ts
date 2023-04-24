@@ -1,4 +1,4 @@
-import '../../src/dialog';
+import '../../src/component/dialog';
 
 const ELEMENT_TAG = 'atlas-dialog';
 

@@ -1,5 +1,5 @@
 import { fireEvent } from '@testing-library/dom';
-import '../../src/button';
+import '../../src/component/button';
 
 const ATLAS_BUTTON_TAG = 'atlas-button';
 const getShadowDomContent = (element) => element.shadowRoot.innerHTML;

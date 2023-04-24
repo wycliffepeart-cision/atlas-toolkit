@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/dom';
 
-import { CHECKBOX_ATTRIBUTES } from '../../src/input-checkbox';
+import { CHECKBOX_ATTRIBUTES } from '../../src/component/input-checkbox';
 
 const ELEMENT_TAG = 'atlas-checkbox';
 

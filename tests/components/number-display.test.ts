@@ -1,4 +1,4 @@
-import '../../src/number-display';
+import '../../src/component/number-display';
 
 const NUMBER_DISPLAY_STRING = 'wh-number-display';
 const ATTR = {

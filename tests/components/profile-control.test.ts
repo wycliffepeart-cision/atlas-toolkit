@@ -1,4 +1,4 @@
-import '../../src/profile-control';
+import '../../src/component/profile-control';
 
 const TAG = 'atlas-profile-control';
 const getShadowDomContent = (element) => element.shadowRoot.innerHTML;
