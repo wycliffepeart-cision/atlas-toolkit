@@ -13,6 +13,7 @@ export default {
 	plugins: [
 		cleaner({
 			targets: ['./dist/*'],
+			silent: false,
 		}),
 		svg(),
 		typescript({ tsconfig: './tsconfig.json', exclude: ['./cypress'] }),
