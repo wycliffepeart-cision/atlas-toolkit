@@ -19,7 +19,7 @@
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node", "./types/extension.d.ts","jest", "cypress", "@testing-library/jest-dom", "@types/testing-library__jest-dom"]
+    "types": ["node", "./types/extension.d.ts", "jest", "cypress", "@testing-library/jest-dom", "@types/testing-library__jest-dom"]
   },
   "include": ["types", "./jest-setup.ts", "src", "tests", "stories", ".eslintrc.cjs", "cypress/component"],
   "exclude": ["node_modules", "tmp", "loaders", "dist", "assets"]
