@@ -1,16 +1,25 @@
-# Atlas Toolkit
+# Getting Started
 
-- component
-- styles
-- storybook (Documentation, Playground)
-- vitest (UNIT, Text Coverage)
-- cypress (Integration, Component)
+Atlas components installation.
 
-### Support
+## Installation
 
-- typescript
-- linting
-- prettier
-- husky
+```
+npm i github:wycliffepeart-cision/atlas-toolkit#next
+```
 
-npm cache clean –force
+Target different version by targeting release tags:
+
+> github:wycliffepeart-cision/atlas-toolkit#&lt;tag&gt;
+
+## Usage
+
+```
+import '@atlas/toolkit'
+```
+
+Individual components can be selected by specifying the component name:
+
+```
+import '@atlas/toolkit/components/<component-name>'
+```

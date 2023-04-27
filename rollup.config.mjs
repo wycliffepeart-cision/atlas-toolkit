@@ -18,7 +18,11 @@ export default {
 		typescript({ tsconfig: './tsconfig.json', exclude: ['./cypress'] }),
 		multiInput.default({ relative: 'src/' }),
 		posthtml(),
-		styles(),
+		styles({
+			mode: "extract",
+			// ... or with relative to output dir/output file's basedir (but not outside of it)
+			mode: ["extract", "awesome-bundle.css"],
+		}),
 		watch({ dir: "assets" }),
 		copy({
 			targets: [
