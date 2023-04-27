@@ -13,7 +13,7 @@ declare global {
       };
       'atlas-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
         kind?: 'generic' | 'text';
-        'box-type'?: 'secondary';
+        'box-type'?: 'secondary' | 'primary';
       };
       'atlas-button-set': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
       'atlas-chip': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;

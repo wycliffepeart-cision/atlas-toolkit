@@ -12,17 +12,13 @@ export default {
 	input: ['src/**/**/*.ts', 'src/**/**/*.html'],
 	plugins: [
 		cleaner({
-			targets: ['./dist/'],
+			targets: ['./dist/*'],
 		}),
 		svg(),
 		typescript({ tsconfig: './tsconfig.json', exclude: ['./cypress'] }),
 		multiInput.default({ relative: 'src/' }),
 		posthtml(),
-		styles({
-			mode: "extract",
-			// ... or with relative to output dir/output file's basedir (but not outside of it)
-			mode: ["extract", "awesome-bundle.css"],
-		}),
+		styles(),
 		watch({ dir: "assets" }),
 		copy({
 			targets: [
