@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`MainNavItem has the correct content when created: 
-	<template>
-		<slot></slot>
-	</template>
- 1`] = `undefined`;
