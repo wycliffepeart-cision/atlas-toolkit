@@ -1,8 +1,8 @@
 @import './tokens/layer-definitions.css';
 
-@import './tokens/type.css' layer(atlas);
-@import './tokens/palette.css' layer(atlas);
-@import './tokens/shadow.css' layer(atlas);
+@import './tokens/type.css';
+@import './tokens/palette.css';
+@import './tokens/shadow.css';
 
 /* the themes/scheme */
 @layer base {

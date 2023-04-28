@@ -14,7 +14,6 @@ babel.config.cjs
 jest.setup.ts
 jest.config.ts
 tsconfig.json
-tsconfig.rollup.json
 vitest.config.ts
 cypress.config.ts
 rollup.config.mjs

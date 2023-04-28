@@ -1,10 +1,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
+    "rootDir": "src",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
+    "declarationMap": true,
     "moduleResolution": "node",
+    "outDir": "dist",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -13,11 +15,11 @@
     "lib": ["ESNext", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node", "jest", "cypress", "@testing-library/jest-dom", "@types/testing-library__jest-dom"]
+    "types": ["node", "./types/extension", "jest", "cypress", "@testing-library/jest-dom", "@types/testing-library__jest-dom"]
   },
   "include": ["types", "./jest-setup.ts", "src", "tests", "stories", ".eslintrc.cjs", "cypress/component"],
   "exclude": ["node_modules", "tmp", "loaders", "dist", "assets"]

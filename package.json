@@ -5,13 +5,11 @@
     "test": "jest",
     "cy:open": "cypress open",
     "cy:run": "cypress run --component",
-    "build": "npm run build:dist & npm run build:types",
+    "build": "npm run build:dist",
     "build:dist": "npx rollup -c",
-    "build:types": "npm run generate:types",
     "build:watch": "npx rollup -c --watch",
     "prettier:fix": "prettier --write \"./**/*.{html,ts,tsx,css,js,md,json}\"",
-    "prettier:check": "prettier --check \"./**/*.{html,ts,tsx,css,js,md,json}\" --config ./.prettierrc",
-    "generate:types": "npx -p typescript tsc -p tsconfig.rollup.json"
+    "prettier:check": "prettier --check \"./**/*.{html,ts,tsx,css,js,md,json}\" --config ./.prettierrc"
   },
   "type": "module",
   "main": "index.js",

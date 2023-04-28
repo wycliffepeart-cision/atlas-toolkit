@@ -14,8 +14,16 @@ Target different version by targeting release tags:
 
 ## Usage
 
+Import toolkit
+
+```ts
+import '@atlas/toolkit';
 ```
-import '@atlas/toolkit'
+
+Import styles
+
+```ts
+import '@atlas/toolkit/assets/styles/index.css';
 ```
 
 Individual components can be selected by specifying the component name:
