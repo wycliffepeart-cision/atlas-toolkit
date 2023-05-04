@@ -1,89 +1,89 @@
-@import './tokens/layer-definitions.css';
+@import "./tokens/layer-definitions.css";
 
-@import './tokens/type.css';
-@import './tokens/palette.css';
-@import './tokens/shadow.css';
+@import "./tokens/type.css";
+@import "./tokens/palette.css";
+@import "./tokens/shadow.css";
 
-/* the themes/scheme */
+/* the theme/scheme */
 @layer base {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
 }
 
 @layer co {
-  html {
-    font-size: 100%;
-  }
-  body {
-    font-family: var(--font-family-proxima);
-    min-height: 100vh;
-    margin: 0;
-  }
+	html {
+		font-size: 100%;
+	}
+	body {
+		font-family: var(--font-family-proxima);
+		min-height: 100vh;
+		margin: 0;
+	}
 
-  :root {
-    --co-accent-color: var(--atlas-color-secondary-g500);
+	:root {
+		--co-accent-color: var(--atlas-color-secondary-g500);
 
-    --co-application-frame-background-color: var(--atlas-color-white);
-    --co-application-frame-color: var(--atlas-color-grey-80);
-    --co-application-frame-separator-color: var(--atlas-color-primary-n100);
-    --co-application-frame-separator-style: 2px solid var(--co-application-frame-separator-color);
+		--co-application-frame-background-color: var(--atlas-color-white);
+		--co-application-frame-color: var(--atlas-color-grey-80);
+		--co-application-frame-separator-color: var(--atlas-color-primary-n100);
+		--co-application-frame-separator-style: 2px solid var(--co-application-frame-separator-color);
 
-    --co-feed-background-color: var(--atlas-color-primary-n50);
-    --co-feed-color: var(--atlas-color-primary-n400);
+		--co-feed-background-color: var(--atlas-color-primary-n50);
+		--co-feed-color: var(--atlas-color-primary-n400);
 
-    --co-button-primary-color: var(--atlas-color-on-bg-white);
-    --co-button-primary-background-color: var(--atlas-color-primary-b500);
-    --co-button-hover-background-color: var(--atlas-color-primary-b400);
-    --co-button-primary-disabled-background-color: var(--atlas-color-primary-n100);
+		--co-button-primary-color: var(--atlas-color-on-bg-white);
+		--co-button-primary-background-color: var(--atlas-color-primary-b500);
+		--co-button-hover-background-color: var(--atlas-color-primary-b400);
+		--co-button-primary-disabled-background-color: var(--atlas-color-primary-n100);
 
-    --co-chip-category-color: var(--atlas-color-primary-n400);
-    --co-chip-category-focus-color: var(--atlas-color-on-bg-white);
-    --co-chip-category-hover-color: var(--atlas-color-on-bg-white);
+		--co-chip-category-color: var(--atlas-color-primary-n400);
+		--co-chip-category-focus-color: var(--atlas-color-on-bg-white);
+		--co-chip-category-hover-color: var(--atlas-color-on-bg-white);
 
-    --co-chip-outlets-border-color: var(--atlas-color-secondary-t300);
-    --co-chip-outlets-background-color: var(--atlas-color-on-bg-white);
-    --co-chip-outlets-color: var(--atlas-color-secondary-t500);
-    --co-chip-outlets-active-shadow-color: rgba(14, 125, 121, 0.3);
-    --co-chip-outlets-active-background-color: var(--atlas-color-chart-Xlightteal);
+		--co-chip-outlets-border-color: var(--atlas-color-secondary-t300);
+		--co-chip-outlets-background-color: var(--atlas-color-on-bg-white);
+		--co-chip-outlets-color: var(--atlas-color-secondary-t500);
+		--co-chip-outlets-active-shadow-color: rgba(14, 125, 121, 0.3);
+		--co-chip-outlets-active-background-color: var(--atlas-color-chart-Xlightteal);
 
-    --co-chip-hashtags-border-color: var(--atlas-color-secondary-p400);
-    --co-chip-hashtags-background-color: var(--atlas-color-chart-Xlightpurple);
+		--co-chip-hashtags-border-color: var(--atlas-color-secondary-p400);
+		--co-chip-hashtags-background-color: var(--atlas-color-chart-Xlightpurple);
 
-    --co-chip-topics-border-color: var(--atlas-color-chart-blue);
-    --co-chip-topics-color: var(--atlas-color-chart-darkblue);
-    --co-chip-topics-background-color: var(--atlas-color-on-bg-white);
-    --co-chip-topics-active-shadow-color: rgba(45, 94, 161, 0.3);
-    --co-chip-topics-active-background-color: var(--atlas-color-chart-Xlightblue);
+		--co-chip-topics-border-color: var(--atlas-color-chart-blue);
+		--co-chip-topics-color: var(--atlas-color-chart-darkblue);
+		--co-chip-topics-background-color: var(--atlas-color-on-bg-white);
+		--co-chip-topics-active-shadow-color: rgba(45, 94, 161, 0.3);
+		--co-chip-topics-active-background-color: var(--atlas-color-chart-Xlightblue);
 
-    --co-chip-type-filter-color: var(--atlas-color-primary-n400);
-    --co-chip-type-filter-background-color: var(--atlas-color-primary-n25);
-    --co-chip-type-filter-border-color: var(--atlas-color-primary-n200);
-    --co-chip-type-filter-hover-background-color: var(--atlas-color-primary-n50);
-    --co-chip-type-filter-active-background-color: var(--atlas-color-primary-n50);
-    --co-chip-type-filter-active-shadow-color: rgba(0, 0, 0, 0.3);
+		--co-chip-type-filter-color: var(--atlas-color-primary-n400);
+		--co-chip-type-filter-background-color: var(--atlas-color-primary-n25);
+		--co-chip-type-filter-border-color: var(--atlas-color-primary-n200);
+		--co-chip-type-filter-hover-background-color: var(--atlas-color-primary-n50);
+		--co-chip-type-filter-active-background-color: var(--atlas-color-primary-n50);
+		--co-chip-type-filter-active-shadow-color: rgba(0, 0, 0, 0.3);
 
-    /* Application layer menus and Dialogs  */
-    --co-shadow-application-layer: var(--atlas-shadow-100);
+		/* Application layer menus and Dialogs  */
+		--co-shadow-application-layer: var(--atlas-shadow-100);
 
-    /* Input Controls and Dropdown */
-    --co-shadow-controls-layer: var(--atlas-shadow-50);
+		/* Input Controls and Dropdown */
+		--co-shadow-controls-layer: var(--atlas-shadow-50);
 
-    /* Feed inner Dialog */
-    --co-shadow-feed-dialog-layer: var(--atlas-shadow-25);
+		/* Feed inner Dialog */
+		--co-shadow-feed-dialog-layer: var(--atlas-shadow-25);
 
-    /* Tile Board Tile */
-    --co-shadow-tile-board-tile-layer: var(--atlas-shadow-hard-100);
+		/* Tile Board Tile */
+		--co-shadow-tile-board-tile-layer: var(--atlas-shadow-hard-100);
 
-    /* --co-main-navigation-menu-icon-color--default: var(--atlas-color-primary-b400); */
-    /* --co-main-navigation-menu-icon-color--hover: var(--atlas-color-primary-o500); */
-  }
+		/* --co-main-navigation-menu-icon-color--default: var(--atlas-color-primary-b400); */
+		/* --co-main-navigation-menu-icon-color--hover: var(--atlas-color-primary-o500); */
+	}
 
-  /* @media (prefers-color-scheme: dark) {
+	/* @media (prefers-color-scheme: dark) {
 		:root {
 			--co-application-frame-background-color: var(--atlas-color-black);
 			--co-application-frame-color: var(--atlas-color-white);
@@ -95,74 +95,80 @@
 	} */
 }
 
-*[data-theme='themeCisionOne'] {
-  --co-accent-color: var(--atlas-color-secondary-g500);
+*[data-theme="themeCisionOne"] {
+	--co-accent-color: var(--atlas-color-secondary-g500);
 
-  --atlas-dialog-color-semantic-danger: var(--atlas-color-semantic-danger);
-  --atlas-dialog-color-semantic-danger-hover: #cf2f32;
+	--atlas-dialog-color-semantic-danger: var(--atlas-color-semantic-danger);
 
-  --atlas-application-frame-background-color: var(--co-application-frame-background-color);
-  --atlas-application-frame-color: var(--co-application-frame-color);
-  --atlas-application-frame-separator-style: var(--co-application-frame-separator-style);
+	--atlas-application-frame-background-color: var(--co-application-frame-background-color);
+	--atlas-application-frame-color: var(--co-application-frame-color);
+	--atlas-application-frame-separator-style: var(--co-application-frame-separator-style);
 
-  --atlas-feed-background-color: var(--co-feed-background-color);
-  --atlas-feed-color: var(--co-feed-color);
+	--atlas-feed-background-color: var(--co-feed-background-color);
+	--atlas-feed-color: var(--co-feed-color);
 
-  --atlas-brand-logo-separator-style: var(--co-application-frame-separator-style);
+	--atlas-brand-logo-separator-style: var(--co-application-frame-separator-style);
 
-  --atlas-tile-board-tile-shadow: var(--co-shadow-tile-board-tile-layer);
+	--atlas-tile-board-tile-shadow: var(--co-shadow-tile-board-tile-layer);
 
-  --atlas-button-primary-color: var(--co-button-primary-color);
-  --atlas-button-primary-background-color: var(--co-button-primary-background-color);
-  --atlas-button-hover-background-color: var(--co-button-hover-background-color);
-  --atlas-button-primary-disabled-background-color: var(--co-button-primary-disabled-background-color);
+	--atlas-button-primary-color: var(--co-button-primary-color);
+	--atlas-button-primary-background-color: var(--co-button-primary-background-color);
+	--atlas-button-hover-background-color: var(--co-button-hover-background-color);
+	--atlas-button-primary-disabled-background-color: var(
+		--co-button-primary-disabled-background-color
+	);
 
-  --atlas-chip-body-height: 1.88em;
-  --atlas-chip-category-color: var(--co-chip-category-color);
-  --atlas-chip-category-focus-color: var(--co-chip-category-focus-color);
+	--atlas-chip-body-height: 1.88em;
+	--atlas-chip-category-color: var(--co-chip-category-color);
+	--atlas-chip-category-focus-color: var(--co-chip-category-focus-color);
 
-  --atlas-chip-outlets-border-color: var(--co-chip-outlets-border-color);
-  --atlas-chip-outlets-background-color: var(--co-chip-outlets-background-color);
-  --atlas-chip-outlets-color: var(--co-chip-outlets-color);
-  --atlas-chip-outlets-hover-color: var(--co-chip-category-hover-color);
-  --atlas-chip-outlets-active-shadow-color: var(--co-chip-outlets-active-shadow-color);
-  --atlas-chip-outlets-active-background-color: var(--co-chip-outlets-active-background-color);
+	--atlas-chip-outlets-border-color: var(--co-chip-outlets-border-color);
+	--atlas-chip-outlets-background-color: var(--co-chip-outlets-background-color);
+	--atlas-chip-outlets-color: var(--co-chip-outlets-color);
+	--atlas-chip-outlets-hover-color: var(--co-chip-category-hover-color);
+	--atlas-chip-outlets-active-shadow-color: var(--co-chip-outlets-active-shadow-color);
+	--atlas-chip-outlets-active-background-color: var(--co-chip-outlets-active-background-color);
 
-  --atlas-chip-hashtags-border-color: var(--co-chip-hashtags-border-color);
-  --atlas-chip-hashtags-background-color: var(--co-chip-hashtags-background-color);
+	--atlas-chip-hashtags-border-color: var(--co-chip-hashtags-border-color);
+	--atlas-chip-hashtags-background-color: var(--co-chip-hashtags-background-color);
 
-  --atlas-chip-topics-border-color: var(--co-chip-topics-border-color);
-  --atlas-chip-topics-background-color: var(--co-chip-topics-background-color);
-  --atlas-chip-topics-color: var(--co-chip-topics-color);
-  --atlas-chip-topics-hover-color: var(--co-chip-category-hover-color);
-  --atlas-chip-topics-active-shadow-color: var(--co-chip-topics-active-shadow-color);
-  --atlas-chip-topics-active-background-color: var(--co-chip-topics-active-background-color);
+	--atlas-chip-topics-border-color: var(--co-chip-topics-border-color);
+	--atlas-chip-topics-background-color: var(--co-chip-topics-background-color);
+	--atlas-chip-topics-color: var(--co-chip-topics-color);
+	--atlas-chip-topics-hover-color: var(--co-chip-category-hover-color);
+	--atlas-chip-topics-active-shadow-color: var(--co-chip-topics-active-shadow-color);
+	--atlas-chip-topics-active-background-color: var(--co-chip-topics-active-background-color);
 
-  --atlas-chip-type-filter-color: var(--co-chip-type-filter-color);
-  --atlas-chip-type-filter-background-color: var(--co-chip-type-filter-background-color);
-  --atlas-chip-type-filter-border-color: var(--co-chip-type-filter-border-color);
-  --atlas-chip-type-filter-hover-background-color: var(--co-chip-type-filter-hover-background-color);
-  --atlas-chip-type-filter-active-background-color: var(--co-chip-type-filter-active-background-color);
-  --atlas-chip-type-filter-active-shadow-color: var(--co-chip-type-filter-active-shadow-color);
+	--atlas-chip-type-filter-color: var(--co-chip-type-filter-color);
+	--atlas-chip-type-filter-background-color: var(--co-chip-type-filter-background-color);
+	--atlas-chip-type-filter-border-color: var(--co-chip-type-filter-border-color);
+	--atlas-chip-type-filter-hover-background-color: var(
+		--co-chip-type-filter-hover-background-color
+	);
+	--atlas-chip-type-filter-active-background-color: var(
+		--co-chip-type-filter-active-background-color
+	);
+	--atlas-chip-type-filter-active-shadow-color: var(--co-chip-type-filter-active-shadow-color);
 
-  /* Common Input */
-  --atlas-input-common-border-color: var(--atlas-color-primary-n200);
-  --atlas-input-common-border-size: 1px;
-  --atlas-input-common-border: var(--atlas-input-common-border-size) solid var(--atlas-input-common-border-color);
-  --atlas-input-common-border-radius: 0.25em;
+	/* Common Input */
+	--atlas-input-common-border-color: var(--atlas-color-primary-n200);
+	--atlas-input-common-border-size: 1px;
+	--atlas-input-common-border: var(--atlas-input-common-border-size) solid
+		var(--atlas-input-common-border-color);
+	--atlas-input-common-border-radius: 0.25em;
 
-  --atlas-input-common-label-color: var(--atlas-color-primary-n400);
-  --atlas-input-common-label-font-size: 0.75em;
-  --atlas-input-common-label-block-spacing: 1em;
+	--atlas-input-common-label-color: var(--atlas-color-primary-n400);
+	--atlas-input-common-label-font-size: 0.75em;
+	--atlas-input-common-label-block-spacing: 1em;
 
-  --atlas-input-common-background-color: var(--atlas-color-white);
-  --atlas-input-common-box-shadow: var(--co-shadow-controls-layer);
+	--atlas-input-common-background-color: var(--atlas-color-white);
+	--atlas-input-common-box-shadow: var(--co-shadow-controls-layer);
 
-  --atlas-input-common-accent-color: var(--atlas-color-primary-b500);
+	--atlas-input-common-accent-color: var(--atlas-color-primary-b500);
 
-  --atlas-dialog-border-radius: 0.625rem;
+	--atlas-dialog-border-radius: 0.625rem;
 }
 
 atlas-brand-logo {
-  border-inline-end: var(--atlas-brand-logo-separator-style);
+	border-inline-end: var(--atlas-brand-logo-separator-style);
 }

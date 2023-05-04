@@ -1,156 +1,156 @@
 @layer atlas {
-  atlas-input-text {
-    --border-color: var(--atlas-color-primary-n100);
-    --background-color: var(--atlas-input-common-background-color);
-    --disabled-background-color: var(--atlas-color-primary-n50);
-    --invalid-background-color: var(--atlas-color-semantic-danger-light);
-    --invalid-border-color: var(--atlas-color-semantic-danger);
-    --text-color: var(--atlas-color-primary-n400);
-    --label-color: var(--atlas-color-primary-n300);
+	atlas-input-text {
+		--border-color: var(--atlas-color-primary-n100);
+		--background-color: var(--atlas-input-common-background-color);
+		--disabled-background-color: var(--atlas-color-primary-n50);
+		--invalid-background-color: var(--atlas-color-semantic-danger-light);
+		--invalid-border-color: var(--atlas-color-semantic-danger);
+		--text-color: var(--atlas-color-primary-n400);
+		--label-color: var(--atlas-color-primary-n300);
 
-    --common-block-margin: 0.5em;
-    --common-padding: 1em;
-    --common-padding-inline: 3em;
-    --input-padding-block-start: 1.7em;
-    --input-padding-block-end: 0.7em;
-    --label-padding-block-start: 0.6em;
-    --affix-padding: 1.6em;
-    --default-font-size: 1em;
-    --smaller-font-size: 0.75em;
-    --label-gap: 0.3em;
+		--common-block-margin: 0.5em;
+		--common-padding: 1em;
+		--common-padding-inline: 3em;
+		--input-padding-block-start: 1.7em;
+		--input-padding-block-end: 0.7em;
+		--label-padding-block-start: 0.6em;
+		--affix-padding: 1.6em;
+		--default-font-size: 1em;
+		--smaller-font-size: 0.75em;
+		--label-gap: 0.3em;
 
-    --moz-label-padding-block: 0.2em;
-  }
+		--moz-label-padding-block: 0.2em;
+	}
 
-  atlas-input-text {
-    accent-color: var(--atlas-input-common-accent-color);
-    color: var(--text-color);
-    display: grid;
-    grid-template-areas: 'Prefix Label Suffix' 'Subtext Subtext Subtext';
-    grid-template-columns: min-content 1fr min-content min-content;
-    grid-template-rows: min-content min-content;
-    margin-block: var(--common-block-margin);
-  }
+	atlas-input-text {
+		accent-color: var(--atlas-input-common-accent-color);
+		color: var(--text-color);
+		display: grid;
+		grid-template-areas: "Prefix Label Suffix" "Subtext Subtext Subtext";
+		grid-template-columns: min-content 1fr min-content min-content;
+		grid-template-rows: min-content min-content;
+		margin-block: var(--common-block-margin);
+	}
 
-  atlas-input-text::part(input) {
-    background-color: var(--background-color);
-    border-color: var(--border-color);
-    border-radius: var(--atlas-input-common-border-radius);
-    border: var(--atlas-input-common-border);
-    color: var(--text-color);
-    font-size: var(--default-font-size);
-    grid-row: 1;
-    grid-column: 1 / span 4;
-    padding-block: var(--common-padding);
-    padding-inline: var(--common-padding-inline);
-  }
+	atlas-input-text::part(input) {
+		background-color: var(--background-color);
+		border-color: var(--border-color);
+		border-radius: var(--atlas-input-common-border-radius);
+		border: var(--atlas-input-common-border);
+		color: var(--text-color);
+		font-size: var(--default-font-size);
+		grid-row: 1;
+		grid-column: 1 / span 4;
+		padding-block: var(--common-padding);
+		padding-inline: var(--common-padding-inline);
+	}
 
-  atlas-input-text[disabled]:not([disabled='false'])::part(input) {
-    --border-color: var(--disabled-background-color);
-    --background-color: var(--disabled-background-color);
+	atlas-input-text[disabled]:not([disabled="false"])::part(input) {
+		--border-color: var(--disabled-background-color);
+		--background-color: var(--disabled-background-color);
 
-    pointer-events: none;
-    cursor: auto;
-  }
+		pointer-events: none;
+		cursor: auto;
+	}
 
-  atlas-input-text::part(input):focus {
-    box-shadow: var(--atlas-input-common-box-shadow);
-    outline: none;
-  }
+	atlas-input-text::part(input):focus {
+		box-shadow: var(--atlas-input-common-box-shadow);
+		outline: none;
+	}
 
-  atlas-input-text::part(label-wrapper) {
-    grid-area: Label;
+	atlas-input-text::part(label-wrapper) {
+		grid-area: Label;
 
-    position: absolute;
-    isolation: isolate;
+		position: absolute;
+		isolation: isolate;
 
-    color: var(--label-color);
-    display: flex;
-    gap: var(--label-gap);
+		color: var(--label-color);
+		display: flex;
+		gap: var(--label-gap);
 
-    padding-inline: var(--common-padding-inline);
-    padding-block-start: var(--moz-label-padding-block);
-  }
+		padding-inline: var(--common-padding-inline);
+		padding-block-start: var(--moz-label-padding-block);
+	}
 
-  atlas-input-text::part(label) {
-    font-size: var(--smaller-font-size);
-  }
+	atlas-input-text::part(label) {
+		font-size: var(--smaller-font-size);
+	}
 
-  atlas-input-text[required]:not([required='false'])::part(required) {
-    display: inline;
-  }
+	atlas-input-text[required]:not([required="false"])::part(required) {
+		display: inline;
+	}
 
-  atlas-input-text::part(required) {
-    display: none;
-    vertical-align: super;
-    font-size: smaller;
-  }
+	atlas-input-text::part(required) {
+		display: none;
+		vertical-align: super;
+		font-size: smaller;
+	}
 
-  atlas-input-text::part(prefix),
-  atlas-input-text::part(suffix) {
-    font-size: var(--smaller-font-size);
-    align-content: center;
-    display: flex;
-    flex-wrap: wrap;
-  }
+	atlas-input-text::part(prefix),
+	atlas-input-text::part(suffix) {
+		font-size: var(--smaller-font-size);
+		align-content: center;
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-  atlas-input-text::part(prefix) {
-    grid-area: Prefix;
-    padding-inline-start: var(--affix-padding);
-  }
+	atlas-input-text::part(prefix) {
+		grid-area: Prefix;
+		padding-inline-start: var(--affix-padding);
+	}
 
-  atlas-input-text::part(suffix) {
-    grid-area: Suffix;
-    padding-inline-end: var(--affix-padding);
-  }
+	atlas-input-text::part(suffix) {
+		grid-area: Suffix;
+		padding-inline-end: var(--affix-padding);
+	}
 
-  atlas-input-text::part(helper-text) {
-    grid-area: Subtext;
+	atlas-input-text::part(helper-text) {
+		grid-area: Subtext;
 
-    display: none;
-    font-size: var(--smaller-font-size);
-  }
+		display: none;
+		font-size: var(--smaller-font-size);
+	}
 
-  atlas-input-text::part(validation-text) {
-    grid-area: Subtext;
+	atlas-input-text::part(validation-text) {
+		grid-area: Subtext;
 
-    color: var(--invalid-border-color);
-    display: none;
-    font-size: var(--smaller-font-size);
-  }
+		color: var(--invalid-border-color);
+		display: none;
+		font-size: var(--smaller-font-size);
+	}
 
-  /* atlas--invalid CUSTOM STATE */
-  atlas-input-text[atlas--invalid]::part(input) {
-    --border-color: var(--invalid-border-color);
-    --background-color: var(--invalid-background-color);
-  }
+	/* atlas--invalid CUSTOM STATE */
+	atlas-input-text[atlas--invalid]::part(input) {
+		--border-color: var(--invalid-border-color);
+		--background-color: var(--invalid-background-color);
+	}
 
-  atlas-input-text:not([atlas--invalid])::part(helper-text) {
-    display: block;
-    margin-block-start: var(--common-block-margin);
-  }
+	atlas-input-text:not([atlas--invalid])::part(helper-text) {
+		display: block;
+		margin-block-start: var(--common-block-margin);
+	}
 
-  atlas-input-text[atlas--invalid]::part(validation-text) {
-    display: block;
-    margin-block-start: var(--common-block-margin);
-  }
+	atlas-input-text[atlas--invalid]::part(validation-text) {
+		display: block;
+		margin-block-start: var(--common-block-margin);
+	}
 
-  /* EXPERIMENTAL USE OF :has() */
-  atlas-input-text:not(:has([slot='prefix']))::part(input),
-  atlas-input-text:not(:has([slot='prefix']))::part(label-wrapper) {
-    padding-inline-start: var(--common-padding);
-  }
+	/* EXPERIMENTAL USE OF :has() */
+	atlas-input-text:not(:has([slot="prefix"]))::part(input),
+	atlas-input-text:not(:has([slot="prefix"]))::part(label-wrapper) {
+		padding-inline-start: var(--common-padding);
+	}
 
-  atlas-input-text:not(:has([slot='suffix']))::part(input) {
-    padding-inline-end: var(--common-padding);
-  }
+	atlas-input-text:not(:has([slot="suffix"]))::part(input) {
+		padding-inline-end: var(--common-padding);
+	}
 
-  atlas-input-text:has([slot='label'])::part(input) {
-    padding-block-start: var(--input-padding-block-start);
-    padding-block-end: var(--input-padding-block-end);
-  }
+	atlas-input-text:has([slot="label"])::part(input) {
+		padding-block-start: var(--input-padding-block-start);
+		padding-block-end: var(--input-padding-block-end);
+	}
 
-  atlas-input-text:has([slot='label'])::part(label-wrapper) {
-    padding-block-start: var(--label-padding-block-start);
-  }
+	atlas-input-text:has([slot="label"])::part(label-wrapper) {
+		padding-block-start: var(--label-padding-block-start);
+	}
 }

@@ -1,24 +1,24 @@
 @font-face {
-  font-family: 'ProximaNova';
-  src: url('../fonts/proxima/proximanova-regular.otf') format('opentype');
+	font-family: "ProximaNova";
+	src: url("../fonts/proxima/proximanova-regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'ProximaNova-Bold';
-  src: url('../fonts/proxima/proximanova-bold.otf') format('opentype');
+	font-family: "ProximaNova-Bold";
+	src: url("../fonts/proxima/proximanova-bold.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'ProximaNova-Semibold';
-  src: url('../fonts/proxima/proximanova-semibold.otf') format('opentype');
+	font-family: "ProximaNova-Semibold";
+	src: url("../fonts/proxima/proximanova-semibold.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'ProximaNova-Light';
-  src: url('../fonts/proxima/proximanova-light.otf') format('opentype');
+	font-family: "ProximaNova-Light";
+	src: url("../fonts/proxima/proximanova-light.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'IBMPlexSerif-Bold';
-  src: url('../fonts/ibm-plex-serif/IBMPlexSerif-Bold.otf') format('opentype');
+	font-family: "IBMPlexSerif-Bold";
+	src: url("../fonts/ibm-plex-serif/IBMPlexSerif-Bold.otf") format("opentype");
 }

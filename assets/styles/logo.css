@@ -1,52 +1,52 @@
 @layer atlas {
-  atlas-logo {
-    --margin-inline-value: 0.5em;
-    --text-font-size: 0.6em;
-    --text-line-height: 2em;
-    --text-separation-distance: 0.75em;
-    --beta-logo-separator: 1em;
+	atlas-logo {
+		--margin-inline-value: 0.5em;
+		--text-font-size: 0.6em;
+		--text-line-height: 2em;
+		--text-separation-distance: 0.75em;
+		--beta-logo-separator: 1em;
 
-    width: inherit;
-    height: inherit;
+		width: inherit;
+		height: inherit;
 
-    margin-inline: var(--margin-inline-value);
-    display: block;
-  }
+		margin-inline: var(--margin-inline-value);
+		display: block;
+	}
 
-  atlas-logo::part(graphic-fullsize),
-  atlas-logo::part(graphic) {
-    display: none;
-  }
+	atlas-logo::part(graphic-fullsize),
+	atlas-logo::part(graphic) {
+		display: none;
+	}
 
-  atlas-application-frame[focus-mode] > atlas-logo::part(graphic) {
-    display: none;
-  }
+	atlas-application-frame[focus-mode] > atlas-logo::part(graphic) {
+		display: none;
+	}
 
-  atlas-application-frame[focus-mode] atlas-logo::part(graphic-fullsize) {
-    display: block;
-  }
+	atlas-application-frame[focus-mode] atlas-logo::part(graphic-fullsize) {
+		display: block;
+	}
 
-  atlas-logo::part(graphic) {
-    display: flex;
-    justify-content: center;
-  }
+	atlas-logo::part(graphic) {
+		display: flex;
+		justify-content: center;
+	}
 
-  atlas-logo::part(text) {
-    text-transform: uppercase;
-    text-align: center;
-    display: block;
-    font-size: var(--text-font-size);
-    line-height: var(--text-line-height);
-    margin-block-start: var(--text-separation-distance);
-  }
+	atlas-logo::part(text) {
+		text-transform: uppercase;
+		text-align: center;
+		display: block;
+		font-size: var(--text-font-size);
+		line-height: var(--text-line-height);
+		margin-block-start: var(--text-separation-distance);
+	}
 
-  atlas-logo::part(beta) {
-    display: none;
-  }
+	atlas-logo::part(beta) {
+		display: none;
+	}
 
-  atlas-logo[beta]:not([beta='false'])::part(beta) {
-    display: block;
-    margin-block-start: var(--beta-logo-separator);
-    margin-inline: auto;
-  }
+	atlas-logo[beta]:not([beta="false"])::part(beta) {
+		display: block;
+		margin-block-start: var(--beta-logo-separator);
+		margin-inline: auto;
+	}
 }

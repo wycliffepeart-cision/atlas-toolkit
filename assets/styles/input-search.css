@@ -1,110 +1,107 @@
 @layer atlas {
-  atlas-search {
-    --border-color: var(--atlas-color-primary-n100);
+	atlas-search {
+		--border-color: var(--atlas-color-primary-n100);
 
-    --disabled-search-text-color: var(--atlas-color-primary-n400);
-    --disabled-background-color: var(--atlas-color-primary-n50);
+		--disabled-search-text-color: var(--atlas-color-primary-n400);
+		--disabled-background-color: var(--atlas-color-primary-n50);
 
-    --border-radius: 0.25em;
-    --border: 1px solid var(--atlas-color-primary-n200);
-    --search-text-color: var(--atlas-color-primary-n400);
+		--border-radius: 0.25em;
+		--border: 1px solid var(--atlas-color-primary-n200);
+		--search-text-color: var(--atlas-color-primary-n400);
 
-    --search-text-font-weight: 400;
-    --search-text-font-size: 1em;
+		--search-text-font-weight: 400;
+		--search-text-font-size: 1em;
 
-    --overall-flow-space: 0.5em;
-    --inner-space: 0.8em;
+		--inner-space: 0.8em;
 
-    --affix-color: var(--atlas-color-primary-n100);
-    --affix-font-size: 0.75em;
-    --affix-inline-margin: 1.25em;
-    --affix-affordance: 3em;
-  }
+		--affix-color: var(--atlas-color-primary-n100);
+		--affix-font-size: 0.75em;
+		--affix-inline-margin: 1.25em;
+		--affix-affordance: 3em;
+	}
 
-  atlas-search {
-    display: grid;
+	atlas-search {
+		display: grid;
 
-    grid-template-columns: min-content 1fr min-content;
-    grid-template-areas:
-      'P I S'
-      'M M M';
+		grid-template-columns: min-content 1fr min-content;
+		grid-template-areas:
+			"P I S"
+			"M M M";
+	}
 
-    margin-block: var(--overall-flow-space);
-  }
+	atlas-search::part(label) {
+		display: none;
+	}
 
-  atlas-search::part(label) {
-    display: none;
-  }
+	atlas-search::part(menu) {
+		grid-area: M;
+	}
 
-  atlas-search::part(menu) {
-    grid-area: M;
-  }
+	atlas-search:not([show-menu])::part(menu),
+	atlas-search[show-menu="false"]::part(menu) {
+		display: none;
+	}
 
-  atlas-search:not([show-menu])::part(menu),
-  atlas-search[show-menu='false']::part(menu) {
-    display: none;
-  }
+	atlas-search::part(prefix) {
+		display: inline-block;
+		grid-area: P;
 
-  atlas-search::part(prefix) {
-    display: inline-block;
-    grid-area: P;
+		align-self: center;
+		font-size: var(--affix-font-size);
 
-    align-self: center;
-    font-size: var(--affix-font-size);
+		color: var(--affix-color);
 
-    color: var(--affix-color);
+		margin-inline-start: var(--affix-inline-margin);
+	}
 
-    margin-inline-start: var(--affix-inline-margin);
-  }
+	atlas-search::part(suffix) {
+		display: inline-block;
+		grid-area: S;
 
-  atlas-search::part(suffix) {
-    display: inline-block;
-    grid-area: S;
+		align-self: center;
+		font-size: var(--affix-font-size);
 
-    align-self: center;
-    font-size: var(--affix-font-size);
+		color: var(--affix-color);
 
-    color: var(--affix-color);
+		margin-inline-end: var(--affix-inline-margin);
+	}
 
-    margin-inline-end: var(--affix-inline-margin);
-  }
+	atlas-search::part(input) {
+		display: inline-block;
 
-  atlas-search::part(input) {
-    display: inline-block;
+		grid-row: 1;
+		grid-column: 1 / span 3;
 
-    grid-row: 1;
-    grid-column: 1 / span 3;
+		width: auto;
+		margin: 0;
+		padding-block: 0;
 
-    width: auto;
-    margin: 0;
-    padding-block: 0;
+		font-weight: var(--search-text-font-weight);
+		font-size: var(--search-text-font-size);
 
-    font-weight: var(--search-text-font-weight);
-    font-size: var(--search-text-font-size);
+		color: var(--search-text-color);
+		background-color: var(--atlas-input-common-background-color);
+		border: var(--border);
+		border-radius: var(--border-radius);
 
-    color: var(--search-text-color);
-    background-color: var(--atlas-input-common-background-color);
-    border: var(--border);
-    border-radius: var(--border-radius);
+		padding-block: var(--inner-space);
+		padding-inline: var(--affix-affordance);
+	}
 
-    padding-block: var(--inner-space);
-    padding-inline: var(--affix-affordance);
-  }
+	atlas-search[disabled]:not([disabled="false"])::part(input) {
+		background-color: var(--disabled-background-color);
+		border-color: var(--disabled-background-color);
+		color: var(--disabled-search-text-color);
+		pointer-events: none;
+		cursor: auto;
+	}
 
-  atlas-search[disabled]:not([disabled='false'])::part(input) {
-    background-color: var(--disabled-background-color);
-    border-color: var(--disabled-background-color);
-    color: var(--disabled-search-text-color);
-    pointer-events: none;
-    cursor: auto;
-  }
+	atlas-search[disabled]:not([disabled="false"])::part(suffix) {
+		display: none;
+	}
 
-  atlas-search[disabled]:not([disabled='false'])::part(suffix) {
-    display: none;
-  }
-
-  atlas-search:focus-within::part(input) {
-    box-shadow: var(--atlas-input-common-box-shadow);
-    outline: none;
-  }
+	atlas-search:focus-within::part(input) {
+		box-shadow: var(--atlas-input-common-box-shadow);
+		outline: none;
+	}
 }

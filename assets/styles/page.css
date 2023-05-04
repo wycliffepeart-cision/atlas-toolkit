@@ -1,0 +1,64 @@
+@layer atlas {
+	atlas-page {
+		--page-width: 1024px;
+
+		--page-bg-color: var(--atlas-color-white);
+		--page-color: var(--atlas-color-primary-n400);
+		--page-boarder-radius: 0.5em;
+		--page-min-height: 4em;
+
+		--page-container-padding-block-end: 1em;
+
+		--page-title-color: var(--atlas-color-primary-n400);
+		--page-title-padding-block: 1em 0.5em;
+
+		--page-content-inline-padding: 2em;
+		--page-content-block-padding: 2em 2em;
+	}
+
+	atlas-page {
+		display: block;
+		margin-inline: auto;
+
+		max-width: var(--page-width);
+	}
+
+	atlas-page::part(title) {
+		display: block;
+
+		font-family: var(--atlas-type-display-medium-bold-font-family);
+		font-size: var(--atlas-type-display-medium-bold-font-size);
+		font-weight: bolder;
+
+		padding-block: var(--page-title-padding-block);
+		padding-inline: 0;
+
+		color: var(--page-title-color);
+	}
+
+	atlas-page::part(page-container) {
+		display: block;
+		overflow: hidden;
+
+		background-color: var(--page-bg-color);
+		color: var(--page-color);
+		padding: 0;
+		margin: 0;
+
+		padding-block-end: var(--page-container-padding-block-end);
+
+		border-radius: var(--page-boarder-radius);
+		box-shadow: var(--atlas-shadow-hard-100);
+	}
+
+	atlas-page::part(prefix) {
+	}
+
+	atlas-page::part(content) {
+		display: block;
+		padding-inline: var(--page-content-inline-padding);
+		padding-block: var(--page-content-block-padding);
+
+		min-height: var(--page-min-height);
+	}
+}

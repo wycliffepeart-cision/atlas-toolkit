@@ -1,68 +1,68 @@
 @layer atlas {
-  atlas-workflow-step {
-    --step-gap: 2em;
+	atlas-workflow-step {
+		--step-gap: 2em;
 
-    --step-title-font-size: 3em;
-    --step-sub-title-font-size: 1em;
-    --step-sub-title-max-width: 40ch;
-    --step-title-font-weight: 700;
+		--step-title-font-size: 3em;
+		--step-sub-title-font-size: 1em;
+		--step-sub-title-max-width: 40ch;
+		--step-title-font-weight: 700;
 
-    --step-hero-title-font-color: var(--atlas-color-primary-b400);
-    --step-hero-sub-title-font-size: 1.5em;
-    --step-here-sub-title-font-weight: 400;
+		--step-hero-title-font-color: var(--atlas-color-primary-b400);
+		--step-hero-sub-title-font-size: 1.5em;
+		--step-here-sub-title-font-weight: 400;
 
-    --step-general-margin-inline: 1em;
-  }
+		--step-general-margin-inline: 1em;
+	}
 
-  atlas-workflow-step {
-    min-height: 100%;
-    width: 100%;
+	atlas-workflow-step {
+		min-height: 100%;
+		width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--step-gap);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--step-gap);
 
-    padding-block-start: var(--step-gap);
-  }
+		padding-block-start: var(--step-gap);
+	}
 
-  atlas-workflow-step:where(:not([active]), [active='false']) {
-    display: none;
-  }
+	atlas-workflow-step:where(:not([active]), [active="false"]) {
+		display: none;
+	}
 
-  atlas-workflow-step::part(title) {
-    display: block;
+	atlas-workflow-step::part(title) {
+		display: block;
 
-    font-size: var(--step-title-font-size);
-    font-weight: var(--step-title-font-weight);
+		font-size: var(--step-title-font-size);
+		font-weight: var(--step-title-font-weight);
 
-    margin-inline: var(--step-general-margin-inline);
-  }
+		margin-inline: var(--step-general-margin-inline);
+	}
 
-  atlas-workflow-step::part(subTitle) {
-    font-size: var(--step-sub-title-font-size);
-    margin-inline: var(--step-general-margin-inline);
-  }
+	atlas-workflow-step::part(subTitle) {
+		font-size: var(--step-sub-title-font-size);
+		margin-inline: var(--step-general-margin-inline);
+	}
 
-  atlas-workflow-step[hide-stepper]:not([hide-stepper='false'])::part(stepper) {
-    display: none;
-    justify-content: center;
-  }
+	atlas-workflow-step[hide-stepper]:not([hide-stepper="false"])::part(stepper) {
+		display: none;
+		justify-content: center;
+	}
 
-  atlas-workflow-step[hero]:not([hero='false']) {
-    background-image: var(--epic-hero-url, unset);
-    background-size: cover;
-  }
+	atlas-workflow-step[hero]:not([hero="false"]) {
+		background-image: var(--epic-hero-url, unset);
+		background-size: cover;
+	}
 
-  atlas-workflow-step[hero]:not([hero='false'])::part(title) {
-    color: var(--step-hero-title-font-color);
-  }
+	atlas-workflow-step[hero]:not([hero="false"])::part(title) {
+		color: var(--step-hero-title-font-color);
+	}
 
-  atlas-workflow-step[hero]:not([hero='false'])::part(subTitle) {
-    font-size: var(--step-hero-sub-title-font-size);
-    font-weight: var(--step-hero-sub-title-font-weight);
-    text-align: center;
+	atlas-workflow-step[hero]:not([hero="false"])::part(subTitle) {
+		font-size: var(--step-hero-sub-title-font-size);
+		font-weight: var(--step-hero-sub-title-font-weight);
+		text-align: center;
 
-    max-width: var(--step-sub-title-max-width);
-  }
+		max-width: var(--step-sub-title-max-width);
+	}
 }
