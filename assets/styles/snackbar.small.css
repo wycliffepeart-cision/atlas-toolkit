@@ -1,29 +1,29 @@
 @layer atlas {
-	@container snackbar-box (max-width: 350px) {
-		atlas-snackbar {
-			--snackbar-small-spacing: 0.5em;
-			--snackbar-suffix-margin-left: var(--snackbar-small-spacing);
-			--snackbar-prefix-right-margin: var(--snackbar-small-spacing);
-		}
+  @container snackbar-box (max-width: 350px) {
+    atlas-snackbar {
+      --snackbar-small-spacing: 0.5em;
+      --snackbar-suffix-margin-left: var(--snackbar-small-spacing);
+      --snackbar-prefix-right-margin: var(--snackbar-small-spacing);
+    }
 
-		atlas-snackbar::part(sub-title) {
-			overflow: hidden;
-			white-space: nowrap;
-		}
+    atlas-snackbar::part(sub-title) {
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
-		atlas-snackbar > [slot="sub-title"] {
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-	}
+    atlas-snackbar > [slot='sub-title'] {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 
-	@container snackbar-box (max-width: 300px) {
-		atlas-snackbar {
-			padding: var(--snackbar-small-spacing);
-		}
+  @container snackbar-box (max-width: 300px) {
+    atlas-snackbar {
+      padding: var(--snackbar-small-spacing);
+    }
 
-		atlas-snackbar::part(prefix) {
-			display: none;
-		}
-	}
+    atlas-snackbar::part(prefix) {
+      display: none;
+    }
+  }
 }

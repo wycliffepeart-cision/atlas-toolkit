@@ -1,130 +1,130 @@
 @layer atlas {
-	atlas-alert {
-		--alert-dialog-color: var(--atlas-color-primary-n400);
-		--alert-dialog-width: 37em;
-		--alert-dialog-height: 14em;
-		--alert-dialog-padding-block: 2.5em 1.5em;
-		--alert-dialog-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px 2px 10px rgba(0, 0, 0, 0.2);
+  atlas-alert {
+    --alert-dialog-color: var(--atlas-color-primary-n400);
+    --alert-dialog-width: 37em;
+    --alert-dialog-height: 14em;
+    --alert-dialog-padding-block: 2.5em 1.5em;
+    --alert-dialog-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px 2px 10px rgba(0, 0, 0, 0.2);
 
-		--alert-icon-size: 1.22em;
+    --alert-icon-size: 1.22em;
 
-		--alert-header-margin-inline-start: 0.6em;
-		--alert-header-font-size: 1.5em;
-		--alert-header-font-weight: 600;
+    --alert-header-margin-inline-start: 0.6em;
+    --alert-header-font-size: 1.5em;
+    --alert-header-font-weight: 600;
 
-		--alert-body-padding-inline: 5.5em;
-		--alert-body-font-size: 1em;
-		--alert-body-line-height: 1.4em;
-		--alert-body-font-weight: 400;
+    --alert-body-padding-inline: 5.5em;
+    --alert-body-font-size: 1em;
+    --alert-body-line-height: 1.4em;
+    --alert-body-font-weight: 400;
 
-		--icon-color: inherit;
-		--button-background-color: inherit;
-		--button-background-color-hover: inherit;
+    --icon-color: inherit;
+    --button-background-color: inherit;
+    --button-background-color-hover: inherit;
 
-		display: none;
-		height: 100vh;
-		align-items: center;
-	}
+    display: none;
+    height: 100vh;
+    align-items: center;
+  }
 
-	atlas-alert[open]:not([open="false"]) {
-		display: flex;
-	}
+  atlas-alert[open]:not([open='false']) {
+    display: flex;
+  }
 
-	atlas-alert::part(dialog) {
-		display: grid;
-		grid-template-rows: 1fr 1fr 2fr;
-		grid-template-columns: 4.5em auto;
-		grid-template-areas:
-			"icon header"
-			"body body"
-			"footer footer";
+  atlas-alert::part(dialog) {
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-columns: 4.5em auto;
+    grid-template-areas:
+      'icon header'
+      'body body'
+      'footer footer';
 
-		max-width: var(--alert-dialog-width);
-		max-height: var(--alert-dialog-height);
+    max-width: var(--alert-dialog-width);
+    max-height: var(--alert-dialog-height);
 
-		border: none;
-		border-radius: var(--atlas-dialog-border-radius);
+    border: none;
+    border-radius: var(--atlas-dialog-border-radius);
 
-		padding-inline: 0;
-		padding-block: var(--alert-dialog-padding-block);
+    padding-inline: 0;
+    padding-block: var(--alert-dialog-padding-block);
 
-		color: var(--alert-dialog-color);
+    color: var(--alert-dialog-color);
 
-		box-shadow: var(--alert-dialog-box-shadow);
-	}
+    box-shadow: var(--alert-dialog-box-shadow);
+  }
 
-	atlas-alert::part(icon),
-	atlas-alert::part(header),
-	atlas-alert::part(body) {
-		display: block;
-	}
+  atlas-alert::part(icon),
+  atlas-alert::part(header),
+  atlas-alert::part(body) {
+    display: block;
+  }
 
-	atlas-alert::part(icon) {
-		grid-area: icon;
+  atlas-alert::part(icon) {
+    grid-area: icon;
 
-		margin-left: auto;
-		font-size: var(--alert-icon-size);
-	}
+    margin-left: auto;
+    font-size: var(--alert-icon-size);
+  }
 
-	atlas-alert::part(header) {
-		grid-area: header;
+  atlas-alert::part(header) {
+    grid-area: header;
 
-		margin-inline-start: var(--alert-header-margin-inline-start);
-		font-size: var(--alert-header-font-size);
-		font-weight: var(--alert-header-font-weight);
-	}
+    margin-inline-start: var(--alert-header-margin-inline-start);
+    font-size: var(--alert-header-font-size);
+    font-weight: var(--alert-header-font-weight);
+  }
 
-	atlas-alert::part(body) {
-		grid-area: body;
+  atlas-alert::part(body) {
+    grid-area: body;
 
-		padding-inline: var(--alert-body-padding-inline);
-		font-size: var(--alert-body-font-size);
-		line-height: var(--alert-body-line-height);
-		font-weight: var(--alert-body-font-weight);
-	}
+    padding-inline: var(--alert-body-padding-inline);
+    font-size: var(--alert-body-font-size);
+    line-height: var(--alert-body-line-height);
+    font-weight: var(--alert-body-font-weight);
+  }
 
-	atlas-alert::part(footer) {
-		display: flex;
-		align-self: end;
-		margin-inline: auto;
-		grid-area: footer;
-	}
+  atlas-alert::part(footer) {
+    display: flex;
+    align-self: end;
+    margin-inline: auto;
+    grid-area: footer;
+  }
 
-	/* ALERT TYPE SETTINGS */
-	atlas-alert[type] > atlas-button-set > [box-type="primary"] {
-		background-color: var(--button-background-color);
+  /* ALERT TYPE SETTINGS */
+  atlas-alert[type] > atlas-button-set > [box-type='primary'] {
+    background-color: var(--button-background-color);
 
-		--primary-border-color: var(--atlas-dialog-color-semantic-danger);
-	}
+    --primary-border-color: var(--atlas-dialog-color-semantic-danger);
+  }
 
-	atlas-alert[type] > atlas-button-set > [box-type="primary"]:hover {
-		background-color: var(--button-background-color-hover);
-		color: var(--button-color-hover);
-		box-shadow: var(--dialog-button-danger-shadow);
-	}
+  atlas-alert[type] > atlas-button-set > [box-type='primary']:hover {
+    background-color: var(--button-background-color-hover);
+    color: var(--button-color-hover);
+    box-shadow: var(--dialog-button-danger-shadow);
+  }
 
-	atlas-alert[type] > atlas-button-set > [box-type="primary"]:active {
-		--dialog-button-danger-shadow: none;
+  atlas-alert[type] > atlas-button-set > [box-type='primary']:active {
+    --dialog-button-danger-shadow: none;
 
-		background-color: var(--button-background-color-hover);
-	}
+    background-color: var(--button-background-color-hover);
+  }
 
-	atlas-alert[type] > atlas-icon {
-		color: var(--icon-color);
-	}
+  atlas-alert[type] > atlas-icon {
+    color: var(--icon-color);
+  }
 
-	/* TYPE DANGER DEFINITION */
-	atlas-alert[type="danger"] {
-		--dialog-button-danger-shadow: 0 0 5px 0 var(--atlas-dialog-color-semantic-danger);
-		--icon-color: var(--atlas-dialog-color-semantic-danger);
-		--button-background-color: var(--atlas-dialog-color-semantic-danger);
-		--button-background-color-hover: var(--atlas-color-semantic-danger-light);
-		--button-color-hover: var(--atlas-dialog-color-semantic-danger);
-	}
+  /* TYPE DANGER DEFINITION */
+  atlas-alert[type='danger'] {
+    --dialog-button-danger-shadow: 0 0 5px 0 var(--atlas-dialog-color-semantic-danger);
+    --icon-color: var(--atlas-dialog-color-semantic-danger);
+    --button-background-color: var(--atlas-dialog-color-semantic-danger);
+    --button-background-color-hover: var(--atlas-color-semantic-danger-light);
+    --button-color-hover: var(--atlas-dialog-color-semantic-danger);
+  }
 
-	@media (max-width: 480px) {
-		atlas-alert::part(dialog) {
-			margin-inline: 1em;
-		}
-	}
+  @media (max-width: 480px) {
+    atlas-alert::part(dialog) {
+      margin-inline: 1em;
+    }
+  }
 }

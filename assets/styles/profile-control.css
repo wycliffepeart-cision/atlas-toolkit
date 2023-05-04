@@ -1,56 +1,55 @@
 @layer atlas {
-	atlas-profile-control {
-		--avatar-as-button-hover-filter: drop-shadow(var(--atlas-shadow-soft-100))
-			drop-shadow(var(--atlas-shadow-hard-100));
-	}
+  atlas-profile-control {
+    --avatar-as-button-hover-filter: drop-shadow(var(--atlas-shadow-soft-100)) drop-shadow(var(--atlas-shadow-hard-100));
+  }
 
-	atlas-profile-control {
-		--text-name-text-font-size: 1.25em;
-		--text-name-font-weigth: 700;
-		--text-name-margin-left: 1em;
-		--container-spacing: 0em;
-		--icon-margin-left: 0.6rem;
+  atlas-profile-control {
+    --text-name-text-font-size: 1.25em;
+    --text-name-font-weigth: 700;
+    --text-name-margin-left: 1em;
+    --container-spacing: 0em;
+    --icon-margin-left: 0.6rem;
 
-		display: inline-grid;
-		grid-template-columns: max-content;
-		grid-template-areas: "img icon name" "menu menu menu";
-		justify-content: stretch;
-		align-items: stretch;
-	}
+    display: inline-grid;
+    grid-template-columns: max-content;
+    grid-template-areas: 'img icon name' 'menu menu menu';
+    justify-content: stretch;
+    align-items: stretch;
+  }
 
-	atlas-profile-control::part(image) {
-		grid-area: img;
-	}
+  atlas-profile-control::part(image) {
+    grid-area: img;
+  }
 
-	atlas-profile-control atlas-avatar:hover {
-		filter: var(--avatar-as-button-hover-filter);
-	}
+  atlas-profile-control atlas-avatar:hover {
+    filter: var(--avatar-as-button-hover-filter);
+  }
 
-	atlas-profile-control > [slot="icon"] {
-		grid-area: icon;
-		margin-left: var(--icon-margin-left);
-		aspect-ratio: 1/1;
-		width: 0.7em;
-	}
+  atlas-profile-control > [slot='icon'] {
+    grid-area: icon;
+    margin-left: var(--icon-margin-left);
+    aspect-ratio: 1/1;
+    width: 0.7em;
+  }
 
-	atlas-profile-control::part(name) {
-		height: 100%;
-		grid-area: name;
-		flex-wrap: nowrap;
-		margin-inline-start: var(--text-name-margin-left);
-		font-size: var(--text-name-text-font-size);
-		font-weight: var(--text-name-font-weigth);
-	}
+  atlas-profile-control::part(name) {
+    height: 100%;
+    grid-area: name;
+    flex-wrap: nowrap;
+    margin-inline-start: var(--text-name-margin-left);
+    font-size: var(--text-name-text-font-size);
+    font-weight: var(--text-name-font-weigth);
+  }
 
-	atlas-profile-control::part(menu) {
-		display: block;
-		grid-area: menu;
-	}
+  atlas-profile-control::part(menu) {
+    display: block;
+    grid-area: menu;
+  }
 
-	atlas-profile-control::part(name),
-	atlas-profile-contro > [slot="icon"] {
-		display: flex;
-		height: 100%;
-		align-items: center;
-	}
+  atlas-profile-control::part(name),
+  atlas-profile-contro > [slot='icon'] {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
 }

@@ -1,114 +1,114 @@
 @media (max-width: 800px) {
-	atlas-application-frame {
-		grid-template-rows: min-content min-content 1fr min-content;
-		grid-template-columns: 0.5fr 1fr 0.5fr;
-		grid-template-areas:
-			"extd-ctrl al feed-ctrl"
-			"f f f"
-			"ca ca ca"
-			"mn mn mn";
-	}
+  atlas-application-frame {
+    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-areas:
+      'extd-ctrl al feed-ctrl'
+      'f f f'
+      'ca ca ca'
+      'mn mn mn';
+  }
 
-	atlas-application-frame::part(feed) {
-		overflow-y: unset;
-		width: 100%;
-	}
+  atlas-application-frame::part(feed) {
+    overflow-y: unset;
+    width: 100%;
+  }
 
-	atlas-application-frame::part(main-nav),
-	atlas-application-frame::part(app-logo) {
-		border-inline-end-width: 0;
-	}
+  atlas-application-frame::part(main-nav),
+  atlas-application-frame::part(app-logo) {
+    border-inline-end-width: 0;
+  }
 
-	atlas-application-frame::part(main-nav) {
-		width: 100%;
-	}
+  atlas-application-frame::part(main-nav) {
+    width: 100%;
+  }
 
-	atlas-application-frame::part(content-area) {
-		margin-inline: 0;
-	}
+  atlas-application-frame::part(content-area) {
+    margin-inline: 0;
+  }
 
-	atlas-application-frame::part(contextual-controls),
-	atlas-application-frame::part(profile-controls),
-	atlas-application-frame::part(feed),
-	atlas-application-frame::part(search) {
-		display: none;
-	}
+  atlas-application-frame::part(contextual-controls),
+  atlas-application-frame::part(profile-controls),
+  atlas-application-frame::part(feed),
+  atlas-application-frame::part(search) {
+    display: none;
+  }
 
-	atlas-application-frame::part(backdrop) {
-		grid-area: extd-ctrl-start / extd-ctrl-start / ca-end / ca-end;
-	}
+  atlas-application-frame::part(backdrop) {
+    grid-area: extd-ctrl-start / extd-ctrl-start / ca-end / ca-end;
+  }
 
-	atlas-application-frame::part(feed-toggle-control) {
-		grid-area: feed-ctrl;
-		display: flex;
-		align-items: center;
-		justify-content: end;
-		margin-inline-end: var(--desktop-content-common-inline-margin);
-	}
+  atlas-application-frame::part(feed-toggle-control) {
+    grid-area: feed-ctrl;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-inline-end: var(--desktop-content-common-inline-margin);
+  }
 
-	atlas-application-frame::part(extended-control) {
-		grid-area: extd-ctrl;
-		display: flex;
-		align-items: center;
-		justify-content: start;
-		margin-inline-start: var(--desktop-content-common-inline-margin);
-	}
+  atlas-application-frame::part(extended-control) {
+    grid-area: extd-ctrl;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-inline-start: var(--desktop-content-common-inline-margin);
+  }
 
-	/* SHOW FEED */
-	atlas-application-frame[hide-feed="false"] {
-		grid-template-rows: min-content 1fr;
-		grid-template-areas:
-			"extd-ctrl al feed-ctrl"
-			"f f f";
-	}
+  /* SHOW FEED */
+  atlas-application-frame[hide-feed='false'] {
+    grid-template-rows: min-content 1fr;
+    grid-template-areas:
+      'extd-ctrl al feed-ctrl'
+      'f f f';
+  }
 
-	atlas-application-frame[hide-feed="false"]::part(feed) {
-		display: block;
-		width: 100%;
-	}
+  atlas-application-frame[hide-feed='false']::part(feed) {
+    display: block;
+    width: 100%;
+  }
 
-	atlas-application-frame[hide-feed="false"]::part(main-nav),
-	atlas-application-frame[hide-feed="false"]::part(content-area) {
-		display: none;
-	}
+  atlas-application-frame[hide-feed='false']::part(main-nav),
+  atlas-application-frame[hide-feed='false']::part(content-area) {
+    display: none;
+  }
 
-	/* SHOW CONTROLS */
-	atlas-application-frame[show-controls]:not([show-controls="false"]) {
-		grid-template-rows: min-content min-content 1fr;
-		grid-template-areas:
-			"extd-ctrl al"
-			"pc pc"
-			"cc cc";
-	}
+  /* SHOW CONTROLS */
+  atlas-application-frame[show-controls]:not([show-controls='false']) {
+    grid-template-rows: min-content min-content 1fr;
+    grid-template-areas:
+      'extd-ctrl al'
+      'pc pc'
+      'cc cc';
+  }
 
-	atlas-application-frame[show-controls]:not([show-controls="false"])::part(contextual-controls),
-	atlas-application-frame[show-controls]:not([show-controls="false"])::part(profile-controls) {
-		display: flex;
-		justify-self: start;
-	}
+  atlas-application-frame[show-controls]:not([show-controls='false'])::part(contextual-controls),
+  atlas-application-frame[show-controls]:not([show-controls='false'])::part(profile-controls) {
+    display: flex;
+    justify-self: start;
+  }
 
-	atlas-application-frame[show-controls]:not([show-controls="false"])::part(content-area),
-	atlas-application-frame[show-controls]:not([show-controls="false"])::part(main-nav),
-	atlas-application-frame[show-controls]:not([show-controls="false"])::part(feed),
-	atlas-application-frame[show-controls]:not([show-controls="false"])::part(feed-toggle-control) {
-		display: none;
-	}
+  atlas-application-frame[show-controls]:not([show-controls='false'])::part(content-area),
+  atlas-application-frame[show-controls]:not([show-controls='false'])::part(main-nav),
+  atlas-application-frame[show-controls]:not([show-controls='false'])::part(feed),
+  atlas-application-frame[show-controls]:not([show-controls='false'])::part(feed-toggle-control) {
+    display: none;
+  }
 
-	@keyframes feed-collapse {
-		from {
-			height: 100%;
-		}
-		to {
-			height: var(--feed-body-container-close-size);
-		}
-	}
+  @keyframes feed-collapse {
+    from {
+      height: 100%;
+    }
+    to {
+      height: var(--feed-body-container-close-size);
+    }
+  }
 
-	@keyframes feed-expand {
-		from {
-			height: var(--feed-body-container-close-size);
-		}
-		to {
-			height: 100%;
-		}
-	}
+  @keyframes feed-expand {
+    from {
+      height: var(--feed-body-container-close-size);
+    }
+    to {
+      height: 100%;
+    }
+  }
 }

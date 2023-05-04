@@ -1,111 +1,111 @@
 /* the theme/schemes pallet */
 :root {
-	--atlas-color-wildberry: red;
-	--atlas-color-white: white;
-	--atlas-color-black: black;
-	--atlas-color-grey-80: #677078;
-	--atlas-color-on-bg-white: #ffffff;
+  --atlas-color-wildberry: red;
+  --atlas-color-white: white;
+  --atlas-color-black: black;
+  --atlas-color-grey-80: #677078;
+  --atlas-color-on-bg-white: #ffffff;
 
-	/* primary colors */
-	/* blue */
-	--atlas-color-primary-b500: #00607f;
-	--atlas-color-primary-b400: #007fa8;
-	--atlas-color-primary-b300: #009ed1;
-	--atlas-color-primary-b200: #00bdf9;
-	--atlas-color-primary-b100: #5ad7ff;
-	--atlas-color-primary-b50: #9fe7ff;
-	--atlas-color-primary-b25: #dff9ff;
+  /* primary colors */
+  /* blue */
+  --atlas-color-primary-b500: #00607f;
+  --atlas-color-primary-b400: #007fa8;
+  --atlas-color-primary-b300: #009ed1;
+  --atlas-color-primary-b200: #00bdf9;
+  --atlas-color-primary-b100: #5ad7ff;
+  --atlas-color-primary-b50: #9fe7ff;
+  --atlas-color-primary-b25: #dff9ff;
 
-	/* orange */
-	--atlas-color-primary-o500: #fc5b08;
-	--atlas-color-primary-o400: #fd7c3a;
-	--atlas-color-primary-o300: #fd9e6d;
-	--atlas-color-primary-o200: #febf9f;
-	--atlas-color-primary-o100: #fee1d2;
-	--atlas-color-primary-o50: #fff2eb;
-	--atlas-color-primary-o25: #fffaf6;
+  /* orange */
+  --atlas-color-primary-o500: #fc5b08;
+  --atlas-color-primary-o400: #fd7c3a;
+  --atlas-color-primary-o300: #fd9e6d;
+  --atlas-color-primary-o200: #febf9f;
+  --atlas-color-primary-o100: #fee1d2;
+  --atlas-color-primary-o50: #fff2eb;
+  --atlas-color-primary-o25: #fffaf6;
 
-	/* neutral */
-	--atlas-color-primary-n500: #0a0d0f;
-	--atlas-color-primary-n400: #34404b;
-	--atlas-color-primary-n300: #677078;
-	--atlas-color-primary-n200: #9aa0a5;
-	--atlas-color-primary-n100: #cccfd2;
-	--atlas-color-primary-n50: #ebeced;
-	--atlas-color-primary-n25: #f7f7f7;
+  /* neutral */
+  --atlas-color-primary-n500: #0a0d0f;
+  --atlas-color-primary-n400: #34404b;
+  --atlas-color-primary-n300: #677078;
+  --atlas-color-primary-n200: #9aa0a5;
+  --atlas-color-primary-n100: #cccfd2;
+  --atlas-color-primary-n50: #ebeced;
+  --atlas-color-primary-n25: #f7f7f7;
 
-	/* secondary colors */
-	/* purple */
-	--atlas-color-secondary-p500: #7a53be;
-	--atlas-color-secondary-p400: #9664d8;
-	--atlas-color-secondary-p300: #b67ce2;
-	--atlas-color-secondary-p200: #db93f0;
-	--atlas-color-secondary-p100: #faaffb;
-	--atlas-color-secondary-p50: #f7d6f7;
-	--atlas-color-secondary-p25: #faf0fa;
+  /* secondary colors */
+  /* purple */
+  --atlas-color-secondary-p500: #7a53be;
+  --atlas-color-secondary-p400: #9664d8;
+  --atlas-color-secondary-p300: #b67ce2;
+  --atlas-color-secondary-p200: #db93f0;
+  --atlas-color-secondary-p100: #faaffb;
+  --atlas-color-secondary-p50: #f7d6f7;
+  --atlas-color-secondary-p25: #faf0fa;
 
-	/* teal */
-	--atlas-color-secondary-t500: #0e7d79;
-	--atlas-color-secondary-t400: #19948f;
-	--atlas-color-secondary-t300: #25afa9;
-	--atlas-color-secondary-t200: #2fcbc5;
-	--atlas-color-secondary-t100: #39e9e3;
-	--atlas-color-secondary-t50: #51fdf7;
-	--atlas-color-secondary-t25: #c3fefd;
+  /* teal */
+  --atlas-color-secondary-t500: #0e7d79;
+  --atlas-color-secondary-t400: #19948f;
+  --atlas-color-secondary-t300: #25afa9;
+  --atlas-color-secondary-t200: #2fcbc5;
+  --atlas-color-secondary-t100: #39e9e3;
+  --atlas-color-secondary-t50: #51fdf7;
+  --atlas-color-secondary-t25: #c3fefd;
 
-	/* green */
-	--atlas-color-secondary-g500: #2d7722;
-	--atlas-color-secondary-g400: #26901a;
-	--atlas-color-secondary-g300: #30ab0b;
-	--atlas-color-secondary-g200: #72c21c;
-	--atlas-color-secondary-g100: #a5d928;
-	--atlas-color-secondary-g50: #d1ee32;
-	--atlas-color-secondary-g25: #f0fe37;
+  /* green */
+  --atlas-color-secondary-g500: #2d7722;
+  --atlas-color-secondary-g400: #26901a;
+  --atlas-color-secondary-g300: #30ab0b;
+  --atlas-color-secondary-g200: #72c21c;
+  --atlas-color-secondary-g100: #a5d928;
+  --atlas-color-secondary-g50: #d1ee32;
+  --atlas-color-secondary-g25: #f0fe37;
 
-	/* sienna */
-	--atlas-color-secondary-s500: #be780d;
-	--atlas-color-secondary-s400: #da890f;
-	--atlas-color-secondary-s300: #f79b11;
-	--atlas-color-secondary-s200: #ffb913;
-	--atlas-color-secondary-s100: #ffd612;
-	--atlas-color-secondary-s50: #ffed42;
-	--atlas-color-secondary-s25: #fff7ab;
+  /* sienna */
+  --atlas-color-secondary-s500: #be780d;
+  --atlas-color-secondary-s400: #da890f;
+  --atlas-color-secondary-s300: #f79b11;
+  --atlas-color-secondary-s200: #ffb913;
+  --atlas-color-secondary-s100: #ffd612;
+  --atlas-color-secondary-s50: #ffed42;
+  --atlas-color-secondary-s25: #fff7ab;
 
-	/* semantics */
-	--atlas-color-semantic-danger: #bf0002;
-	--atlas-color-semantic-warning: #ffc700;
-	--atlas-color-semantic-success: #047c25;
-	--atlas-color-semantic-danger-light: #feebea;
-	--atlas-color-semantic-warning-light: #fef8d3;
-	--atlas-color-semantic-success-light: #e9fcf6;
+  /* semantics */
+  --atlas-color-semantic-danger: #bf0002;
+  --atlas-color-semantic-warning: #ffc700;
+  --atlas-color-semantic-success: #047c25;
+  --atlas-color-semantic-danger-light: #feebea;
+  --atlas-color-semantic-warning-light: #fef8d3;
+  --atlas-color-semantic-success-light: #e9fcf6;
 
-	/* charts */
-	--atlas-color-chart-darkblue: #2d5ea1;
-	--atlas-color-chart-darkpurple: #5b4887;
-	--atlas-color-chart-darkmagenta: #cb509e;
-	--atlas-color-chart-darkteal: #2dafac;
-	--atlas-color-chart-darkgreen: #009e71;
-	--atlas-color-chart-darkred: #cb4e55;
-	--atlas-color-chart-darkyellow: #fdd500;
-	--atlas-color-chart-blue: #3487f7;
-	--atlas-color-chart-purple: #9664d8;
-	--atlas-color-chart-magenta: #ff64c6;
-	--atlas-color-chart-teal: #39dbd8;
-	--atlas-color-chart-green: #00c68d;
-	--atlas-color-chart-red: #ff626b;
-	--atlas-color-chart-yellow: #fde568;
-	--atlas-color-chart-lightblue: #23c9ff;
-	--atlas-color-chart-lightpurple: #db93f0;
-	--atlas-color-chart-lightmagenta: #ffa4f6;
-	--atlas-color-chart-lightteal: #52ebe7;
-	--atlas-color-chart-lightgreen: #a1f0d7;
-	--atlas-color-chart-lightred: #ffbbbe;
-	--atlas-color-chart-lightyellow: #fff5c2;
-	--atlas-color-chart-Xlightblue: #ecf4ff;
-	--atlas-color-chart-Xlightpurple: #f4f1ff;
-	--atlas-color-chart-Xlightmagenta: #fff3fb;
-	--atlas-color-chart-Xlightteal: #e6faf9;
-	--atlas-color-chart-Xlightgreen: #e6fdf6;
-	--atlas-color-chart-Xlightred: #fff2f3;
-	--atlas-color-chart-Xlightyellow: #fffae2;
+  /* charts */
+  --atlas-color-chart-darkblue: #2d5ea1;
+  --atlas-color-chart-darkpurple: #5b4887;
+  --atlas-color-chart-darkmagenta: #cb509e;
+  --atlas-color-chart-darkteal: #2dafac;
+  --atlas-color-chart-darkgreen: #009e71;
+  --atlas-color-chart-darkred: #cb4e55;
+  --atlas-color-chart-darkyellow: #fdd500;
+  --atlas-color-chart-blue: #3487f7;
+  --atlas-color-chart-purple: #9664d8;
+  --atlas-color-chart-magenta: #ff64c6;
+  --atlas-color-chart-teal: #39dbd8;
+  --atlas-color-chart-green: #00c68d;
+  --atlas-color-chart-red: #ff626b;
+  --atlas-color-chart-yellow: #fde568;
+  --atlas-color-chart-lightblue: #23c9ff;
+  --atlas-color-chart-lightpurple: #db93f0;
+  --atlas-color-chart-lightmagenta: #ffa4f6;
+  --atlas-color-chart-lightteal: #52ebe7;
+  --atlas-color-chart-lightgreen: #a1f0d7;
+  --atlas-color-chart-lightred: #ffbbbe;
+  --atlas-color-chart-lightyellow: #fff5c2;
+  --atlas-color-chart-Xlightblue: #ecf4ff;
+  --atlas-color-chart-Xlightpurple: #f4f1ff;
+  --atlas-color-chart-Xlightmagenta: #fff3fb;
+  --atlas-color-chart-Xlightteal: #e6faf9;
+  --atlas-color-chart-Xlightgreen: #e6fdf6;
+  --atlas-color-chart-Xlightred: #fff2f3;
+  --atlas-color-chart-Xlightyellow: #fffae2;
 }
