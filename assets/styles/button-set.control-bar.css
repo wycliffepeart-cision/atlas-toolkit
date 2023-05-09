@@ -1,90 +1,90 @@
 @layer atlas {
-	atlas-button-set[control-bar] {
-		--control-bar-button-color: var(--atlas-color-primary-n300);
-		--control-bar-full-button-color: var(--atlas-color-primary-n400);
-		--control-bar-full-icon-color: var(--atlas-color-primary-n200);
-		--control-bar-border-color: var(--atlas-color-primary-n50);
-		--control-bar-inline-padding: 1em;
-	}
+  atlas-button-set[control-bar] {
+    --control-bar-button-color: var(--atlas-color-primary-n300);
+    --control-bar-full-button-color: var(--atlas-color-primary-n400);
+    --control-bar-full-icon-color: var(--atlas-color-primary-n200);
+    --control-bar-border-color: var(--atlas-color-primary-n50);
+    --control-bar-inline-padding: 1em;
+  }
 
-	atlas-button-set[control-bar] {
-		align-items: end;
-		width: 100%;
+  atlas-button-set[control-bar] {
+    align-items: end;
+    width: 100%;
 
-		container: control-bar / size;
-	}
+    container: control-bar / size;
+  }
 
-	atlas-button-set[control-bar] > atlas-button {
-		--atlas-button-primary-color: var(--control-bar-button-color);
-		--atlas-button-hover-background-color: transparent;
-		--atlas-button-primary-background-color: transparent;
-		--primary-active-background: transparent;
-		--atlas-button-primary-disabled-background-color: transparent;
-		--large-padding-left-right: 0;
-		--large-padding-top-bottom: 0;
-		--text-space-between: 1em;
-	}
+  atlas-button-set[control-bar] > atlas-button {
+    --atlas-button-primary-color: var(--control-bar-button-color);
+    --atlas-button-hover-background-color: transparent;
+    --atlas-button-primary-background-color: transparent;
+    --primary-active-background: transparent;
+    --atlas-button-primary-disabled-background-color: transparent;
+    --large-padding-left-right: 0;
+    --large-padding-top-bottom: 0;
+    --text-space-between: 1em;
+  }
 
-	atlas-button-set[control-bar] > atlas-button {
-		max-width: unset;
-		border: 0;
-		border-radius: 0;
-	}
+  atlas-button-set[control-bar] > atlas-button {
+    max-width: unset;
+    border: 0;
+    border-radius: 0;
+  }
 
-	atlas-button-set[control-bar] > atlas-button[disabled]:not([disabled="false"]) {
-		--atlas-button-primary-color: var(--default-disabled-color);
+  atlas-button-set[control-bar] > atlas-button[disabled]:not([disabled='false']) {
+    --atlas-button-primary-color: var(--default-disabled-color);
 
-		border-color: var(--control-bar-border-color);
-	}
+    border-color: var(--control-bar-border-color);
+  }
 
-	atlas-button-set[control-bar] > atlas-button::part(label) {
-		display: none;
-	}
+  atlas-button-set[control-bar] > atlas-button::part(label) {
+    display: none;
+  }
 
-	atlas-button-set[control-bar] atlas-icon {
-		--atlas-icon-default-color: inherit;
-	}
+  atlas-button-set[control-bar] atlas-icon {
+    --atlas-icon-default-color: inherit;
+  }
 
-	atlas-button-set[control-bar] > atlas-button:hover {
-		color: var(--icon-hover-color);
-	}
+  atlas-button-set[control-bar] > atlas-button:hover {
+    color: var(--icon-hover-color);
+  }
 
-	atlas-button-set[control-bar] > atlas-button:active {
-		color: var(--icon-active-color);
-	}
+  atlas-button-set[control-bar] > atlas-button:active {
+    color: var(--icon-active-color);
+  }
 
-	@media (max-width: 800px) {
-		atlas-button-set[control-bar] {
-			--primary-spacing: 0;
-			--space-around: 0;
-		}
+  @media (max-width: 800px) {
+    atlas-button-set[control-bar] {
+      --primary-spacing: 0;
+      --space-around: 0;
+    }
 
-		atlas-button-set[control-bar] {
-			padding-inline: var(--control-bar-inline-padding);
-		}
-	}
+    atlas-button-set[control-bar] {
+      padding-inline: var(--control-bar-inline-padding);
+    }
+  }
 
-	@container control-bar (orientation: portrait) {
-		atlas-button-set[control-bar]::part(primary) {
-			flex-flow: column;
-		}
+  @container control-bar (orientation: portrait) {
+    atlas-button-set[control-bar]::part(primary) {
+      flex-flow: column;
+    }
 
-		atlas-button-set[control-bar] > atlas-button {
-			--large-padding-top-bottom: 1em;
-			--atlas-button-primary-color: var(--control-bar-full-button-color);
-		}
+    atlas-button-set[control-bar] > atlas-button {
+      --large-padding-top-bottom: 1em;
+      --atlas-button-primary-color: var(--control-bar-full-button-color);
+    }
 
-		atlas-button-set[control-bar] > atlas-button {
-			border-bottom: 1px solid var(--control-bar-border-color);
-			width: 100cqw;
-		}
+    atlas-button-set[control-bar] > atlas-button {
+      border-bottom: 1px solid var(--control-bar-border-color);
+      width: 100cqw;
+    }
 
-		atlas-button-set[control-bar] atlas-icon {
-			--atlas-icon-default-color: var(--control-bar-full-icon-color);
-		}
+    atlas-button-set[control-bar] atlas-icon {
+      --atlas-icon-default-color: var(--control-bar-full-icon-color);
+    }
 
-		atlas-button-set[control-bar] > atlas-button::part(label) {
-			display: flex;
-		}
-	}
+    atlas-button-set[control-bar] > atlas-button::part(label) {
+      display: flex;
+    }
+  }
 }
