@@ -93,14 +93,20 @@
   /* ALERT TYPE SETTINGS */
   atlas-alert[type] > atlas-button-set > [box-type='primary'] {
     background-color: var(--button-background-color);
+
+    --primary-border-color: var(--atlas-dialog-color-semantic-danger);
   }
 
   atlas-alert[type] > atlas-button-set > [box-type='primary']:hover {
     background-color: var(--button-background-color-hover);
+    color: var(--button-color-hover);
+    box-shadow: var(--dialog-button-danger-shadow);
   }
 
   atlas-alert[type] > atlas-button-set > [box-type='primary']:active {
-    background-color: var(--button-background-color);
+    --dialog-button-danger-shadow: none;
+
+    background-color: var(--button-background-color-hover);
   }
 
   atlas-alert[type] > atlas-icon {
@@ -109,9 +115,11 @@
 
   /* TYPE DANGER DEFINITION */
   atlas-alert[type='danger'] {
+    --dialog-button-danger-shadow: 0 0 5px 0 var(--atlas-dialog-color-semantic-danger);
     --icon-color: var(--atlas-dialog-color-semantic-danger);
     --button-background-color: var(--atlas-dialog-color-semantic-danger);
-    --button-background-color-hover: var(--atlas-dialog-color-semantic-danger-hover);
+    --button-background-color-hover: var(--atlas-color-semantic-danger-light);
+    --button-color-hover: var(--atlas-dialog-color-semantic-danger);
   }
 
   @media (max-width: 480px) {

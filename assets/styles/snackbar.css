@@ -1,9 +1,9 @@
 @layer atlas {
   atlas-snackbar {
     --snackbar-background-color: #eef8ec;
-    --snackbar-max-width: 26.938rem;
+    --snackbar-max-width: 100%;
     --snackbar-prefix-icon-size: 1.25em;
-    --snackbar-suffix-icon-size: 0.53em;
+    --snackbar-suffix-icon-size: 1em;
     --snackbar-prefix-icon-color: #047c25;
     --snackbar-title-color: #1b923c;
     --snackbar-title-line-hight: 1.375rem;
@@ -13,18 +13,15 @@
     --snackbar-subtitle-font-weight: 400;
     --snackbar-prefix-right-margin: 1.188rem;
     --snackbar-subtitle-font-size: 0.875rem;
-    --snackbar-suffix-mergin-left: 2rem;
+    --snackbar-suffix-margin-left: 2rem;
     --snackbar-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
   }
 
   atlas-snackbar {
-    top: 1rem;
-    right: 1rem;
-    max-width: var(--snackbar-max-width);
+    background: var(--snackbar-background-color);
+    width: var(--snackbar-max-width);
     display: grid;
     border-radius: 0.5rem;
-    position: absolute;
-    background: var(--snackbar-background-color);
     align-items: center;
     grid-template-rows: 1fr 1fr;
     padding: 1rem 1.375rem 1rem 1.188rem;
@@ -71,6 +68,6 @@
     align-items: center;
     justify-content: center;
     font-size: var(--snackbar-suffix-icon-size);
-    margin-inline-start: var(--snackbar-suffix-mergin-left);
+    margin-inline-start: var(--snackbar-suffix-margin-left);
   }
 }

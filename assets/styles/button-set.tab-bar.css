@@ -1,0 +1,72 @@
+@layer atlas {
+  atlas-button-set[tab-bar] {
+    --space-around: 0;
+    --extended-gap: 0;
+    --primary-spacing: 0;
+
+    --selected-tab-accent-color: var(--atlas-color-primary-b400);
+    --selected-tab-color: var(--atlas-color-primary-n400);
+    --tab-color: var(--atlas-color-primary-n300);
+    --disabled-tab-color: var(--atlas-color-primary-n100);
+    --tab-button-min-heigh: 4em;
+    --tab-label-border-color: transparent;
+    --tab-label-border-size: 0.143em;
+    --tab-label-heigh: 100%;
+  }
+
+  atlas-button-set[tab-bar] {
+    position: relative;
+    isolation: isolate;
+    flex-flow: nowrap;
+
+    border-block-end: 1px solid var(--atlas-color-primary-n100);
+  }
+
+  atlas-button-set[tab-bar]::part(primary) {
+    justify-content: flex-start;
+    flex-grow: 2;
+  }
+
+  atlas-button-set[tab-bar]::part(extended) {
+    align-items: center;
+  }
+
+  atlas-button-set[tab-bar] atlas-icon {
+    --atlas-icon-default-color: inherit;
+  }
+
+  atlas-button-set[tab-bar] > atlas-button:not([slot='extended']) {
+    --default-font-size: var(--medium-font-size);
+    --atlas-button-primary-color: var(--tab-color);
+    --atlas-button-hover-background-color: transparent;
+    --atlas-button-primary-background-color: transparent;
+    --primary-active-background: transparent;
+    --atlas-button-primary-disabled-background-color: transparent;
+    --large-padding-top-bottom: 0;
+    --large-padding-left-right: 0.8em;
+    --text-space-between: 0;
+  }
+
+  atlas-button-set[tab-bar] > atlas-button:not([slot='extended'])[disabled]:not([disabled='false']) {
+    --atlas-button-primary-color: var(--disabled-tab-color);
+  }
+
+  atlas-button-set[tab-bar] > atlas-button:not([slot='extended'])::part(label) {
+    border-bottom: var(--tab-label-border-size) solid var(--tab-label-border-color);
+    display: flex;
+    height: var(--tab-label-heigh);
+    align-items: center;
+  }
+
+  atlas-button-set[tab-bar] > atlas-button:not([slot='extended']) {
+    outline: none;
+    border: 0;
+    min-height: var(--tab-button-min-heigh);
+  }
+
+  atlas-button-set[tab-bar] > atlas-button[selected]:not([selected='false']) {
+    transform: scale(1.05);
+    --tab-label-border-color: var(--selected-tab-accent-color);
+    --atlas-button-primary-color: var(--selected-tab-color);
+  }
+}

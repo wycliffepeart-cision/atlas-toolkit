@@ -15,6 +15,7 @@
     --medium-padding-top-bottom: 0.375em;
 
     --primary-active-background: var(--atlas-color-primary-b300);
+    --primary-border-color: var(--atlas-color-primary-b500);
 
     --secondary-border-color: var(--atlas-color-primary-b500);
     --secondary-color: var(--atlas-color-primary-b500);
@@ -28,8 +29,8 @@
     --tertiary-background-hover: var(--atlas-color-primary-n25);
 
     --icon-default-color: var(--atlas-color-primary-n300);
-    --icon-active-color: var(--atlas-color-primary-b500);
-    --icon-hover-color: var(--atlas-color-primary-o500);
+    --icon-active-color: var(--atlas-color-primary-b300);
+    --icon-hover-color: var(--atlas-color-primary-b400);
 
     --text-color: var(--atlas-color-primary-b400);
     --text-color-active: var(--atlas-color-primary-b400);
@@ -58,7 +59,6 @@
     font-family: inherit;
     font-weight: var(--default-font-weight);
     font-size: var(--default-font-size);
-    height: 100%;
     line-height: var(--default-line-heigh);
     max-width: max-content;
     min-width: max-content;
@@ -85,6 +85,7 @@
     cursor: inherit;
     font-size: inherit;
     font-family: inherit;
+    font-weight: inherit;
   }
 
   atlas-button:hover {
@@ -149,16 +150,11 @@
 
   /* Text */
   atlas-button[kind='text'] {
-    flex-direction: column;
     background-color: unset;
     padding: 0;
     color: var(--text-color);
     outline: 0;
     border: none;
-  }
-
-  atlas-button:where([kind='text']) {
-    margin-block: auto;
   }
 
   atlas-button[kind='text']::part(button) {
@@ -185,7 +181,7 @@
   atlas-button[box-type='primary'] {
     background-color: var(--atlas-button-primary-background-color);
     color: var(--atlas-button-primary-color);
-    border: var(--default-border-size) solid var(--atlas-button-primary-background-color);
+    border: var(--default-border-size) solid var(--primary-border-color);
   }
 
   atlas-button[disabled]:not([disabled='false']),
@@ -196,13 +192,13 @@
   atlas-button:hover,
   atlas-button[box-type='primary']:hover {
     background-color: var(--atlas-button-hover-background-color);
-    border-color: var(--atlas-button-hover-background-color);
+    --primary-border-color: var(--atlas-button-hover-background-color);
   }
 
   atlas-button:active,
   atlas-button[box-type='primary']:active {
     background-color: var(--primary-active-background);
-    border-color: var(--primary-active-background);
+    --primary-border-color: var(--primary-active-background);
   }
 
   /* Secondary */
@@ -238,9 +234,11 @@
   atlas-button::part(button):focus-visible,
   atlas-button[box-type='primary']::part(button):focus-visible,
   atlas-button[box-type='secondary']::part(button):focus-visible {
+    --primary-focus-outline-color: var(--atlas-button-primary-background-color);
+
     box-shadow: var(--box-focus-shadow);
     border-radius: var(--default-border-radius);
-    outline: var(--default-focus-outline) solid var(--atlas-button-primary-background-color);
+    outline: var(--default-focus-outline) solid var(--primary-focus-outline-color);
   }
 
   atlas-button[box-type='tertiary']::part(button):focus-visible {

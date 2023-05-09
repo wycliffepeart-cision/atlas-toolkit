@@ -1,0 +1,57 @@
+@layer atlas {
+  atlas-button[state='danger'] {
+    --button-danger-color: var(--atlas-color-semantic-danger);
+    --button-danger-color-light: var(--atlas-color-semantic-danger-light);
+    --button-danger-disabled-light: #fff7f7;
+    --button-danger-disabled: #e7a0a1;
+    --button-danger-shadow: none;
+
+    --atlas-button-primary-background-color: var(--button-danger-color);
+    --primary-border-color: var(--button-danger-color);
+    --atlas-button-hover-background-color: var(--button-danger-color-light);
+    --primary-active-background: var(--button-danger-color-light);
+    --atlas-button-primary-disabled-background-color: var(--button-danger-disabled);
+
+    --secondary-color: var(--button-danger-color);
+    --secondary-hover-background-color: var(--button-danger-color);
+    --secondary-border-color: var(--button-danger-color);
+    --box-secondary-active: var(--button-danger-color);
+    --box-disabled-background: var(--button-danger-disabled-light);
+    --default-disabled-text-color: var(--button-danger-disabled);
+  }
+
+  atlas-button[state='danger'] {
+    box-shadow: var(--button-danger-shadow);
+  }
+
+  atlas-button[state='danger']:hover {
+    --button-danger-shadow: 0 0 5px 0 var(--button-danger-color);
+
+    --atlas-button-primary-color: var(--button-danger-color);
+    --secondary-color: var(--atlas-color-white);
+  }
+
+  atlas-button[state='danger']:active {
+    --primary-border-color: var(--button-danger-color);
+    --button-danger-shadow: none;
+  }
+
+  atlas-button[state='danger']::part(button):focus-visible {
+    --button-danger-shadow: 0 0 6px 0 var(--button-danger-color);
+
+    --box-focus-shadow: var(--button-danger-shadow);
+    --primary-focus-outline-color: var(--button-danger-color-light);
+  }
+
+  atlas-button[state='danger'][disabled]:not([disabled='false']) {
+    --atlas-button-primary-color: var(--button-danger-disabled-light);
+  }
+
+  atlas-button[state='danger'][box-type='secondary']::part(button):focus-visible {
+    --primary-focus-outline-color: var(--button-danger-color);
+  }
+
+  atlas-button[state='danger'][box-type='secondary'][disabled]:not([disabled='false']) {
+    border-color: var(--button-danger-disabled);
+  }
+}

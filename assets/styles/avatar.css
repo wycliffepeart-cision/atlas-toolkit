@@ -1,6 +1,6 @@
 @layer atlas {
   atlas-avatar {
-    --atlas-avatar-border-radius: 50%;
+    --atlas-avatar-vertex-clip-path: circle(50%);
     --atlas-avatar-default-width: 2em;
     --atlas-avatar-full-mode-min-width: 2em;
   }
@@ -11,7 +11,7 @@
     display: none;
     aspect-ratio: 1 / 1;
     width: var(--atlas-avatar-default-width);
-    border-radius: var(--atlas-avatar-border-radius);
+    clip-path: var(--atlas-avatar-vertex-clip-path);
   }
 
   atlas-avatar[visible='image']::part(image),
@@ -36,8 +36,8 @@
   atlas-avatar[full-mode][visible='image']::part(image),
   atlas-avatar[full-mode][visible='initials']::part(initials),
   atlas-avatar[full-mode][visible='fallback']::part(fallback) {
-    --atlas-avatar-border-radius: 0.3em;
     aspect-ratio: unset;
+    --atlas-avatar-vertex-clip-path: inset(0% 0% 0% 0% round 0.3em);
   }
 
   atlas-avatar[full-mode][visible='initials']::part(initials),

@@ -7,7 +7,9 @@
 
     --chips-label-font-size: var(--atlas-input-common-label-font-size);
     --chips-label-color: var(--atlas-input-common-label-color);
-    --chips-label-padding-before: var(--atlas-input-common-label-block-spacing);
+    --chips-label-padding-before: 0.5em;
+    --chips-label-padding-after: 0.55em;
+    --chips-label-margin-top: 1.2em;
 
     --chips-min-height: calc(var(--atlas-chip-body-height) * 5);
     --chips-max-height: calc(var(--atlas-chip-body-height) * 9);
@@ -15,7 +17,6 @@
     --suggestion-min-height: calc(var(--atlas-chip-body-height) * 2);
     --suggestion-max-height: calc(var(--atlas-chip-body-height) * 5);
     --suggestion-box-shadow: var(--atlas-input-common-box-shadow);
-    --suggestion-block-start-margin: -1em;
     --suggestion-inline-padding: 0.5em;
 
     --overall-control-padding: 0.5em;
@@ -41,24 +42,23 @@
 
   atlas-input-chip-group::part(label) {
     grid-area: label;
-    display: block;
-
     font-size: var(--atlas-input-common-label-font-size);
+  }
+
+  atlas-input-chip-group > [slot='label'] {
+    display: block;
     margin-block-end: var(--atlas-input-common-label-block-spacing);
   }
 
   atlas-input-chip-group::part(chips-label) {
     grid-area: chips-label;
     display: block;
-
     color: var(--chips-label-color);
-
     border-inline: var(--wrapper-border);
     border-block-start: var(--wrapper-border);
-
     padding-block-start: var(--chips-label-padding-before);
+    padding-block-end: var(--chips-label-padding-after);
     padding-inline-start: var(--inset-size);
-
     border-radius: var(--wrapper-border-radius) var(--wrapper-border-radius) 0 0;
   }
 
@@ -76,7 +76,7 @@
     display: block;
 
     padding-inline: var(--inset-size);
-    padding-block-start: var(--inset-size);
+    padding-block-end: var(--inset-size);
     padding-block-end: var(--inset-size);
 
     border-inline: var(--wrapper-border);
@@ -92,6 +92,10 @@
     display: block;
     height: 100%;
     overflow-y: auto;
+  }
+
+  atlas-input-chip-group > atlas-chip-group:not([slot]) {
+    padding-block: 0;
   }
 
   atlas-input-chip-group::part(controls) {
@@ -122,7 +126,6 @@
 
   atlas-input-chip-group[show-suggestion]::part(suggestion) {
     padding-inline: var(--suggestion-inline-padding);
-    margin-block-start: var(--suggestion-block-start-margin);
 
     max-width: 100%;
     min-height: var(--suggestion-min-height);

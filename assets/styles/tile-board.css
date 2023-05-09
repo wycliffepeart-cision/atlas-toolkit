@@ -1,5 +1,7 @@
 @layer atlas {
   atlas-tile-board {
+    container-type: inline-size;
+    container-name: atlas-tile-board;
     display: block;
     --atlas-tile-board-border-radius: 0.75em;
     --atlas-title-board-grid-gap: 1em;

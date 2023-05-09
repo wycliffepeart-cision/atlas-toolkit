@@ -24,6 +24,14 @@ export class Avatar extends HTMLElement {
   connectedCallback() {
     const currentVisibleValue = this.getAttribute(AVATAR_ATTRIBUTES.VISIBLE);
     this.setAttribute(AVATAR_ATTRIBUTES.VISIBLE, currentVisibleValue ?? DISPLAY.fallback);
+
+    const imageElement = this.shadowRoot.querySelector('#image');
+    imageElement.addEventListener('error', this.#handleImageError);
+  }
+
+  disconnectedCallback() {
+    const imageElement = this.shadowRoot.querySelector('#image');
+    imageElement.removeEventListener('error', this.#handleImageError);
   }
 
   static get observedAttributes() {
@@ -33,6 +41,10 @@ export class Avatar extends HTMLElement {
   get visible() {
     return this.getAttribute(AVATAR_ATTRIBUTES.VISIBLE);
   }
+
+  #handleImageError = () => {
+    this.dispatchEvent(new CustomEvent('error', { bubbles: true, composed: true }));
+  };
 
   #defineContent(name, value) {
     const imageElement = this.shadowRoot.querySelector('#image');

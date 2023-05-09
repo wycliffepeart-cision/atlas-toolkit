@@ -94,6 +94,7 @@ import Messages from '../../../assets/icons/messages.svg';
 import Movie from '../../../assets/icons/movie.svg';
 import MyNetwork from '../../../assets/icons/my-network.svg';
 import Newsfeed from '../../../assets/icons/newsfeed.svg';
+import NewsfeedSlash from '../../../assets/icons/newsfeed-slash.svg';
 import Newspaper from '../../../assets/icons/newspaper.svg';
 import NewWindow from '../../../assets/icons/new-window.svg';
 import Next from '../../../assets/icons/next.svg';
@@ -120,6 +121,7 @@ import Slideshow1 from '../../../assets/icons/slideshow-1.svg';
 import Slideshow2 from '../../../assets/icons/slideshow-2.svg';
 import Stack from '../../../assets/icons/stack.svg';
 import StickyNote from '../../../assets/icons/sticky-note.svg';
+import Submit from '../../../assets/icons/submit.svg';
 import ThumbUp from '../../../assets/icons/thumb-up.svg';
 import TikTok from '../../../assets/icons/tik-tok.svg';
 import Trash from '../../../assets/icons/trash.svg';
@@ -131,6 +133,7 @@ import Upload1 from '../../../assets/icons/upload-1.svg';
 import Upload2 from '../../../assets/icons/upload-2.svg';
 import User from '../../../assets/icons/user.svg';
 import Warning from '../../../assets/icons/warning.svg';
+import WarningReport from '../../../assets/icons/warning-report.svg';
 import Website from '../../../assets/icons/website.svg';
 import Window from '../../../assets/icons/window.svg';
 import Youtube from '../../../assets/icons/youtube.svg';
@@ -233,6 +236,7 @@ export const iconMappings = {
   movie: { alt: 'Movie', icon: Movie },
   myNetwork: { alt: 'My Network', icon: MyNetwork },
   newsfeed: { alt: 'Newsfeed', icon: Newsfeed },
+  newsfeedSlash: { alt: 'NewsfeedSlash', icon: NewsfeedSlash },
   newspaper: { alt: 'Newspaper', icon: Newspaper },
   newWindow: { alt: 'New Window', icon: NewWindow },
   next: { alt: 'Next', icon: Next },
@@ -259,6 +263,7 @@ export const iconMappings = {
   slideshow2: { alt: 'Slideshow 2', icon: Slideshow2 },
   stack: { alt: 'Stack', icon: Stack },
   stickyNote: { alt: 'Sticky Note', icon: StickyNote },
+  submit: { alt: 'Submit', icon: Submit },
   thumbUp: { alt: 'Thumb Up', icon: ThumbUp },
   tikTok: { alt: 'Tik Tok', icon: TikTok },
   trash: { alt: 'Trash', icon: Trash },
@@ -270,6 +275,7 @@ export const iconMappings = {
   upload2: { alt: 'Upload 2', icon: Upload2 },
   user: { alt: 'User', icon: User },
   warning: { alt: 'Warning', icon: Warning },
+  warningReport: { alt: 'WarningReport', icon: WarningReport },
   website: { alt: 'Website', icon: Website },
   window: { alt: 'Window', icon: Window },
   youtube: { alt: 'Youtube', icon: Youtube },

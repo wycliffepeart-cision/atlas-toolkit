@@ -16,4 +16,10 @@
   atlas-feed::part(prefix) {
     display: flex;
   }
+
+  @media (max-width: 800px) {
+    atlas-feed {
+      width: 100%;
+    }
+  }
 }

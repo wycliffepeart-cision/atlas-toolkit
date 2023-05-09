@@ -1,0 +1,6 @@
+@container atlas-tile-board (max-width: 700px) {
+  atlas-tile-board::part(dashboard) {
+    display: flex;
+    flex-direction: column;
+  }
+}

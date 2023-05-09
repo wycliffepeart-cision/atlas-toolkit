@@ -1,0 +1,18 @@
+@layer atlas {
+  @media (max-width: 800px) {
+    atlas-main-nav {
+      flex-direction: row;
+      margin-block: 0.5em;
+    }
+  }
+
+  @container main-nav (min-width: 200px) {
+    atlas-main-nav > atlas-main-nav-item > atlas-button::part(button) {
+      flex-flow: column;
+    }
+
+    atlas-main-nav > atlas-main-nav-item > atlas-button::part(label) {
+      display: contents;
+    }
+  }
+}

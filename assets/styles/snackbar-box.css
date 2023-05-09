@@ -1,0 +1,65 @@
+@layer atlas {
+  atlas-snackbar-box {
+    --snackbar-box-right-position: 0;
+    --snackbar-box-top-position: 0;
+    --snackbar-box-width: 431px;
+    --snackbar-box-gap: 1em;
+    --snackbar-box-spacing: 1em;
+  }
+
+  atlas-snackbar-box {
+    container: snackbar-box / inline-size;
+
+    width: var(--snackbar-box-width);
+    padding: var(--snackbar-box-spacing);
+
+    position: absolute;
+    top: var(--snackbar-box-top-position);
+    right: var(--snackbar-box-right-position);
+
+    background: transparent;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+  }
+
+  atlas-snackbar-box > * {
+    animation: add 0.3s;
+    max-height: 10em;
+  }
+
+  atlas-snackbar-box > *:not(:last-child) {
+    margin-block-end: 1em;
+  }
+
+  atlas-snackbar-box > *[dismiss] {
+    transform: translateX(500px);
+    transition: transform 0.3s;
+
+    animation: collapse 0.2s forwards 0.1s;
+  }
+
+  @keyframes add {
+    from {
+      transform: translateX(500px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes collapse {
+    to {
+      max-height: 0;
+      padding: 0;
+      margin-block-end: 0;
+    }
+  }
+
+  @container app-frame (max-width: 450px) {
+    atlas-snackbar-box {
+      --snackbar-box-width: 100cqw;
+      --snackbar-box-spacing: 0.5em;
+    }
+  }
+}

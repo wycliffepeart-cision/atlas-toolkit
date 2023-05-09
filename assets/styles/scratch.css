@@ -4,7 +4,7 @@
 @import './tokens/palette.css';
 @import './tokens/shadow.css';
 
-/* the themes/scheme */
+/* the theme/scheme */
 @layer base {
   *,
   *::before,
@@ -99,7 +99,6 @@
   --co-accent-color: var(--atlas-color-secondary-g500);
 
   --atlas-dialog-color-semantic-danger: var(--atlas-color-semantic-danger);
-  --atlas-dialog-color-semantic-danger-hover: #cf2f32;
 
   --atlas-application-frame-background-color: var(--co-application-frame-background-color);
   --atlas-application-frame-color: var(--co-application-frame-color);

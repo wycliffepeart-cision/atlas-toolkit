@@ -12,7 +12,6 @@
     --search-text-font-weight: 400;
     --search-text-font-size: 1em;
 
-    --overall-flow-space: 0.5em;
     --inner-space: 0.8em;
 
     --affix-color: var(--atlas-color-primary-n100);
@@ -28,8 +27,6 @@
     grid-template-areas:
       'P I S'
       'M M M';
-
-    margin-block: var(--overall-flow-space);
   }
 
   atlas-search::part(label) {

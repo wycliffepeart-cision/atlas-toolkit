@@ -11,12 +11,14 @@
 
   atlas-dialog {
     --atlas-dialog-dismissible-margin-block-end: 0.25rem;
-    --atlas-dialod-background-color: var(--atlas-color-white);
+    --atlas-dialog-background-color: var(--atlas-color-white);
     --atlas-dialog-footer-block-spacing: 2.5rem;
     --atlas-dialog-padding: 1rem;
     --atlas-dialog-inline-spacing: 3.75rem;
     --atlas-dialog-dismissible-padding: 1.25rem;
-    --atlas-dialog-subtext-margin-block-end: 1.5rem;
+    --atlas-dialog-subtext-margin-block-end: 0;
+    --atlas-dialog-body-block-start: 1.5rem;
+    --atlas-dialog-max-width: 600px;
 
     height: 100vh;
     align-items: center;
@@ -36,8 +38,10 @@
     grid-template-columns: 1fr;
     max-height: calc(100vh - (var(--atlas-dialog-padding) + var(--atlas-dialog-padding)));
     grid-template-rows: auto auto 1fr auto;
-    background: var(--atlas-dialod-background-color);
+    background: var(--atlas-dialog-background-color);
     border-radius: var(--atlas-dialog-border-radius);
+
+    overflow: hidden;
   }
 
   atlas-dialog::part(dismissible) {
@@ -51,12 +55,19 @@
     display: block;
     margin-block-end: 1rem;
     padding-inline: var(--atlas-dialog-inline-spacing);
+
+    font: var(--atlas-type-title-large-semibold);
+    color: var(--atlas-color-primary-n400);
   }
 
-  atlas-dialog::part(subtext) {
+  atlas-dialog > [slot='subtext'] {
     display: block;
     margin-block-end: var(--atlas-dialog-subtext-margin-block-end);
     padding-inline: var(--atlas-dialog-inline-spacing);
+
+    font: var(--atlas-type-body-large-regular);
+    font-weight: var(--atlas-type-body-large-regular-font-weight);
+    color: var(--atlas-color-primary-n400);
   }
 
   atlas-dialog::part(body) {
@@ -65,11 +76,20 @@
     overflow-y: auto;
     overflow-x: hidden;
     margin-inline: var(--atlas-dialog-inline-spacing);
+
+    font-family: var(--atlas-type-body-large-regular-font-family);
+    color: var(--atlas-color-primary-n400);
+
+    margin-block-start: var(--atlas-dialog-body-block-start);
+    padding-block-end: var(--atlas-dialog-footer-block-spacing);
+
+    max-width: var(--atlas-dialog-max-width);
   }
 
   atlas-dialog::part(footer) {
     display: block;
     padding: var(--atlas-dialog-footer-block-spacing) var(--atlas-dialog-inline-spacing);
+    padding-block-start: 0;
   }
 
   atlas-dialog[blade]::part(container) {
