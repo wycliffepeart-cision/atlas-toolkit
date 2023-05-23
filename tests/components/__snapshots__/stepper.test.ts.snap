@@ -1,6 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Stepper is matches snapshot 1`] = `
-<slot part="steps">
-</slot>
-`;
